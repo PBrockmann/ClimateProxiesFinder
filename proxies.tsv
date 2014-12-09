@@ -1,0 +1,942 @@
+Core	Longitude	Latitude	Depth	RecentDate	OldestDate	Proxy	Species	Reference
+12PC51	-23	0	3870	7.19	33.15	Planktonic foraminifera	Globigerinoides sacculifer	Sikes and keigwin, (1994)
+2B	-109.22	10.3	13	-0.04	-0.02	Coral	Porites lobata	Linsley et al., 2000
+A107-131	-38	-31	2925	4.24	301.8	Unknown	Unknown	Imbrie et al., 1992
+A7	126.98	27.82	1264	1.37	18.19	Planktonic foraminifera	Globigerinoides ruber	Sun et al., 2005
+AC85-4	11.77	41.75	662	4.8	21.6	Benthic foraminifera	Uvigerina peregrina	Vergnaud-grazzini and pierre, (1991)
+AHF-11343	-119.86	32.8	1171	3.04	32.73	Planktonic foraminifera	Globigerina bulloides	Mortyn et al., 1996
+AHF-16830	-118.42	31.47	2451	1.38	24.99	Planktonic foraminifera	Globigerina bulloides	Mortyn et al., 1996
+AHF-16832	-118.12	31.87	1915	1.69	34.89	Planktonic foraminifera	Globigerina bulloides	Mortyn et al., 1996
+AHF-16832	-118.12	31.87	1915	3.43	48.59	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+AHF-16832	-118.12	31.87	1915	3.43	48.59	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+AHF-28181	-119.06	33.01	1756	3.85	29.08	Planktonic foraminifera	Globigerina bulloides	Mortyn et al., 1996
+ALKOR_159_225514	8.71	57.84	420	-0.05	1.06	Benthic foraminifera	Bulimina marginata	Brackner and mackensen (2006)
+ALKOR_159_225514	8.71	57.84	420	-0.05	1.06	Benthic foraminifera	Melonis barleeanus	Brackner and mackensen (2006)
+ALKOR_159_225514	8.71	57.84	420	-0.05	1.06	Benthic foraminifera	Uvigerina mediterranea	Brackner and mackensen (2006)
+AQ18	35.5	29.45	19	-0.04	0.16	Coral	Porites cf. lutea	Heiss 1994 ; Al-rousan et al., 2003
+AQ-19	35.5	29.45	19	-0.04	0.06	Coral	Porites	Al-rousan et al., 2003
+AQ-19-3	35.5	29.45	19	-0.05	-0.05	Coral	Porites cf. lutea	Al-rousan et al., 2003
+AQ-19-4	35.5	29.45	19	-0.05	-0.05	Coral	Porites cf. lutea	Al-rousan et al., 2003
+AQ-19A	35.5	29.45	19	-0.05	-0.04	Coral	Porites cf. lutea	Al-rousan et al., 2003
+AQ-19C	35.5	29.45	19	-0.05	-0.04	Coral	Porites cf. lutea	Al-rousan et al., 2003
+AQ2	34.97	29.46	18	-0.05	-0.04	Coral	Porites	Felis et al., 2004
+AQ-29	35.5	29.45	29	-0.05	-0.05	Coral	Porites spp.	Al-rousan et al., 2003
+AQ-42	35.5	29.45	42	-0.05	-0.05	Coral	Porites spp.	Al-rousan et al., 2003
+AQ-7	35.5	29.45	7	-0.05	-0.05	Coral	Porites spp.	Al-rousan et al., 2003
+ASV880	47.14	79.93	388	0	9.65	Benthic foraminifera	Elphidium clavatum	Gif
+ASV880	47.14	79.93	388	0	9.88	Benthic foraminifera	Nonion labradoricum	Gif
+ASV880	47.14	79.93	388	0	10.72	Planktonic foraminifera	Neogloboquadrina pachyderma left	Gif
+B007-328PC	-21.55	65.96	94	0.1	1.6	Benthic foraminifera	Benthics	Axford et al., 2011. 
+B997-317	-18.87	66.59	494	0.01	13.75	Planktonic foraminifera	Neogloboquadrina pachyderma (s)	Castaneda et al., 2004
+B997-321	-18.97	66.89	480	0.37	7.85	Planktonic foraminifera	Neogloboquadrina pachyderma (s)	Castaneda et al., 2004
+B997-324	-21.15	66.52	282	0.03	12.06	Planktonic foraminifera	Turborotalita quinqueloba	Castaneda et al., 2004
+B997-324	-21.15	66.52	282	0.03	12.06	Benthic foraminifera	Melonis barleeanum	Castaneda et al., 2004
+B997-324	-21.15	66.52	282	0.03	12.06	Planktonic foraminifera	Neogloboquadrina pachyderma (s)	Castaneda et al., 2004
+B997-327	-20.86	66.64	373	0.39	4.36	Planktonic foraminifera	Neogloboquadrina pachyderma (s)	Castaneda et al., 2004
+B997-328	-21.55	65.96	96	0.03	4.62	Benthic foraminifera	Cibicidoides lobatulus	Castaneda et al., 2004
+B997-329	-21.3	65.97	111	0	10.49	Benthic foraminifera	Cibicidoides lobatulus	Castaneda et al., 2004
+B997-330	-21.09	65.87	170	0	11.08	Benthic foraminifera	Cibicidoides lobatulus	Castaneda et al., 2004
+B997-331	-21.64	66.07	46	0.29	4.14	Benthic foraminifera	Cibicidoides lobatulus	Castaneda et al., 2004
+B997-332	-21.58	66.14	108	0	10.94	Benthic foraminifera	Cibicidoides lobatulus	Castaneda et al., 2004
+BC-004A	-57.6	33.68	4418	0.05	2.87	Planktonic foraminifera	Globigerinoides ruber	Keigwin, 1996
+BDA18-5	-64.7	32.47	0	0.35	0.43	Coral	Diploria strigosa	Draschba 1999 / kuhnert 2002
+BDA19	0	0	12	-0.04	0.16	Coral	Montastrea annularis	Kuhnert, 2000
+BJ8 10GGC	115.25	-7.36	649	0.28	12.03	Planktonic foraminifera	Globigerinoides ruber	Linsley et al., 2010
+BJ8 13GGC	115.2	-7.4	594	0.13	10.57	Planktonic foraminifera	Globigerinoides ruber	Linsley et al., 2010
+BJ8 70GGC	119.4	-3.6	482	0.11	14.3	Planktonic foraminifera	Globigerinoides ruber	Linsley et al., 2010
+BJ8-03-31MCA	119.45	-3.88	454	-0.04	0.24	Planktonic foraminifera	Globigerinoides ruber	Oppo, 2009
+BJ8-03-32GGC	119.45	-3.88	459	0.01	1.87	Planktonic foraminifera	Globigerinoides ruber	Oppo, 2009
+BJ8-03-34GGC	119.45	-3.88	503	0.33	2.32	Planktonic foraminifera	Globigerinoides ruber	Oppo, 2009
+BOFS26/6K	-19.84	24.45	3680	0.57	26.67	Benthic foraminifera	Cibicidoides wuellerstorfi	Beveridge et al., 1995
+BOFS28/3M	-22.76	24.62	4900	1.52	34.4	Benthic foraminifera	Cibicidoides wuellerstorfi	Beveridge et al., 1995
+BOFS29/1K	-21.12	20.52	4000	1.09	33.89	Benthic foraminifera	Cibicidoides wuellerstorfi	Beveridge et al., 1995
+BOFS30/3K	-20.72	19.75	3580	0.99	34.89	Benthic foraminifera	Cibicidoides wuellerstorfi	Beveridge et al., 1995
+BOFS31/1K	-20.16	19	3300	0.63	27.32	Benthic foraminifera	Cibicidoides wuellerstorfi	Beveridge et al., 1995
+BOFS31/1K	-20.16	19	3300	0	26.46	Benthic foraminifera	Bulimina aculeata	Chapman et al., 1996
+BOFS31/1K	-20.16	19	3300	0	26.46	Planktonic foraminifera	Globigerina bulloides	Chapman et al., 1996
+BOX CORE MSM5/5-712-1	6.77	78.92	1491	-0.06	2.07	Planktonic foraminifera	Cibicidoides wuellerstorfi	Werner et al., 2011
+BOX CORE MSM5/5-712-1	6.77	78.92	1491	-0.06	2.07	Planktonic foraminifera	Neogloboquadrina pachyderma s	Werner et al., 2011
+BP00-07/05	81.14	74.66	38	1	7.6	Ostracode	Paracyprideis pseudopunctillata	Simstich et al., 2004
+BS7933	14.03	38.26	1282	0.68	29.49	Planktonic foraminifera	Globigerina bulloides	Cacho et al., 2001
+BS7938	13.58	38.41	1489	0.87	24.09	Planktonic foraminifera	Globigerina bulloides	Cacho et al., 2001
+C166A-8GGC	-83.57	24.65	435	0	2.85	Planktonic foraminifera	Globigerinoides ruber	Lund and curry 2004
+C18	34.97	29.43	1	-0.04	0.16	Coral	Porites sp.	Heiss, 1994
+C19	34.97	29.43	1	-0.04	0.06	Coral	Porites sp.	Heiss, 1994
+CH07_98_MC22	-76.28	32.78	1895	0.1	1.7	Planktonic foraminifera	Globigerinoides ruber	Saenger et al., 2011
+CH69-K09	-47.35	41.76	4100	110.39	134.91	Benthic foraminifera	Globigerina bulloides	Govin et al., 2012
+CH69-K09	-47.35	41.76	4100	110.39	134.91	Benthic foraminifera	Cibicides sp.	Govin et al., 2012
+CH82-24	-33	42	3427	0	220.8	Benthic foraminifera	Cibicides wuellerstorfi	Boyle and keigwin (1985,86)
+CHN82-24	-33	-42	3427	0	220.8	Benthic foraminifera	Benthic foraminifers	Boyle and keigwin (1985)
+CHN82-24	-33	-42	3427	0	220.8	Benthic foraminifera	Benthic foraminifers	Imbrie et al., 1992
+CHO288-54	-77.65	17.42	1020	0.59	13.15	Benthic foraminifera	Cibicides wuellerstorfi	Gif
+CHO288-54	-77.65	17.42	1020	0.59	11.65	Planktonic foraminifera	Globigerinoides ruber white	Gif
+CHO288-54	-77.65	17.42	1020	0.59	11.65	Planktonic foraminifera	Globigerinoides ruber pink	Gif
+COMPOSITE 63KA, 41KL, 42KG	65.98	24.62	316	-0.04	12.75	Planktonic foraminifera	Globigerinoides ruber	Staubwasser et al., 2003
+CORAL	55	-4.63	7	-0.05	0.1	Coral	Porites lutea	Charles et al., 1997
+CORAL	-162.13	5.87	9	-0.05	0.06	Coral	Porites lutea	Cobb et al., 2001
+CORAL	166.88	-15.63	10	11.96	12.45	Coral	Diploastrea heliopora	Corrage et al., 2004
+CORAL	113.77	-28.45	5	-0.04	0.16	Coral	Porites lutea	Kuhnert et al., 1999
+CORAL	82.05	7.98	3	-0.03	0.24	Coral	Porites lobata	Linsley et al., 1994
+CORAL	40	-3	6	-0.04	0.15	Coral	Unknown	Cole et al., 2000
+CORAL	-89.17	-0.67	14	-0.03	0.01	Coral	Pavona clavus	Shen et al., 1992
+DSDP 219	72.88	9.03	1764	34.2	3525.12	Benthic foraminifera	Globocassidulina pacifica RAW	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	34.2	3525.12	Benthic foraminifera	Globocassidulina pacifica ADJUSTED	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2820	2820	Benthic foraminifera	Cibicidoides kullenbergi RAW	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2820	2820	Benthic foraminifera	Cibicidoides kullenbergi ADJUSTED	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2360	3270	Benthic foraminifera	Cibicidoides wuellerstorfi RAW	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2360	3270	Benthic foraminifera	Cibicidoides wuellerstorfi ADJUSTED	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2120	5540	Benthic foraminifera	Oridorsalis umbonatus RAW	Gupta et al., 1999
+DSDP 219	72.88	9.03	1764	2120	5540	Benthic foraminifera	Oridorsalis umbonatus ADJUSTED	Gupta et al., 1999
+DSDP 502	-79.38	11.49	3051	0.6	1135	Benthic foraminifera	Cibicidoides wuellerstorf	De menocal et al., 1992
+DSDP 552	-23.23	56.04	2301	7	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+DSDP 607	-32.96	41	3427	0	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+DSDP 607	-32.96	41	3427	0	3261.9	Benthic foraminifera	Uvigerina and Cibicidoides +0.64 per mil	Raymo et al., 1992
+DSDP 607	-32.96	41	3427	0	3261.92	Benthic foraminifera	Cibicidoides	Raymo et al., 1992
+DSDP 609	-24.23	49.88	3884	0	35.5	Planktonic foraminifera	Neogloboquadrina pachyderma	Bond, 1992
+EILAT-1	34.92	29.5	4	-0.04	-0.04	Coral	Porites	Felis et al., 2004
+EILAT-15B	34.92	29.5	15	-0.05	-0.04	Coral	Porites	Felis et al., 2004
+EL-15A	34.93	29.52	15	-0.05	-0.04	Coral	Porites cf. nodifera	Al-rousan et al., 2003
+EL-15B	34.93	29.52	15	-0.05	-0.04	Coral	Porites cf. nodifera	Al-rousan et al., 2003
+EL-15C	34.93	29.52	15	-0.05	-0.04	Coral	Porites cf. nodifera	Al-rousan et al., 2003
+EN120GGC1	-57.6	33.6	4450	1.7	18.9	Benthic foraminifera	Cibicides	Boyle et keigwin, 1987
+EN120GGC1	-57.6	33.6	4450	9.58	18.97	Planktonic foraminifera	Globigerinoides ruber	Boyle et keigwin, 1987
+ENAM96-06	-13.99	55.66	2548	0.39	2.32	Planktonic foraminifera	Globigerina bulloides	Richter et al., 2009
+ERDC-077BX	156.06	4.85	3585	4.1	25.6	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-108BX	160.8	-1.75	3383	0.25	19.75	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-129BX	161.98	0.01	4441	0.42	36.81	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-131BX	162.7	-0.03	4441	0.39	27.89	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-135BX	160.99	0.88	3509	0.26	20.69	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-136BX	161.61	1.1	3848	1.45	22.87	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+ERDC-139BX	162.39	1.36	4118	0.42	29.19	Planktonic foraminifera	Pulleniatina obliquiloculata	Wu and berger, 1989
+EW9209-1JPC	-44.2	5.91	4056	-0.09	502.45	Benthic foraminifera	Mean Benthics	Curry et al., 1996
+EW9209-1JPC	-44.2	5.91	4056	2.99	150.16	Benthic foraminifera	Cibicides spp.	Curry et al., 1997
+EW9209-1JPC	-44.2	5.91	4056	2.99	151.31	Planktonic foraminifera	Globigernoides sacculifer	Curry et al., 1997
+EW9209-2JPC	-44.47	5.64	3528	7.74	417.56	Benthic foraminifera	Mean Benthics	Curry et al., 1996
+EW9209-3JPC	-44.26	5.31	3288	3.2	435.11	Benthic foraminifera	Mean Benthics	Curry et al., 1996
+EW9209-6JPC	-43.74	5.98	3033	0.29	376.34	Benthic foraminifera	Mean Benthics	Curry et al., 1996
+EW9302-JPC2	-45.09	48.8	1251	109.9	134.05	Benthic foraminifera	Cibicides sp.	Govin et al., 2012
+EW9302-JPC8	-25	61	1917	57.53	135.1	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2001
+EW9302-JPC8	-25	61	1917	57.53	135.1	Planktonic foraminifera	Neogloboquadrina pachyderma (right coiling)	Oppo et al., 2001
+EW9504-02	-117.58	31.25	2042	1.9	194.31	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-02	-117.58	31.25	2042	1.9	194.31	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+EW9504-03	-117.37	32.07	1299	-1.39	170.16	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-03	-117.37	32.07	1299	-1.39	170.16	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+EW9504-04	-118.4	32.28	1759	1.52	198.38	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-04	-118.4	32.28	1759	1.52	198.38	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+EW9504-05	-118.13	32.48	1818	2.16	110.24	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-05	-118.13	32.48	1818	2.16	110.24	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+EW9504-08	-118.8	32.8	1442	0.43	130.98	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-08	-118.8	32.8	1442	0.43	130.98	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+EW9504-09	-119.97	32.87	1194	0.95	135.08	Benthic foraminifera	Cibicidoides mckannai	Stott et al., 2000
+EW9504-09	-119.97	32.87	1194	0.95	135.08	Planktonic foraminifera	Globigerina bulloides	Stott et al., 2000
+GEOB10029-4	100	-1.01	964	0	40.12	Planktonic foraminifera	Globigerinoides ruber s.s.	Mohtadi et al., 2010
+GEOB10038-4	103	-5.02	1819	0	131.4	Planktonic foraminifera	Neogloboquadrina dutertrei	Mohtadi et al., 2010 b
+GEOB10038-4	103	-5.02	1819	0	131.4	Planktonic foraminifera	Globigerinoides ruber	Mohtadi et al., 2010 b
+GEOB10038-4	103	-5.02	1819	0	131.4	Benthic foraminifera	Cibicidoides wuellerstorfi	Mohtadi et al., 2010 b
+GEOB10038-4	103	-5.02	1891	0	39.59	Planktonic foraminifera	Globigerinoides ruber s.s.	Mohtadi et al., 2010
+GEOB10053-7	112.01	-8.01	1375	0.24	21.98	Planktonic foraminifera	Globigerinoides ruber	Mohtadi et al., 2011
+GEOB10053-7	112.01	-8.01	1375	0.24	21.98	Planktonic foraminifera	Globigerina bulloides	Mohtadi et al., 2011
+GEOB1008-3	10.32	-6.58	3124	0.4	190.5	Planktonic foraminifera	Globigerina bulloides	Schneider et al., 1995
+GEOB1008-3	10.32	-6.58	3124	0.4	190.5	Planktonic foraminifera	Globigerinoides ruber pink	Schneider et al., 1995
+GEOB1016-3	11.68	-11.77	3409	0.9	200.6	Planktonic foraminifera	Globigerina bulloides	Schneider et al., 1995
+GEOB1016-3	11.68	-11.77	3409	0.9	200.6	Planktonic foraminifera	Globigerinoides ruber pink	Schneider et al., 1995
+GEOB1028-5	9.19	-20.1	2209	0	219.4	Planktonic foraminifera	Globigerina bulloides	Schneider et al., 1995
+GEOB1028-5	9.19	-20.1	2209	0	219.4	Planktonic foraminifera	Globigerinoides ruber	Schneider et al., 1995
+GEOB1032	6.04	-22.92	2505	0.75	368	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1034	5.42	-21.74	3731	0	902.67	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1035	5.03	-21.6	4450	0	902.67	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1041	-7.59	-3.48	4035	0.21	586	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1101	-10.98	1.66	4567	0.38	540.8	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1105	-12.43	-1.67	3230	0.24	366.85	Benthic foraminifera	Cibicidoides wuellerstorfi	Bickert and wefer, 1996
+GEOB1112	-10.75	-5.78	3128	1	271	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1113	-11.04	-5.75	2374	0.36	423.5	Planktonic foraminifera	Globigerinoides ruber w	Sarnthein et al., 1994
+GEOB1113	-11.04	-5.75	2374	0.36	423.5	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GEOB1115	-12.56	-3.56	2945	0.57	269	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1117	-14.9	-3.82	3984	2.61	362	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1118	-16.43	-3.56	4671	0.38	387.2	Benthic foraminifera	Cibicides wuellerstorfi	Bickert and wefer, 1996
+GEOB1515	-43.67	4.24	3129	0.16	69.08	Benthic foraminifera	Cibicides sp RAW	Vidal 1999
+GEOB1515	-43.67	4.24	3129	0.16	69.08	Benthic foraminifera	Cibicides sp ADJUSTED	Vidal 1999
+GEOB1523-1	-41.62	3.83	3292	77	128.5	Planktonic foraminifera	Globorotalia tumida	Ruehlemann et al., 2001
+GEOB1711	12.38	-23.32	1967	0.24	59	Benthic foraminifera	Cibicides wuellerstorfi	Vidal et al., 1999
+GEOB3129/3911	-36.64	-4.61	830	0.17	20.74	Planktonic foraminifera	Globigerinoides ruber white	Weldeab et al., 2006
+GEOB3129-1	-36.64	-4.61	830	0.46	14.34	Planktonic foraminifera	Globigerinoides sacculifer	Arz et al., 1999a
+GEOB3129-1	-36.64	-4.61	830	0.46	14.34	Planktonic foraminifera	Globigerinoides ruber pink	Arz et al., 1999a
+GEOB3176-1	-34.44	-7.01	1385	0.65	29.08	Planktonic foraminifera	Globigerinoides sacculifer	Arz et al., 1999a
+GEOB3176-1	-34.44	-7.01	1385	0.65	29.08	Planktonic foraminifera	Globigerinoides ruber pink	Arz et al., 1999a
+GEOB3606-1	13.08	-25.47	1785	6.7	54.9	Planktonic foraminifera	Globigerina bulloides	Romero et al., 2003
+GEOB3606-1	13.08	-25.47	1785	6.7	54.9	Planktonic foraminifera	Globorotalia inflata	Romero et al., 2003
+GEOB3910-2	-36.35	-4.25	2362	0.25	10.7	Planktonic foraminifera	Globigerinoides sacculifer	Arz et al., 2001
+GEOB3910-2	-36.35	-4.25	2362	0.25	10.7	Planktonic foraminifera	Globorotalia tumida	Arz et al., 2001
+GEOB3911-3	-36.64	-4.61	828	14.43	20.74	Planktonic foraminifera	Globigerinoides sacculifer	Arz et al., 1999a
+GEOB3911-3	-36.64	-4.61	828	14.43	20.74	Planktonic foraminifera	Globigerinoides ruber pink	Arz et al., 1999a
+GEOB3935-2	-59.39	12.61	1558	0.21	176.25	Benthic foraminifera	Cibicides wuellerstorfi	Schlanz et al., 2000
+GEOB3938-1	-58.33	12.26	1972	0.21	244.18	Benthic foraminifera	Cibicides wuellerstorfi	Schlanz et al., 2000
+GEOB4223	-12.47	29.02	775	0.92	88.44	Benthic foraminifera	Globigerina bulloides	Freudenthal et al., 2002
+GEOB4223	-12.47	29.02	775	0.92	88.44	Benthic foraminifera	Uvigerina peregrina	Freudenthal et al., 2002
+GEOB4905-4	9.39	2.5	1328	0.06	21.77	Planktonic foraminifera	Globigerinoides ruber pink	Weldeab et al., 2005
+GEOB5804-4	34.96	29.5	464	-0.03	7.43	Gradient Planktonic-benthic foraminifera	Gradient globigerinoides ruber (white) - cibicidoides mabahethi	Lamy et al., 2006 
+GEOB5836-2	35.35	26.2	1475	3.95	6.29	Planktonic foraminifera	Globigerinoides ruber	Arz et al., 2006
+GEOB5844-2	34.68	27.71	963	0.59	20.98	Planktonic foraminifera	Globigerinoides ruber white	Arz et al., 2003
+GEOB5844-2	34.68	27.71	963	0.59	20.98	Pteropod	Creseis acicula	Arz et al., 2003
+GEOB5844-2	34.68	27.71	963	0.59	20.98	Benthic foraminifera	Cibicidoides mabahethi	Arz et al., 2003
+GEOB5844-2	34.68	27.71	963	0.59	20.98	Benthic foraminifera	Bulimina marginata	Arz et al., 2003
+GEOB5844-2	34.68	27.71	963	0.59	20.98	Pteropod	Limacina inflata	Arz et al., 2003
+GEOB6007-1	-10.27	30.85	899	-0.05	0.12	Benthic foraminifera	Hyalinea balthica	Morley, 2011
+GEOB6007-1	-10.27	30.85	899	-0.05	0.12	Benthic foraminifera	Hyalinea balthica interpolated	Morley, 2011
+GEOB6007-2	-10.27	30.85	900	0.17	1.14	Benthic foraminifera	Hyalinea balthica	Morley, 2011
+GEOB6007-2	-10.27	30.85	900	0.17	1.13	Benthic foraminifera	Hyalinea balthica interpolated	Morley, 2011
+GEOB6518-1	11.22	-5.59	962	0.03	19.5	Planktonic foraminifera	Globigerinoides ruber	Schefuss et al., 2005
+GEOB7608-1	30.2	43.49	1202	8.27	26.51	Ostracode	Candona spp.	Bahr et al., 2008
+GEOB7610-1	30.07	43.65	465	7.78	15.89	Ostracode	Candona spp	Bahr et al., 2005
+GEOB7616-4	30.04	43.68	168	12.36	15.47	Bivalve shell	Dreissena rostriformis	Bahr et al., 2005 & 2006
+GEOB7920-2	-18.58	20.75	2278	0.52	117.89	Benthic foraminifera	Cibicidoides wuellerstorfi	Tjallingii et al., 2008
+GEOB9528-3 (313)	-17.66	9.17	3057	6.95	192.3	Benthic foraminifera	Cibicidoides wuellerstorfi	Castaneda et al., 2009
+GEOTU_SL096	19.2	32.76	1399	2.3	17.1	Planktonic foraminifera	Globigerinoides ruber type A	Numberger et al., 2009
+GEOTU_SL096	19.2	32.76	1399	2.3	17.1	Planktonic foraminifera	Globigerinoides ruber type B	Numberger et al., 2009
+GEOTU_SL096	19.2	32.76	1399	8.3	16.3	Planktonic foraminifera	Globigerinoides ruber type C	Numberger et al., 2009
+GEOTU_SL112	34.65	32.74	892	0.33	12.02	Benthic foraminifera	Planulina ariminensis	Kuhnt et al., 2008
+GEOTU_SL112	34.65	32.74	892	0.33	12.02	Benthic foraminifera	Uvigerina mediterranea	Kuhnt et al., 2008
+GEOTU_SL123	24.1	39.75	1094	0.07	11.87	Benthic foraminifera	Planulina ariminensis	Kuhnt et al., 2008
+GEOTU_SL123	24.1	39.75	1094	0.07	11.87	Benthic foraminifera	Uvigerina mediterranea	Kuhnt et al., 2008
+GEOTU_SL148	27.56	35.76	728	2.41	12.04	Benthic foraminifera	Planulina ariminensis	Kuhnt et al., 2008
+GEOTU_SL148	27.56	35.76	728	0.07	12.04	Benthic foraminifera	Uvigerina mediterranea	Kuhnt et al., 2008
+GGC39	-75.42	31.67	2975	1.2	18.53	Benthic foraminifera	Cibicidoides wuellerstorfi	Keigwin and schlegel, 2002
+GGC39	-75.42	31.67	2975	1.2	19.94	Planktonic foraminifera	Globigerinoides ruber	Keigwin and schlegel, 2002
+GGC40	-75.47	31.72	2924	2.35	18.99	Planktonic foraminifera	Globigerinoides ruber	Keigwin and schlegel, 2002
+GIK12328-5	-18.57	21.15	2778	0	30.76	Benthic foraminifera	Uvigerina peregrina	Beveridge et al., 1995
+GIK12329	-18.93	19.37	3315	0.26	155.39	Benthic foraminifera	Pyrgo sp.	Sarnthein et al., 1994
+GIK12329	-18.93	19.37	3315	0.26	155.39	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK12337	-18.13	15.95	3094	0.13	17.1	Planktonic foraminifera	Globigerinoides ruber w	Sarnthein et al., 1994
+GIK12337	-18.13	15.95	3094	0.13	17.1	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK12379-1	-17.75	23.14	2136	3.92	92.21	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK12379-1	-17.75	23.14	2136	9.8	92.21	Benthic foraminifera	Uvigerina hollicki	Sarnthein et al., 1994
+GIK12379-1	-17.75	23.14	2136	3.92	92.21	Benthic foraminifera	Uvigerina peregrina	Sarnthein et al., 1994
+GIK12392-1	-16.85	25.17	2573	2.49	141.33	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK12392-1	-16.85	25.17	2573	2.49	141.33	Benthic foraminifera	Uvigerina hollicki	Sarnthein et al., 1994
+GIK13239	-18.31	13.88	3156	8.2	39.52	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK13239	-18.31	13.88	3156	8.2	39.52	Benthic foraminifera	Uvigerina hollicki	Sarnthein et al., 1994
+GIK13289	-18.01	18.07	2490	2.8	34.95	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK13289	-18.01	18.07	2490	2.8	34.95	Benthic foraminifera	Uvigerina peregrina	Sarnthein et al., 1994
+GIK13519	-19.85	5.67	2862	0.73	781.74	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK13519	-19.85	5.67	2862	0.73	781.74	Benthic foraminifera	Uvigerina hollicki	Sarnthein et al., 1994
+GIK15637	-18.99	27.01	3849	7.13	446.99	Benthic foraminifera	Uvigerina hollicki	Sarnthein et al., 1994
+GIK15637	-18.99	27.01	3849	7.13	446.99	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK15669-1	-7.82	34.89	2022	2	119.34	Benthic foraminifera	Cibicides wuellerstorfi	Zahn thesis (1986)
+GIK16402-1	-20.57	14.42	4324	0.02	59.84	Planktonic foraminifera	Globigerinoides sacculifer	Sarnthein et al., 1994
+GIK16408-5	-21.5	9.01	4239	0.24	26.8	Planktonic foraminifera	Globigerinoides ruber w	Sarnthein et al., 1994
+GIK16408-5	-21.5	9.01	4239	0.24	26.8	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 1994
+GIK16459-1	-26.19	7.28	4835	3.03	34.11	Benthic foraminifera	Cibicides wuellerstorfi	Gif
+GIK16459-1	-26.19	7.28	4835	3.03	34.11	Planktonic foraminifera	Globigerinoides ruber w	Gif
+GIK16771-2	-15.5	0.8	2764	1.47	162.05	Planktonic foraminifera	Globigerinoides sacculifer	Sarnthein et al., 1994
+GIK16771-2	-15.5	0.8	2764	1.47	162.05	Planktonic foraminifera	Globigerinoides ruber w	Sarnthein et al., 1994
+GIK16771-2	-15.5	0.8	2764	1.47	162.05	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK16772-2	-11.96	-1.35	3912	17.1	334	Planktonic foraminifera	Globigerinoides sacculifer	Gif
+GIK16772-2	-11.96	-1.35	3912	17.1	334	Benthic foraminifera	Cibicides wuellerstorfi	Gif
+GIK16772-2	-11.96	-1.35	3912	0.22	9.8	Planktonic foraminifera	Globigerinoides ruber white	Gif
+GIK16772-2	-11.96	-1.35	3913	0.58	331.6	Benthic foraminifera	Cibicidoides wuellerstorfi	Martin et al., 2002
+GIK16773-1	-9.44	-0.97	4662	7.13	446.99	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK16773-1	-9.44	-0.97	4662	7.13	446.99	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK16856-2	3.4	4.81	2861	6.07	74.12	Benthic foraminifera	Cibicides cf wuellerstorfi	Sarnthein et al., 1994
+GIK16856-2	3.4	4.81	2861	6.07	74.12	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK16856-2	3.4	4.81	2861	6.07	74.12	Benthic foraminifera	Cibicides kullenbergi	Sarnthein et al., 1994
+GIK16867-1	5.1	-2.2	3891	0.33	162.22	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1994
+GIK17048-3	-18.18	54.31	1859	0.43	29.5	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Sarnthein et al., 1994
+GIK17048-3	-18.18	54.31	1859	0.43	29.5	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Sarnthein et al., 1994
+GIK17048-3	-18.18	54.31	1859	0.43	29.5	Planktonic foraminifera	Globigerina bulloides	Sarnthein et al., 1994
+GIK17048-3	-18.18	54.31	1859	0.43	29.5	Planktonic foraminifera	Globorotalia inflata	Sarnthein et al., 1994
+GIK17048-3	-18.18	54.31	1859	0.43	29.5	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK17940-2	117.38	20.12	1727	0.01	41.13	Planktonic foraminifera	Globigerinoides ruber	Wang, luejiang; sarnthein, michael; grootes, pieter meiert; erlenkeuser, helmut (1999): millennial reocurrence of century-scale abrupt events of east asian monsoon: a possible heat conveyor for the global deglaciation. paleoceanography, 14(6), 725-731, doi:10.1029/1999pa900028
+GIK23258	13.97	75	1768	0	1.94	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 2003
+GIK23258	13.97	75	1768	0	1.94	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Sarnthein et al., 2003
+GIK23415-9	-19.15	53.18	2472	8.74	80.85	Planktonic foraminifera	Neogloboquadrina pachyderma left	Weinelt et al., 2003
+GIK23519-4	-29.6	64.8	1903	0	5.6	Benthic foraminifera	Adjusted : cibicidoides wuellerstorfi + 0.64 per mil	Millo et al., 2006
+GIK23519-4	-29.6	64.8	1903	0	5.6	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2006
+GIK23519-4	-29.6	64.8	1903	0	5.6	Benthic foraminifera	Cibicidoides wuellerstorfi	Millo et al., 2006
+GIK23519-5	-29.6	64.8	1893	5.81	32.82	Benthic foraminifera	Adjusted : cibicidoides wuellerstorfi + 0.64 per mil	Millo et al., 2006
+GIK23519-5	-29.6	64.8	1893	5.81	32.82	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2006
+GIK23519-5	-29.6	64.8	1893	5.81	32.82	Benthic foraminifera	Cibicidoides wuellerstorfi	Millo et al., 2006
+GUA1 slabA	61.49	16.2	1.7	-0.05	-0.03	Coral	Diploria strigosa	Hetzinger, 2007
+GUA1 SlabB	61.49	16.2	1.7	-0.03	0.05	Coral	Diploria strigosa	Hetzinger, 2007
+H95-64	147.6	-6.08	4	-0.05	-0.03	Coral	Porites	Tudhope et al., 2001
+HEALY 02-02 51JPC	168.67	54.55	1466	0.96	21.36	Planktonic foraminifera	Neogloboquadrina pachyderma	Caissie et al., 2010
+HEALY 02-02 51JPC	168.67	54.55	1466	0.96	21.36	Benthic foraminifera	Uvigerina peregrina	Caissie et al., 2010
+HLY0205-GGC19	-155.51	72.16	369	0.05	6.66	Benthic foraminifera	Islandiella helenae	Farmer et al., 2011
+HLY0205-GGC19	-155.51	72.16	369	0.28	6.66	Benthic foraminifera	Nonion labradoricum	Farmer et al., 2011
+HLY03-05GC	63.26	81.62	797	-0.01	10.28	Planktonic foraminifera	Neogloboquadrina pachyderma	Jennings et al., 2011
+HLY03-05GC	63.26	81.62	797	-0.01	10.28	Planktonic foraminifera	Cassidulina neoteretis	Jennings et al., 2011
+HM115-16	37.33	60.87	345	-0.05	1.94	Benthic foraminifera	Uvigerina mediterranea	Eirksson 2006
+HM52-43	0.73	64.25	2781	0.54	14.7	Benthic foraminifera	Benthics	Fronval and jansen, 1997
+HM52-43	0.73	64.25	2781	0.54	14.7	Planktonic foraminifera	Planktonics	Fronval and jansen, 1997
+HM57-7	-13.87	68.43	1620	1.09	135.1	Benthic foraminifera	Benthics	Fronval and jansen, 1997
+HM57-7	-13.87	68.43	1620	1.09	135.1	Planktonic foraminifera	Planktonics	Fronval and jansen, 1997
+HM71-19	-9.51	69.48	2210	100	135.1	Benthic foraminifera	Benthics	Fronval and jansen, 1997
+HM71-19	-9.51	69.48	2210	0	135.1	Planktonic foraminifera	Planktonics	Fronval and jansen, 1997
+HM94-34	-2.53	73.77	3004	103.29	135.1	Benthic foraminifera	Benthics	Fronval and jansen, 1997
+HM94-34	-2.53	73.77	3004	2.78	135.1	Planktonic foraminifera	Planktonics	Fronval and jansen, 1997
+HU72-021-3	-59.92	42.97	2470	0	16.45	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Keigwin and jones, 1995
+HU73-011-1	-60.41	43.21	1814	1.65	15.4	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Keigwin and jones, 1995
+HU73-031-7	-55.25	42.98	4055	0.77	20.41	Planktonic foraminifera	Globigerinoides ruber	Keigwin and jones, 1995
+HU73-031-7	-55.25	42.98	4055	0.77	20.41	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Keigwin and jones, 1995
+HU89038 BC-004D	-57.6	33.68	4583	0	3.13	Benthic foraminifera	Nutallides umbonifera	Keigwin and boyle, 2000
+HU90031-044	-55.62	44.66	1381	0	14.52	Planktonic foraminifera	Neogloboquadrina pachyderma	Carlson et al., 2007
+HU91 045 093 HR	-45.69	50.2	3448	0.02	10.12	Unknown	Unknown	Hoogakker et al., 2011
+HUD91/039-012P	-71.86	76.81	823	3.14	10.86	Benthic foraminifera	Islandiella norcrossi	Knudsen et al., 2008
+HUD91/039-012P	-71.86	76.81	823	9.9	12.23	Benthic foraminifera	Cassidulina neoteretis	Knudsen et al., 2008
+HUD91/039-012P	-71.86	76.81	823	8.19	12.16	Planktonic foraminifera	Neogloboquadrina pachyderma	Knudsen et al., 2008
+IFATY LAGOON	43.58	-23.14	1.1	-0.05	0.29	Coral	Porites lobata	Zinke et al., 2004
+JM97-9482A	7.64	66.97	1048	-0.05	-0.02	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Risebrobakken et al., 2003
+JM97-9482A	7.64	66.97	1048	-0.05	-0.02	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Risebrobakken et al., 2003
+JM97-9482A	7.64	66.97	1048	-0.05	-0.02	Benthic foraminifera	Cassidulina teretis	Risebrobakken et al., 2003
+JPC-76	120.07	34.27	575	0.91	10.97	Planktonic foraminifera	Globigerina bulloides	Friddell et al., 2003
+JPC-76	120.07	34.27	575	0.91	10.97	Planktonic foraminifera	Neogloboquadrina pachyderma	Friddell et al., 2003
+K-11	2	72	2900	0	71	Benthic foraminifera	Benthic foraminifers	Imbrie et al., 1992
+KC82-21	-7.65	36.89	586	3.8	19	Benthic foraminifera	Uvigerina peregrina	Vergnaud-grazzini and pierre, 1991
+KC82-26	-7.81	36.79	583	3.5	15.2	Benthic foraminifera	Uvigerina peregrina	Vergnaud-grazzini and pierre, 1991
+KC82-41	-4.4	35.99	1288	0	15.5	Planktonic foraminifera	Globigerina bulloides	Vergnaud-grazzini and pierre, 1991
+KH-79-3_L3 (L3)	134.71	37.06	935	0.09	7.02	Benthic foraminifera	Cassidulina japonica	Ishiwatari et al., 2001
+KH-79-3_L3 (L3)	134.71	37.06	935	0.09	7.02	Planktonic foraminifera	Neogloboquadrina pachyderma	Ishiwatari et al., 2001
+KH94-3, LM-8	143.37	38.88	2353	0	24.4	Planktonic foraminifera	Globigerina bulloides	Oba and murayama, 2004
+KH94-3, LM-8	143.37	38.88	2353	0	24.1	Benthic foraminifera	Uvigerina senticosa	Oba and murayama, 2004
+KI5	139.4	39.57	807	4.55	14.97	Planktonic foraminifera	Globigerina umbilicata	Crusius et al., 1999
+KI5	139.4	39.57	807	0.73	4.55	Planktonic foraminifera	Neogloboquadrina pachyderma-r.	Crusius et al., 1999
+KI5	139.4	39.57	807	4.55	4.55	Planktonic foraminifera	Neogloboquadrina pachyderma-l	Crusius et al., 1999
+KI5	139.4	39.57	807	4.55	4.55	Planktonic foraminifera	Neogloboquadrina dutertrei	Crusius et al., 1999
+KL11	39.32	18.77	825	0	12.29	Planktonic foraminifera	Globigerinoides ruber	Siddall et al., 2003
+KN158-4 MC52	-14.72	55.47	2172	0	10.79	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Bond et al., 2001
+KN166-14-JPC-13	-33.5	53.1	3082	7.4	126.26	Planktonic foraminifera	Globigerina bulloides	Hodell et al., 2010
+KN166-14-JPC-13	-33.5	53.1	3082	8.12	126.3	Benthic foraminifera	Cibicidoides wuellerstorfi	Hodell et al., 2010
+KN166-14-JPC-13	-33.5	53.1	3082	7.4	126.26	Planktonic foraminifera	Neogloboquadrina pachyderma	Hodell et al., 2010
+KNR140_2_59GGC	-76.32	32.98	1205	0.1	1.5	Planktonic foraminifera	Globigerinoides ruber white	Saenger et al., 2011
+KNR140-51GGC	-76.28	32.78	1790	0.37	25.12	Planktonic foraminifera	Globigerinoides ruber	Carlson et al., 2008
+KNR140-JPC37	-75.42	31.68	2972	68.17	145	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2001
+KNR140-JPC37	-75.42	31.68	2972	68.17	145	Planktonic foraminifera	Globigerinoides ruber	Oppo et al., 2001
+KNR159-5-125GGC	-45.08	-29.53	3589	5.06	22.08	Benthic foraminifera	Cibicidoides spp.	Hoffmann et al., 2012
+KNR159-5-17GGC	-46.48	-27.7	1627	0.85	22.3	Benthic foraminifera	Cibicidoides spp.	Tessin and lund, 2013
+KNR159-5-22GGC	-43.58	-29.78	3924	6.61	22.94	Benthic foraminifera	Cibicidoides spp.	Hoffmann et al., 2012
+KNR159-5-30GGC	-46.07	-28.13	2500	2.89	28.99	Benthic foraminifera	Cibicidoides spp.	Tessin and lund, 2013
+KNR159-5-33GGC	-46.18	-27.57	2082	1.81	23.88	Benthic foraminifera	Cibicidoides spp.	Tessin and lund, 2013
+KNR159-5-36GGC	-46.47	-27.51	1268	1.11	22.84	Planktonic foraminifera	Globorotalia inflata	Carlson et al., 2008
+KNR159-5-42JPC	-46.03	-27.77	2296	0.33	21.23	Benthic foraminifera	Cibicidoides spp.	Hoffmann et al., 2012
+KNR159-5-54GGC	-43.33	-29.53	4003	8.41	17.95	Benthic foraminifera	Cibicidoides spp.	Hoffmann et al., 2012
+KNR159-5-78GGC	-46.33	-27.48	1820	0.8	20.15	Benthic foraminifera	Cibicidoides spp.	Tessin and lund, 2013
+KNR166-2 105JPC	-79.23	24.56	304	0.09	4.54	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 106JPC	-79.23	24.56	354	0	8.24	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 119JPC	-79.27	24.59	529	0.21	9.39	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 127JPC	-79.27	24.76	631	0.73	27.49	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 127JPC	-79.27	24.76	631	11.58	22.46	Benthic foraminifera	Planulina ariminensis	Lynch steiglitz et al., 2011
+KNR166-2 127JPC	-79.27	24.76	631	0.73	146.15	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 132JPC	-79.28	24.85	739	0.87	35.41	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 132JPC	-79.28	24.85	739	0.36	22.9	Benthic foraminifera	Planulina ariminensis	Lynch steiglitz et al., 2011
+KNR166-2 132JPC	-79.28	24.85	739	0	35.41	Benthic foraminifera	Cibicidoides sp	Lynch steiglitz et al., 2011
+KNR166-2 132JPC	-79.28	24.85	739	0.36	4.68	Benthic foraminifera	Cibicides sp.	Lynch-steiglitz et al., 2009
+KNR166-2 135JPC	-79.22	24.83	446	0.22	7.33	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 1GGC	-83.34	24.38	446	0.82	5.67	Planktonic foraminifera	Globigerinoides sacculifer	Lynch-steiglitz et al., 2009
+KNR166-2 1GGC	-83.34	24.38	446	0.82	10.74	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 1GGC	-83.34	24.38	446	8.05	9.45	Benthic foraminifera	Planulina ariminensis	Lynch-steiglitz et al., 2009
+KNR166-2 26JPC	-83.25	24.33	546	0.63	35.66	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 26JPC	-83.25	24.33	546	0.63	10.42	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 27GGC	-83.26	24.31	598	1.33	10.27	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 29JPC	-83.3	24.22	648	15.37	18.66	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 29JPC	-83.3	24.22	648	15.9	22.9	Benthic foraminifera	Cibicidoides wuellerstorfi	Lynch steiglitz et al., 2011
+KNR166-2 29JPC	-83.3	24.22	648	12.17	29.29	Benthic foraminifera	Planulina ariminensis	Lynch steiglitz et al., 2011
+KNR166-2 29JPC	-83.3	24.22	648	1.7	11.2	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 2JPC	-83.34	24.38	446	2.19	10.02	Planktonic foraminifera	Globigerinoides sacculifer	Lynch-steiglitz et al., 2009
+KNR166-2 2JPC	-83.34	24.38	446	2.19	10.02	Benthic foraminifera	Cibicides sp.	Lynch-steiglitz et al., 2009
+KNR166-2 31JPC	-83.27	24.76	751	1.2	34.8	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 31JPC	-83.27	24.76	751	15.29	33.83	Benthic foraminifera	Planulina ariminensis	Lynch steiglitz et al., 2011
+KNR166-2 31JPC	-83.27	24.76	751	1.39	24.84	Benthic foraminifera	Planulina wuellerstorfi	Lynch steiglitz et al., 2011
+KNR166-2 31JPC	-83.27	24.76	751	12.42	20.82	Benthic foraminifera	Cibicidoides sp	Lynch steiglitz et al., 2011
+KNR166-2 31JPC	-83.27	24.76	751	1.2	11.47	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 31JPC	-83.27	24.76	751	1.39	6.15	Benthic foraminifera	Planulina wuellerstorfi	Lynch-steiglitz et al., 2009
+KNR166-2 48JPC	-83.23	24.4	247	1.8	9.4	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 51JPC	-83.22	24.41	198	1.49	10.42	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 59JPC	-83.37	24.42	358	1.94	9.86	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2 73GGC	-79.43	23.75	542	0	41.61	Benthic foraminifera	Cibicidoides pachyderma	Lynch steiglitz et al., 2011
+KNR166-2 73GGC	-79.43	23.75	542	4.56	13.6	Benthic foraminifera	Planulina ariminensis	Lynch steiglitz et al., 2011
+KNR166-2 8GGC	-83.25	24.33	546	0.57	10.9	Benthic foraminifera	Cibicidoides pachyderma	Lynch-steiglitz et al., 2009
+KNR166-2-118MC-A	-79.27	24.59	531	0	0.89	Planktonic foraminifera	Globigerinoides ruber	Lund and curry, 2006
+KNR166-2-125MC-D	-79.29	24.76	694	0	1.36	Planktonic foraminifera	Globigerinoides ruber	Lund and curry, 2006
+KNR166-2-26JPC	-83.3	24.3	546	6.13	19.98	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2011
+KNR166-2-31JPC	-83.3	24.22	751	1.2	20.2	Benthic foraminifera	Cibicidoides pachyderma	Came et al., 2007 b
+KNR166-2-31JPC	-83.3	24.22	751	12.77	12.77	Benthic foraminifera	Cibicidoides spp.	Came et al., 2007 b
+KNR166-2-31JPC	-83.3	24.22	751	1.42	23.04	Benthic foraminifera	Cibicidoides wuellerstorfi	Came et al., 2007 b
+KNR166-2-62MC	-83.26	24.33	547	0.02	0.96	Planktonic foraminifera	Globigerinoides ruber	Lund and curry, 2006
+KNR166-2-51JPC	-83.22	24.41	198	1.49	9.15	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2012
+KNR31 GPC-5	-57.62	33.69	4583	1.36	20.96	Planktonic foraminifera	Globigerinoides ruber	Keigwin et al., 1991
+KNR31 GPC-5	-57.62	33.69	4583	1.22	18.06	Benthic foraminifera	Cibicides	Keigwin et al., 1991
+KNR31-GPC9	-74.43	28.25	4758	70.86	138.71	Benthic foraminifera	Cibicidoides sp.	Keigwin and jones, 1994
+KNR31-GPC9	-74.43	28.25	4758	70.86	138.71	Benthic foraminifera	Nuttalides umbonifera	Keigwin and jones, 1994
+KNR31-GPC9	-74.43	28.25	4758	70.86	138.71	Benthic foraminifera	Nuttallides umbonifera	Keigwin et al., 1994 b
+KNR31-GPC9	-74.43	28.25	4758	70.86	138.71	Benthic foraminifera	Cibicidoides sp.	Keigwin et al., 1994 b
+KS82-30	-3.9	36.45	795	1.5	13.1	Benthic foraminifera	Uvigerina peregrina	Vergnaud-grazzini and pierre, 1991
+KS82-31	-3.26	36.15	854	0.7	20.8	Benthic foraminifera	Uvigerina peregrina	Vergnaud-grazzini and pierre, 1991
+KT90-9, 21	144.32	42.45	1083	2.1	18.9	Planktonic foraminifera	Globigerina bulloides	Oba and murayama, 2004
+KT90-9, 21	144.32	42.45	1083	0	18.9	Benthic foraminifera	Elphidium batialis	Oba and murayama, 2004
+KT90-9, 21	144.32	42.45	1083	9	18.9	Benthic foraminifera	Uvigerina akitaensis	Oba and murayama, 2004
+KT90-9, 5	143.53	41.12	2098	3.6	24.9	Planktonic foraminifera	Globigerina bulloides	Oba and murayama, 2004
+KT90-9, 5	143.53	41.12	2098	0	24.9	Benthic foraminifera	Elphidium batialis	Oba and murayama, 2004
+KT90-9, 5	143.53	41.12	2098	6.4	24.9	Benthic foraminifera	Uvigerina akitaensis	Oba and murayama, 2004
+LAPAS-KF02	-45.2	-25.84	827	0.4	12.96	Planktonic foraminifera	Globigerinoides ruber	Pivel et al., 2013
+LPAZ21P	-109.47	22.99	624	1.4	235.8	Benthic foraminifera	Unknown	Herbert et al., 2001
+LV29-114-3	152.88	49.38	1762	1.2	20.32	Benthic foraminifera	Uvigerina auberiana	Riethdorf et al., 2012
+LV29-114-3	152.88	49.38	1762	1.2	20.32	Benthic foraminifera	Uvigerina peregrina	Riethdorf et al., 2012
+LV29-114-3	152.88	49.38	1762	1.12	20.32	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Riethdorf et al., 2012
+GIK17045	-16.39	52.43	3663	0.71	35.45	Planktonic foraminifera	Neogloboquadrina pachyderma dextre	Sarnthein et al., 1994
+GIK17045	-16.39	52.43	3663	0.71	35.45	Planktonic foraminifera	Globigerina bulloides	Sarnthein et al., 1994
+GIK17045	-16.39	52.43	3663	0.71	35.45	Planktonic foraminifera	Globorotalia inflata	Sarnthein et al., 1994
+GIK17045	-16.39	52.43	3663	0.71	35.45	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+GIK17045	-16.39	52.43	3663	0.71	35.45	Planktonic foraminifera	Neogloboquadrina pachyderma left	Sarnthein et al., 1994
+M200309	-13.99	55.65	2543	-0.05	0.37	Planktonic foraminifera	Globigerina bulloides	Richter et al., 2009
+M25/4-KL13	17.82	37.55	2533	6.4	328	Planktonic foraminifera	Globigerina bulloides	Schmiedl et al., 1998
+M25/4-KL13	17.82	37.55	2533	1.3	124	Planktonic foraminifera	Globigerinoides ruber pink	Schmiedl et al., 1998
+M35003-4	-61.24	12.09	1299	0	29.41	Planktonic foraminifera	Globigerinoides ruber pink	Ruehlemann, nature 1998
+M35003-4	-61.25	12.08	1299	0	28.78	Planktonic foraminifera	Globigerinoides ruber	Ruehlemann et al., 1999
+M39008	-7.07	36.38	577	0	21.5	Planktonic foraminifera	Globigerina bulloides	Cacho et al., 2001
+M44/3_KL83	34.14	32.61	1433	0.19	12.96	Planktonic foraminifera	Globigerinoides ruber	Sperling et al., 2003
+MC-29D	-62.78	45.88	250	0	1.6	Planktonic foraminifera	Cibicidoides lobatulus	Keigwin et al., 2003
+MC-29D	-62.78	45.88	250	0	1.6	Planktonic foraminifera	Neogloboquadrina pachyderma (s)	Keigwin et al., 2003
+MD01-2378	121.79	-13.08	1783	23.9	63.9	Benthic foraminifera	Planulina wuellerstorfi	Darkop et al., 2008
+MD01-2378	121.79	-13.08	1783	23.9	63.9	Benthic foraminifera	Globigerinoides ruber white	Darkop et al., 2008
+MD01-2378	121.79	-13.08	1783	1.05	461.54	Benthic foraminifera	Planulina wuellerstorfi	Holbourn et al., 2005
+MD01-2378	121.79	-13.08	1783	1.05	461.54	Planktonic foraminifera	Globigerinoides ruber	Holbourn et al., 2005
+MD01-2378	121.79	-13.08	1783	0.73	21.53	Planktonic foraminifera	Globigerinoides ruber	Sarnthein et al., 2010
+MD01-2378	121.79	-13.08	1783	1.05	21.79	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein et al., 2010
+MD01-2378	121.79	-13.08	1783	112	140.6	Planktonic foraminifera	Pulleniatina obliquiloculata	Xu et al., 2006
+MD01-2378	121.79	-13.08	1783	112	140.6	Planktonic foraminifera	Globigerinoides ruber white	Xu et al., 2006
+MD01-2378	121.79	-13.08	1783	112	140.6	Benthic foraminifera	Benthic	Xu et al., 2006
+MD01-2378	121.79	-13.08	1783	23.89	62.02	Planktonic foraminifera	Pulleniatina obliquiloculata	Zuraida et al., 2009
+MD01-2390	113.41	6.64	1545	1.05	20.86	Planktonic foraminifera	Globigerinoides ruber	Steinke et al., 2005
+MD01-2390	113.41	6.64	1545	1.05	23.94	Planktonic foraminifera	Globigerinoides ruber s.s.	Steinke et al., 2008
+MD01-2390	113.41	6.64	1545	1.05	21.21	Planktonic foraminifera	Globigerinoides ruber s.l.	Steinke et al., 2008
+MD01-2415	149.96	53.95	822	1.82	1090.04	Benthic foraminifera	Benthics	Nuernberg et al., 2004
+MD01-2416	167.73	51.27	2317	4.17	11.92	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Sarnthein et al., 2004
+MD01-2416	167.73	51.27	2317	5.63	11.92	Unknown	D18O adjusted for vital effect	Sarnthein et al., 2004
+MD01-2416 PC	167.73	51.27	2317	4.17	11.6	Unknown	D18O adjusted for vital effect	Sarnthein et al., 2004
+MD01-2416 PC	167.73	51.27	2317	4.17	11.6	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Sarnthein et al., 2004
+MD01-2421	141.78	36.02	2286	0.2	10.6	Planktonic foraminifera	Globigerina bulloides	Oba and murayama, 2004
+MD01-2421	141.78	36.02	2286	0.2	10	Planktonic foraminifera	Globorotalia inflata	Oba and murayama, 2004
+MD01-2421	141.78	36.02	2286	4.7	17.3	Benthic foraminifera	Uvigerina senticosa	Oba and murayama, 2004
+MD01-2421	141.78	36.02	2286	0.3	17.5	Benthic foraminifera	Bulimina aculeata	Oba and murayama, 2004
+MD01-2421	141.78	36.02	2286	0.24	144.1	Planktonic foraminifera	Globigerina bulloides	Oba et al., 2006
+MD01-2421	141.78	36.02	2286	0.24	144.1	Planktonic foraminifera	Globorotalia inflata	Oba et al., 2006
+MD01-2421	141.78	36.02	2286	0.29	144.1	Benthic foraminifera	Bulimina aculeata	Oba et al., 2006
+MD01-2421	141.78	36.02	2286	5.24	142.62	Benthic foraminifera	Uvigerina spp.	Oba et al., 2006
+MD01-2444	-10.13	37.57	2637	136.1	193.08	Planktonic foraminifera	Globigerina bulloides	Margari et al., 2010
+MD01-2444	-10.13	37.57	2637	136.1	193.29	Planktonic foraminifera	Benthics	Margari et al., 2010
+MD02-2488	88.02	-46.48	3420	108.03	137.3	Benthic foraminifera	Cibicides kullenbergi	Govin et al., 2012
+MD02-2503	120.07	34.47	570	0.14	35.76	Planktonic foraminifera	Globigerina bulloides	Hill et al., 2006 c
+MD02-2503	120.07	34.47	570	0.14	35.76	Benthic foraminifera	Bolivina argentea	Hill et al., 2006 c
+MD02-2503	120.07	34.47	570	0.14	35.76	Benthic foraminifera	Uvigerina peregrina	Hill et al., 2006 c
+MD02-2529	84.13	8.21	1619	0.1	89.3	Planktonic foraminifera	Globigerinoides ruber	Leduc et al., 2007
+MD02-2529	84.13	8.21	1619	1.57	52.14	Planktonic foraminifera	Neogloboquadrina dutertrei	Leduc et al., 2009
+MD02-2550	-91.34	26.95	2248	7.02	10.49	Planktonic foraminifera	Globigerinoides ruber	Lodico et al., 2006
+MD02-2550	-91.34	26.95	2248	10.99	18.35	Planktonic foraminifera	Globigerinoides ruber	Williams et al., 2010
+MD02-2551	-91.35	26.95	2246	27.95	44.46	Planktonic foraminifera	Globigerinoides ruber	Hill et al., 2006
+MD02-2575	-87.12	29	847	1.05	399.67	Benthic foraminifera	Uvigerina peregrina	Nurnberg et al., 2008
+MD02-2575	-87.12	29	847	7.13	399.67	Planktonic foraminifera	Globorotalia crassaformis	Nurnberg et al., 2008
+MD02-2575	-87.12	29	847	1.05	399.67	Planktonic foraminifera	Globigerinoides ruber	Nurnberg et al., 2008
+MD02-2588	25.83	-41.33	2907	0.29	353.18	Benthic foraminifera	"""benthic "" ???"	Ziegler et al., 2013
+MD02-2589	25.25	-41.43	2660	11.67	170.37	Benthic foraminifera	Cibicides wuellerstorfi	Molyneux et al., 2007
+MD03-2611	136.92	-37.22	2420	0.68	30.6	Unknown	Unknown	Calvo et al., 2007
+MD03-2707	9.4	2.5	1295	0.36	155.63	Planktonic foraminifera	Globigerinoides ruber	Weldeab et al., 2007
+MD04-2845	-5.22	45.35	4100	66.49	142.76	Benthic foraminifera	"""benthic "" ???"	Sanchez goni et al., 2013
+MD04-2881	63.08	22.2	2387	8.25	762.75	Benthic foraminifera	Uvigerina peregrina	Ziegler et al. 2010
+MD04-2881	63.08	22.2	2387	8.25	762.75	Planktonic foraminifera	Neogloboquadrina dutertrei	Ziegler et al. 2010
+MD04-2881	63.08	22.2	2387	180.78	762.75	Planktonic foraminifera	Globigerinoides ruber	Ziegler et al. 2010
+MD06-3018	166.15	-23	2470	0	1557.6	Benthic foraminifera	Cibicides wuellerstorfi	Russon et al., 2009
+MD06-3018	166.15	-23	2470	0	1543.5	Planktonic foraminifera	Globigerinoides ruber	Russon et al., 2011
+MD06-3067	126.5	6.51	1575	3.39	158.2	Planktonic foraminifera	Globigerinoides ruber	Bolliet et al., 2011
+MD06-3067	126.5	6.51	1575	3.39	158.2	Planktonic foraminifera	Pulleniatina obliquiloculata	Bolliet et al., 2011
+MD06-3067	126.5	6.51	1575	3.39	158.2	Benthic foraminifera	Benthics	Bolliet et al., 2011
+MD07-3128	-75.57	-52.66	1032	2.46	58.04	Planktonic foraminifera	Neogloboquadrina pachyderma	CaniupÃƒÂ¡n et al., 2011
+MD81-LC21	26.58	35.66	1522	0.08	156.73	Planktonic foraminifera	Globigerinoides ruber (white)	Grant et al., 2012
+MD81-LC21	26.58	35.66	1522	5.17	156.73	Planktonic foraminifera	Neogloboquadrine pachyderma (dextral)	Grant et al., 2012
+MD84-527	51.19	-43.49	3262	1	143.67	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Pichon et al., 1992
+MD84-527	51.19	-43.49	3262	1	143.67	Benthic foraminifera	Benthics	Pichon et al., 1992
+MD84-551	73.17	-55.01	2230	0.8	164.67	Planktonic foraminifera	Planktics	Pichon et al., 1992
+MD88-769	90.11	-46.07	3420	4.24	30.15	Benthic foraminifera	Uvigerina	Rosenthal et al., 1997
+MD88-769	90.11	-46.07	3420	4.24	30.15	Benthic foraminifera	Cibicides wuellestorfi	Rosenthal et al., 1997
+MD90-0963	73.53	5.04	2446	6	902.2	Planktonic foraminifera	Globigerinoides ruber	Bassinot et al., 1994
+MD90-0963	73.53	5.04	2446	6	890	Planktonic foraminifera	Stack	Bassinot et al., 1994
+MD94-101	79.42	-42.5	2920	10.1	254.79	Planktonic foraminifera	Globigerina bulloides(250-315 Ã‚Âµ)	Gif
+MD94-101	79.42	-42.5	2920	10.5	435	Benthic foraminifera	Cibicides uncalibrated	Gif
+MD95-2006	-10.06	57.02	2130	39.96	56.37	Benthic foraminifera	Cibicidoides wuellerstorfi	Dickson et al., 2008
+MD95-2006	-10.06	57.02	2130	39.96	56.37	Planktonic foraminifera	Globigerina bulloides	Dickson et al., 2008
+MD95-2006	-10.06	57.02	2130	39.96	56.37	Planktonic foraminifera	Neogloboquadrina pachyderma	Dickson et al., 2008
+MD95-2010	4.57	66.68	1226	110.1	133.99	Benthic foraminifera	Benthics	Govin et al., 2012
+MD95-2010	4.57	66.68	1226	10.31	158.09	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Risebrobakken et al. 2005 & 2007
+MD95-2010	4.57	66.68	1226	10.31	158.09	Benthic foraminifera	Cassidulina teretis	Risebrobakken et al. 2005 & 2007
+MD95-2010	4.57	66.68	1226	10.31	158.09	Benthic foraminifera	Cibicides wuellerstorfi	Risebrobakken et al. 2005 & 2007
+MD95-2010	4.57	66.68	1226	10.31	158.09	Benthic foraminifera	Oridorsalis umbonata	Risebrobakken et al. 2005 & 2007
+MD95-2011	7.64	66.97	1048	0.53	13.7	Planktonic foraminifera	Neogloboquadrina pachyderma dextre	Risebrobakken et al., 2003
+MD95-2011	7.64	66.97	1048	0.53	13.7	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Risebrobakken et al., 2003
+MD95-2011	7.64	66.97	1048	0.53	13.7	Benthic foraminifera	Cassidulina teretis	Risebrobakken et al., 2003
+MD95-2037	-32.03	37.09	2159	0.7	20.65	Benthic foraminifera	Cibicides	Gif
+MD95-2039	-10.35	40.58	3381	0	142.28	Planktonic foraminifera	Globigerina bulloides	Schanfeld et al., 2003
+MD95-2040	-9.86	40.58	2465	0	141.04	Planktonic foraminifera	Globigerina bulloides	Schanfeld et al., 2003
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Voelker et al., 2009
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Globorotalia inflata	Voelker et al., 2009
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Globigerinoides ruber	Voelker et al., 2009
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Globorotalia scitula	Voelker et al., 2009
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Globorotalia truncatulinoides dextral	Voelker et al., 2009
+MD95-2040	-9.86	40.58	2465	14.87	31.35	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Globorotalia inflata	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Globorotalia scitula	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Globorotalia truncatulinoides dextral	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	14.5	Planktonic foraminifera	Globorotalia truncatulinoides sinistral	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Voelker et al., 2009
+MD95-2041	-9.51	37.83	1123	14.5	28.86	Planktonic foraminifera	Globigerinoides ruber	Voelker et al., 2009
+MD95-2042	-10.16	37.8	3146	110.05	132.1	Planktonic foraminifera	Globigerina bulloides	Govin et al., 2012
+MD95-2042	-10.16	37.8	3146	110.05	132.1	Benthic foraminifera	Mixed benthics	Govin et al., 2012
+MD95-2043	-2.62	36.14	1841	1.01	51.38	Planktonic foraminifera	Globigerina bulloides	Cacho et al., 1999
+MD95-2043	-2.62	36.14	1841	1.01	51.38	Planktonic foraminifera	Globigerina bulloides	Cacho et al., 2001
+MD96-2086	12.14	-25.81	3598	4.02	250.8	Benthic foraminifera	Cibicidoides wuellerstorfi	Pichevin et al., 2005
+MD96-2098	12.63	-25.6	2910	6	193.25	Benthic foraminifera	Cibicidoides wuellerstorfi	Pichevin et al., 2005
+MD97-2138	146.23	1.42	1960	3.67	30.09	Planktonic foraminifera	Globigerinoides sacculifer	De garidel-thoron et al., 2007
+MD97-2138	146.23	1.42	1960	3.67	30.09	Planktonic foraminifera	Globigerinoides ruber	De garidel-thoron et al., 2007
+MD97-2140	141.77	2.03	2547	6	1755	Planktonic foraminifera	Globigerinoides ruber	De garidel-thoron et al., 2005
+MD97-2141	-10.13	37.57	2656	4.29	395	Planktonic foraminifera	Globigerinoides ruber	Oppo et al., 2003 b
+MD97-2141	-10.13	37.57	2656	4.29	146.44	Planktonic foraminifera	Globigerinoides ruber	Rosenthal et al., 2003
+MD98-2160	117.49	-5.2	1185	0.11	0.95	Planktonic foraminifera	Globigerinoides ruber	Newton et al.,2006
+MD98-2160	117.49	-5.2	1185	0.13	0.95	Planktonic foraminifera	Globigerinoides ruber	Oppo, 2009
+MD98-2170	125.39	-10.59	832	0	14.58	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2004
+MD98-2170	125.39	-10.59	832	1.8	21.92	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2007
+MD98-2176	133.44	-5	2382	0.14	14.83	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2004
+MD98-2176	133.44	-5	2382	0.13	21.01	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	28.87	57.61	Planktonic foraminifera	Globigerinoides ruber	Saikku et al., 2009
+MD98-2181	125.82	6.3	2114	29.91	58.65	Benthic foraminifera	Uvigerina hispida	Saikku et al., 2009
+MD98-2181	125.82	6.3	2114	0.1	67.59	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2002
+MD98-2181	125.82	6.3	2114	0.13	67.1	Planktonic foraminifera	Globigerinoides sacculifer	Stott et al., 2002
+MD98-2181	125.82	6.3	2114	0.01	14.92	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2004
+MD98-2181	125.82	6.3	2114	0	21.87	Planktonic foraminifera	Globigerinoides ruber	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	16.89	19.63	Benthic foraminifera	Uvigerina sp.1	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	10.04	21.31	Benthic foraminifera	Cibicidoides mundulus	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	10.04	21.31	Benthic foraminifera	Cibicidoides mundulus adjusted	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	16.19	17.41	Benthic foraminifera	Cibicidoides wuellerstorfi adjusted	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	16.19	19.14	Benthic foraminifera	Cibicidoides wuellerstorfi	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	16.45	17.41	Benthic foraminifera	Uvigerina hispida	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	17.23	17.41	Benthic foraminifera	Costata	Stott et al., 2007
+MD98-2181	125.82	6.3	2114	16.89	21.87	Benthic foraminifera	Uvigerina sp.2	Stott et al., 2007
+MD99-2209	-76.39	38.88	26	0.29	7.06	Benthic foraminifera	Elphidium	Cronin et al., 2005
+MD99-2251	-27.9	57.46	2620	7.2	9.19	Planktonic foraminifera	Globigerina bulloides	Ellison et al., 2006
+MD99-2263	-24.2	66.68	235	0.1	1.6	Benthic foraminifera	"""benthics"""	Axford et al., 2011. 
+MD99-2263	-24.2	66.68	235	0.1	1.6	Planktonic foraminifera	"""planktonics"""	Axford et al., 2011. 
+MD99-2275	-17.7	66.55	470	0.06	2.16	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	EirÃƒÂ­ksson 2006
+MD99-2281	-9.46	60.34	1197	11.17	41.39	Planktonic foraminifera	Neogloboquadrina pachyderma left 200-250Ã‚Âµ	Gif
+MD99-2281	-9.46	60.34	1197	11.17	41.39	Planktonic foraminifera	Cibicides pachyderma >250Ã‚Âµ	Gif
+MD99-2303	8.4	77.52	2325	7	328	Planktonic foraminifera	Neogloboquadrina pachyderma s	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2303	8.4	77.52	2325	7	328	Benthic foraminifera	Oridorsalis umbonatus	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2303	8.4	77.52	2325	7	328	Benthic foraminifera	Oridorsalis umbonatus (vital effect corrected)	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2303	8.4	77.52	2325	7	328	Benthic foraminifera	Cibicides wuellerstorfi	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2303	8.4	77.52	2325	7	328	Benthic foraminifera	Cibicides wuellerstorfi (vital effect corrected)	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2304	9.95	77.62	1348	0.65	130	Planktonic foraminifera	Neogloboquadrina pachyderma s	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2304	9.95	77.62	1348	27.12	115.08	Benthic foraminifera	Cassidulina teretis	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2304	9.95	77.62	1348	112.99	128.95	Benthic foraminifera	Cibicides wuellerstorfi	Risebrobakken et al. 2005 & 2007 (not fully published)
+MD99-2305	15.3	77.78	110	0.44	11.14	Benthic foraminifera	Cassidulina reniforme	Hald et al., 2004
+MD99-2331	-9.68	42.15	2120	65	135.55	Planktonic foraminifera	Planktonic foraminifers	Sanchez goni et al., 2005
+MD99-2331	-9.68	42.15	2120	65	135.55	Benthic foraminifera	Benthic foraminifers	Sanchez goni et al., 2005
+MD99-2336	-8.26	36.72	690	13.16	20.06	Planktonic foraminifera	Globigerinoides ruber	Voelker et al., 2009
+MD99-2336	-8.26	36.72	690	13.16	20.06	Benthic foraminifera	Globorotalia truncatulinoides	Voelker et al., 2009
+MD99-2339	-7.53	35.89	1177	0.52	47.07	Benthic foraminifera	Uvigerina spp.	Voelker et al., 2006
+MD99-2339	-7.53	35.89	1177	20.06	47.02	Benthic foraminifera	Cibicides spp.	Voelker et al., 2006
+MD99-2339	-7.53	35.89	1177	0.52	47.07	Planktonic foraminifera	Neogloboquadrina pachyderma	Voelker et al., 2006
+MD99-2339	-7.53	35.89	1177	1.12	46.34	Benthic foraminifera	Cibicides lobatulus	Voelker et al., 2006
+MD99-2343 (98)	4.03	40.5	2391	0.06	52.48	Planktonic foraminifera	Globigerina bulloides	Frigola et al., 2008
+MD99-2343 (98)	4.03	40.5	2391	10.97	52.14	Benthic foraminifera	Cibicidoides pachyderma	Frigola et al., 2008
+ME0005A-43JC	-83.61	7.86	1368	0.49	28.29	Planktonic foraminifera	Neogloboquadrina dutertrei	Benway et al., 2006
+ME0005A-43JC	-83.61	7.86	1368	0.49	28.29	Planktonic foraminifera	Globigerinoides ruber	Benway et al., 2006
+MSM05/5_712-2	6.77	78.92	1389	0.42	8.84	Planktonic foraminifera	Turborotalita quinqueloba	Werner et al., 2013
+MSM05/5_712-2	6.77	78.92	1389	0.42	8.84	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Werner et al., 2013
+MSM05/5_712-2	6.77	78.92	1389	0.42	8.84	Benthic foraminifera	Cibicidoides wuellerstorfi	Werner et al., 2013
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Globigerinoides ruber	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Neogloboquadrina dutertrei	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Globorotalia menardii	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Pulleniatina obliquiloculata	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Globigerinoides sacculifer	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.57	29.84	Planktonic foraminifera	Globorotalia inflata	Patrick and thunnel, 1997
+MW91-9 GGC15	158.95	-0.03	2311	3.7	53	Benthic foraminifera	Cibs+ cibicides wuellerstorfi	Yu et al., 2010
+MW91-9 GGC48	161	0	3400	3.7	53	Benthic foraminifera	Cibs+ cibicides wuellerstorfi	Yu et al., 2010
+NANTUCKET	-69.67	40.67	54	-0.02	-0.01	Mollusc	Arctica islandica	Weidman and jones., 1994
+NEAP18K	-30.35	52.77	3275	55.27	126	Benthic foraminifera	Cib	Chapman and shackleton, 1999
+NEAP18K	-30.35	52.77	3275	55.27	126	Planktonic foraminifera	Globigerina bulloides	Chapman and shackleton, 1999
+NH15P	-106.47	22.68	420	1.13	112	Benthic foraminifera	Bolivina spp.	Ganeshram et al., 1998
+NH22P	-106.52	23.52	2025	3.35	139	Benthic foraminifera	Uvigerina spp.	Ganeshram et al., 1998
+NH8P	-107.07	22.39	1018	1.64	50.2	Benthic foraminifera	Bolivina spp.	Ganeshram et al., 1998
+NIOP 455	65.95	23.55	1002	9	118.07	Planktonic foraminifera	Neogloboquadrina dutertrei	Reichart et al., 1998
+NIOP 455	65.95	23.55	1002	9	51.75	Planktonic foraminifera	Globigerinoides sacculifer	Reichart et al., 1998
+NIOP 464	63.58	22.25	1470	9.5	226	Planktonic foraminifera	Neogloboquadrina dutertrei	Reichart et al., 1998
+NIOP 497	57.95	17.45	1885	6.2	175.7	Planktonic foraminifera	Neogloboquadrina dutertrei	Reichart et al., 1998
+NIOP 905	51.95	10.77	1580	0.96	87.58	Benthic foraminifera	Cibicides kullenbergi	Jung et al., 2009
+OCE205-2-100GGC	-78.03	26.07	1057	0	27.1	Benthic foraminifera	Cibicidoides spp.	Came et al., 2007 b
+OCE326 26GGC	-54.86	43.48	3975	1.78	9.27	Benthic foraminifera	Cibicidoides wuellerstorfi	Keigwin et al., 2005
+OCE326 26GGC	-54.86	43.48	3975	1.78	10.89	Planktonic foraminifera	Neogloboquadrina pachyderma senestral	Keigwin et al., 2005
+OCE326 MC25B	-54.86	43.48	3890	0.02	1.7	Benthic foraminifera	Cibicidoides wuellerstorfi	Keigwin et al., 2005
+OCE326 MC25B	-54.86	43.48	3890	0.02	1.7	Planktonic foraminifera	Neogloboquadrina pachyderma left	Keigwin et al., 2005
+OCE326-GGC5	-57.58	33.7	4550	0.57	19.91	Planktonic foraminifera	Globigerinoides ruber	Carlson et al., 2008
+OCE326-GGC5	-57.58	33.7	4550	0.57	20.02	Planktonic foraminifera	Globorotalia inflata	Mcmanus et al., 2004
+OCE3326-14GGC	-55.83	43.06	3525	10.02	17.41	Planktonic foraminifera	Neogloboquadrina pachyderma s	Keigwin et al., 2005
+ODP 1012	-118.38	32.28	1772.3	2.05	508.33	Benthic foraminifera	Cibicoides and or Uvigerina	Herbert et al., 2001
+ODP 1014	-119.98	32.83	1165.8	0	187.24	Planktonic foraminifera	Globigerina bulloides	Hendy and kennett, 2000
+ODP 1014	-119.98	32.83	1165.8	0	187.24	Benthic foraminifera	Uvigerina spp.	Hendy and kennett, 2000
+ODP 1018	-123.27	36.98	2477	2.68	546	Unknown	All species	Lyle et al., 2010
+ODP 1018	-123.27	36.98	2477	7.37	546	Unknown	Species 2	Lyle et al., 2010
+ODP 1018	-123.27	36.98	2477	64.85	546	Unknown	Species 3	Lyle et al., 2010
+ODP 1018	-123.27	36.98	2477	287.38	538.36	Unknown	Species 4	Lyle et al., 2010
+ODP 1020	-126.43	41.01	3039	3.5	813.2	Benthic foraminifera	Benthic	Herbert et al., 2001
+ODP 1059	-75.42	31.67	2985.1	7.37	87.65	Benthic foraminifera	Cibicidoides sp	Hagen and keigwin, 2002
+ODP 1059	-75.42	31.67	2985.1	7.37	87.65	Planktonic foraminifera	Globigerinoides ruber	Hagen and keigwin, 2002
+ODP 1059	-75.42	31.67	2985.1	7.37	87.65	Benthic foraminifera	Uvigerina peregrina	Hagen and keigwin, 2002
+ODP 1059	-75.42	31.67	2985	64.65	163.81	Benthic foraminifera	Cibicidoides wuellerstorfi	Heusser and oppo 2003
+ODP 1059	-75.42	31.67	2985	55	267.26	Planktonic foraminifera	Globigerinoides ruber	Heusser and oppo 2003
+ODP 1059	-75.42	31.67	2985	64.92	107.58	Benthic foraminifera	Cibicidoides sp	Heusser and oppo 2003
+ODP 1059	-75.42	31.67	2985	116.69	119.81	Benthic foraminifera	Cibicidoides kullenbergi	Heusser and oppo 2003
+ODP 1059	-75.42	31.67	2985	68.92	156.14	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2001
+ODP 1059	-75.42	31.67	2985	68.92	156.14	Planktonic foraminifera	Globigerinoides ruber	Oppo et al., 2001
+ODP 1060	-74.47	30.76	3480	26.33	62.46	Benthic foraminifera	Uvigerina peregrina	Hoogakker et al., 2007 / vautravers et al., 2004
+ODP 1060	-74.47	30.76	3480	45.88	59.21	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2006b
+ODP 1078C	13.4	-11.92	426	0.02	21.98	Benthic foraminifera	Bolivina dilatata	Ruehlemann et al., 2004
+ODP 1087	15.31	-31.46	1371.6	0	500	Planktonic foraminifera	Globorotalia inflata	Pierre et al., 2001
+ODP 1087	15.31	-31.46	1371.6	0	500	Planktonic foraminifera	Globigerina bulloides	Pierre et al., 2001
+ODP 1087	15.31	-31.46	1371.6	0	500	Benthic foraminifera	Cibicides wuellerstorfi	Pierre et al., 2001
+ODP 1087	15.31	-31.46	1371.6	0	500	Planktonic foraminifera	Globigerinoides ruber	Pierre et al., 2001
+ODP 1088	13.56	-41.14	2082.1	3.33	1103.7	Benthic foraminifera	Cibicoides	Hodell et al., 2003
+ODP 1089	9.89	-40.94	4620	3.53	442.62	Planktonic foraminifera	Globigerina bulloides	Cortese et al., 2004
+ODP 1089	9.89	-40.94	4620	3.53	442.62	Benthic foraminifera	Cibicidoides spp.	Cortese et al., 2004
+ODP 1089	9.89	-40.94	4620	0	615.07	Planktonic foraminifera	Globigerina bulloides	Gersonde et al 1999; hodell et al., 2003
+ODP 1089	9.89	-40.94	4620	0	615.07	Benthic foraminifera	Cibicidoides spp.	Gersonde et al 1999; hodell et al., 2003
+ODP 1090	8.9	42.91	3701.6	0.83	2903.5	Benthic foraminifera	Cibicoides wuellerstorfi	Hodell et al., 2003
+ODP 1090	8.9	42.91	3701.6	0.83	2903.5	Planktonic foraminifera	Globigerina bulloides	Hodell et al., 2003
+ODP 1090	8.9	42.91	3701.6	0.83	2903.5	Planktonic foraminifera	Neogloboquadrina pachyderma	Hodell et al., 2003
+ODP 1090	8.9	42.91	3701.6	0.83	2903.5	Benthic foraminifera	Cibicides kullenbergi	Hodell et al., 2003
+ODP 1094	5.13	-53.18	2807	37.98	443.68	Planktonic foraminifera	Neogloboquadrina pachyderma (sin.)	Kanfoush et al., 2002
+ODP 1094	5.13	-53.18	2807	0.21	558.94	Planktonic foraminifera	Neogloboquadrina pachyderma (sin.)	Hodell et al., ms 177sr-120 (scientific results volume 177, chapter 9, t7)
+ODP 1098B	-64.21	-64.86	1010.6	9.1	9.34	Planktonic foraminifera	Neogloboquadrina pachyderma	Shevenell et al., 2011
+ODP 1089	-64.32	-64.95	1399.8	0	615.07	Planktonic foraminifera	Globigerina bulloides	Hodell et al., 2003
+ODP 1089	-64.32	-64.95	1399.8	0	615.07	Benthic foraminifera	Cibicoides	Hodell et al., 2003
+ODP 1143	113.29	9.36	2770	0	5020.61	Benthic foraminifera	Cibicidoides wuellerstorf Adjusted data	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	0	5020.61	Benthic foraminifera	Cibicidoides wuellerstorf	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	0	5020.61	Benthic foraminifera	Uvigerina peregrina Adjusted data	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	0	5020.61	Benthic foraminifera	Uvigerina peregrina	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	3.6	5018.62	Planktonic foraminifera	Globigerinoides obliquus	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	3.6	5018.62	Planktonic foraminifera	Globigerinoides ruber	Cheng et al., 2004 a
+ODP 1143	113.29	9.36	2770	0	5020.61	Benthic foraminifera	Cibicides wuellerstorfi	Tian et al., 2002
+ODP 1144	117.42	20.05	2037	0.09	1974.7	Planktonic foraminifera	Globigerinoides ruber	Buehring et al., 2001
+ODP 1144	117.42	20.05	2037	0.09	1975.6	Planktonic foraminifera	Globigerinoides ruber	Buehring et al., 2004
+ODP 1145	117.63	19.58	3175	1.94	143	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo and sun, 2005
+ODP 1145	117.63	19.58	3175	1.94	142.57	Planktonic foraminifera	Globigerinoides ruber	Oppo and sun, 2005
+ODP 1146	116.28	19.45	2091	4665.13	5049.03	Planktonic foraminifera	Globigerinoides sacculifer	Clemens et al., 2008
+ODP 1146	116.28	19.45	2091	4.16	5023.13	Benthic foraminifera	Uvigerina peregrina	Clemens et al., 2008
+ODP 1146	116.28	19.45	2091	5.9	5049.03	Benthic foraminifera	Cibicidoides wuellerstorfi	Clemens et al., 2008
+ODP 1146	116.28	19.45	2091	5.9	4885.44	Planktonic foraminifera	Globigerinoides ruber	Clemens et al., 2008
+ODP 1146	116.28	19.45	2091	5.04	2155.91	Benthic foraminifera	Uvigerina peregrina	Herbert et al., 2010
+ODP 1146	116.28	19.45	2091	50.5	149.38	Benthic foraminifera	Uvigerina peregrina	Caballero-gill et al., 2012
+ODP 1146	116.28	19.45	2091	50.5	149.38	Planktonic foraminifera	Globigerinoides ruber	Caballero-gill et al., 2012
+ODP 1147	116.55	18.84	3245.5	6	32720	Benthic foraminifera	Benthics	Cheng et al., 2004 b
+ODP 1147	116.55	18.84	3245.5	10	21528	Planktonic foraminifera	Planktonics	Cheng et al., 2004 b
+ODP 1148	116.57	18.84	3294	0	23000	Benthic foraminifera	Cibicidoides wuellerstorfi	Tian et al., 2008
+ODP 1148	116.57	18.84	3294	0	23000	Benthic foraminifera	Uvigerina sp	Tian et al., 2008
+ODP 1168A	144.41	-42.61	2463	7.81	929.6	Benthic foraminifera	Cibicidoides wuellerstorfi	Nuernberg et al., 2004b
+ODP 1170A	146.05	-47.15	2704	0.21	450.55	Benthic foraminifera	Cibicidoides wuellerstorfi	Nuernberg et al., 2004b
+ODP 1172A	149.93	-43.96	2621.9	0	410.75	Benthic foraminifera	Cibicidoides wuellerstorfi	Nuernberg et al., 2004b
+ODP 1172A	149.93	-43.96	2621.9	2.11	605.73	Planktonic foraminifera	Globigerina bulloides	Nuernberg et al., 2006
+ODP 1172A	149.93	-43.96	2621.9	0	410.75	Benthic foraminifera	Cibicidoides wuellerstorfi	Nuernberg et al., 2006
+ODP 1232	-75.9	-39.89	4072	12.47	141.24	Planktonic foraminifera	Globigerina bulloides	Blumberg et al., 2008
+ODP 1242	-83.61	7.86	1363	0.77	30.21	Planktonic foraminifera	Neogloboquadrina dutertrei	Benway et al., 2006+b706
+ODP 1242	-83.61	7.86	1363	0.77	30.21	Planktonic foraminifera	Globigerinoides ruber	Benway et al., 2006+b706
+ODP 552	-23.23	56.04	2301	7	861	Benthic foraminifera	Cibicidoides wuellerstorfi	Karner et al., 2002
+ODP 607	-32.96	41	3427	0	861	Benthic foraminifera	Cibicidoides wuellerstorfi	Karner et al., 2002
+ODP 609	-24.14	49.53	3900	0	35.5	Planktonic foraminifera	Neogloboquadrina pachyderma left	Bond et al., 1992
+ODP 644	2.93	67.23	1227	56.76	135.1	Benthic foraminifera	Benthics	Fronval and jansen, 1997
+ODP 644	2.93	67.23	1227	56.76	135.1	Planktonic foraminifera	Planktonics	Fronval and jansen, 1997
+ODP 644	2.93	67.23	1227	56	135	Benthic foraminifera	Benthics	Gif (fronval and jansen, 1997)
+ODP 644	2.93	67.23	1227	56	135	Planktonic foraminifera	Planktonics	Gif (fronval and jansen, 1997)
+ODP 658	-18.58	20.75	2274	0.55	90.95	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+ODP 659	-21.03	18.08	3082	5	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 664	-23.23	0.11	3806	4	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 668B	-20.93	4.77	2693	1.08	711.58	Planktonic foraminifera	Globigerinoides ruber	Bird and cali, 2002
+ODP 677	-83.73	1.2	3450	9	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 677A	-83.73	1.2	3450	6	2600	Benthic foraminifera	Composite benthics	Shackleton 1990
+ODP 677A	-83.73	1.2	3450	6	2602	Planktonic foraminifera	Globeriginoides ruber (all types)	Shackleton 1990
+ODP 704A	7.42	-46.88	2543	0.21	663.08	Planktonic foraminifera	Cibicidoides pachyderma	Hodell and ninnemann 2000
+ODP 722B	59.8	16.62	2033	6	355.9	Planktonic foraminifera	Globigerinoides sacculifer	Clemens and prell, 2003
+ODP 722B	59.8	16.62	2033	6	3739.67	Planktonic foraminifera	Globigerinoides sacculifer	Clemens et al., 1996
+ODP 722B	59.8	16.62	2033	6	3730.5	Benthic foraminifera	Uvigerina	Clemens et al., 1996
+ODP 769A	121.29	8.79	3656	0	149.47	Planktonic foraminifera	Globigerinoides ruber	Linsley, 1996
+ODP 806B	159.36	0.32	2520	4.3	470	Planktonic foraminifera	Globigerinoides ruber	Lea et al., 2000
+ODP 806B	159.36	0.32	2520	4.3	1348	Planktonic foraminifera	Globigerinoides ruber	Medina-elizade and lea, 2005
+ODP 820A	146.3	-16.64	278	0.43	814.59	Benthic foraminifera	Benthic composite	Lawrence and herbert, 2005
+ODP 831B	166.67	-16.01	1066	0.96	14.28	Coral	Porites sp.	Kilbourne et al., 2004
+ODP 846	-90.82	-3.1	3296	3	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 846	-90.82	-3.1	3296	3.09	1834.9	Benthic foraminifera	"""benthic foraminifers"""	Mix, 1995
+ODP 846	-90.82	-3.1	3296	-1000	-1000	Unknown	Unknown	Plusieurs ref (jcd, mix, shackleton)
+ODP 848B	-110.48	-2.99	3853	0	35	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 849	-110.52	0.18	3839	4	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 849	-110.52	0.18	3839	3.59	4978.19	Benthic foraminifera	"""benthic foraminifers"""	Mix, 1995
+ODP 849A	-110.52	0.18	3839	0	30	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 850A	-110.52	1.3	3786	0	30	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 851	-110.57	2.77	3760	0	4980	Planktonic foraminifera	Globigerinoides sacculifer	Cannariato and ravelo, 1997
+ODP 851	-110.57	2.77	3760	0	4980	Planktonic foraminifera	Globorotalia tumida	Cannariato and ravelo, 1997
+ODP 851	-110.57	2.77	3760	0	4980	Planktonic foraminifera	Neogloboquadrina dutertrei	Cannariato and ravelo, 1997
+ODP 851	-110.57	2.77	3760	2921.6	4980	Planktonic foraminifera	Neogloboquadrina humerosa	Cannariato and ravelo, 1997
+ODP 851E	-110.57	2.77	3760	0	30	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 852A	-110.08	5.29	3860	0	32	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 853B	-109.75	7.21	3714	0	24	Planktonic foraminifera	Globigerinoides sacculifer	Mcgee et al., 2007
+ODP 871	172.34	5.56	1254	0	537.15	Planktonic foraminifera	Globigerinoides ruber	Dyez et al., 2013
+ODP 893A	-120.04	34.29	576	106.3	144.54	Planktonic foraminifera	Neogloboquadrina pachyderma (right)	Friddell et al., 2002
+ODP 893A	-120.04	34.29	576	104.13	144.68	Planktonic foraminifera	Globigerina bulloides	Friddell et al., 2002
+ODP 893A	-120.04	34.29	576	83.01	144.68	Planktonic foraminifera	Neogloboquadrina pachyderma (left)	Friddell et al., 2002
+ODP 893A	-120.04	34.29	576	9.98	64.12	Benthic foraminifera	Benthics	Hendy and kennett, 2003
+ODP 964A	17.75	36.26	3658	0	19.97	Planktonic foraminifera	Globigerinoides ruber type a	Numberger et al., 2009
+ODP 964A	17.75	36.26	3658	0	19.97	Planktonic foraminifera	Globigerinoides ruber type b	Numberger et al., 2009
+ODP 964A	17.75	36.26	3658	0	19.97	Planktonic foraminifera	Globigerinoides ruber type c	Numberger et al., 2009
+ODP 980	-14.7	55.49	2168	1.04	1003.2	Planktonic foraminifera	Cibicidoides wuellerstorfi	Flower et al., 2000
+ODP 980	-14.7	55.49	2168	110.34	135.11	Benthic foraminifera	Neogloboquadrina pachyderma dextral	Govin et al., 2012
+ODP 980	-14.7	55.49	2168	110.14	135.11	Benthic foraminifera	Cibs	Govin et al., 2012
+ODP 980	-14.7	55.49	2168	1.04	512.21	Benthic foraminifera	Cibicidoides wuellerstorfi	Mc manus et al., 1999
+ODP 980	-14.7	55.49	2168	65	144.94	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2001
+ODP 980	-14.7	55.49	2168	65	144.94	Planktonic foraminifera	Neogloboquadrina pachyderma (right coiling)	Oppo et al., 2001
+ODP 980	-14.7	55.49	2168	1.24	9.87	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2003
+ODP 980	-14.7	55.49	2179	60.04	150.05	Planktonic foraminifera	Neogloboquadrina pachyderma (right coiling)	Oppo et al., 2006
+ODP 980	-14.7	55.49	2179	0.51	191.48	Benthic foraminifera	Cibicidoides wuellerstorfi	Oppo et al., 2006
+ODP 982	-15.85	57.51	1134	0	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+ODP 982A	-15.85	57.51	1134	0	1002	Benthic foraminifera	Cibicidoides	Venz et al., 1999
+ODP 982A	-15.85	57.51	1134	0	1002	Planktonic foraminifera	Globigerina bulloides	Venz et al., 1999
+ODP 984	-24.08	61.43	1648	0.45	11.1	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Came et al., 2007
+ODP 984C	-24.08	61.43	1648	0.45	25.31	Benthic foraminifera	Cibicidoides wuellerstorfi (see figure)	Praetorius et al.,2008
+ODP 999A	-78.74	12.74	2828	3.52	135.9	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2004
+ODP 999A	-78.74	12.74	2828	3.52	474.7	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2006
+ODP U1304	-33.52	53.05	3065	104.72	158.1	Planktonic foraminifera	Globorotalia inflata	Hodell et al., 2009
+ODP U1304	-33.52	53.05	3065	104.98	132.68	Benthic foraminifera	Cibicidoides wuellerstorfi	Hodell et al., 2009
+ODP U1304	-33.52	53.05	3065	104.72	161.6	Planktonic foraminifera	Neogloboquadrina incompta	Hodell et al., 2009
+ODP U1304	-33.52	53.05	3065	104.72	161.6	Planktonic foraminifera	Globigerina bulloides	Hodell et al., 2009
+ODP U1308	-24.24	49.88	3883	0	1512.9	Benthic foraminifera	Cibicoides wuellerstorfi	Hodell et al., 2008
+ODP U1308	-24.24	49.88	3883	0	1071.9	Bulk sediment	Bulk	Hodell et al., 2008
+P1-003MC	5.26	63.76	851	-0.05	1899.7	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Sejrup et al., 2010
+P1-003SC	5.26	63.76	851	0.28	0.96	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Sejrup et al., 2010
+P69	178	40.38	2197	0	25.1	Planktonic foraminifera	Globigerina bulloides	Nelson et al., 2000
+P69	178	40.38	2197	0.97	25.1	Benthic foraminifera	Uvigerina sp.	Weaver et al., 1998
+P69	178	40.38	2197	0.97	25.1	Planktonic foraminifera	"""planktonics"""	Weaver et al., 1998
+PBBC-1	-91.4	27.2	2259	0	1.46	Planktonic foraminifera	Globigerinoides ruber	Richey et al., 2007
+PC-2B	-75.81	37.89	8	-0.04	0.17	Benthic foraminifera	Elphidium	Cronin et al., 2005
+PC-6B	-75.87	37.7	15	-0.03	0.44	Benthic foraminifera	Elphidium	Cronin et al., 2005
+PC9	139.4	39.57	807	15.53	35.77	Planktonic foraminifera	Globigerina umbilicata	Crusius et al., 1999
+PG01-A-2	98.51	-0.13	6	-0.05	0.09	Coral	Porites sp.	Abram et al., 2008
+PL07-39PC	-64.94	10.7	790	0.24	28.42	Planktonic foraminifera	Globigerina bulloides	Lin et al., 1997
+PL07-39PC	-64.94	10.7	790	0.24	28.42	Planktonic foraminifera	Neogloboquadrina dutertrei	Lin et al., 1997
+PL07-39PC	-64.94	10.7	790	0.24	28.42	Planktonic foraminifera	White globigerinoides ruber	Lin et al., 1997
+PL07-39PC	-64.94	10.7	790	0.24	28.42	Planktonic foraminifera	Pink globigerinoides ruber	Lin et al., 1997
+PL07-43PC	-65.18	10.74	819	21.67	28.42	Planktonic foraminifera	Globigerina bulloides	Lin et al., 1997
+PL07-43PC	-65.18	10.74	819	21.67	28.42	Planktonic foraminifera	Neogloboquadrina dutertrei	Lin et al., 1997
+PL07-43PC	-65.18	10.74	819	21.67	28.42	Planktonic foraminifera	White globigerinoides ruber	Lin et al., 1997
+PL07-71 BC merged with Core CAR7	64.71	10.76	395	-0.04	1.95	Planktonic foraminifera	Globigerinoides ruber (pink	Black et al., 2004
+PL07-71 BC merged with Core CAR7	64.71	10.76	395	-0.04	1.95	Planktonic foraminifera	Globigerina bulloides	Black et al., 2004
+PO287-26	-9.36	38.56	96	-0.05	2.11	Benthic foraminifera	Uvigerina sp.	Eiraksson 2006
+PO287-26	-9.36	38.56	96	-0.05	2.11	Planktonic foraminifera	Globigerina bulloides	Eiraksson 2006
+PP7-3	-157.3	2	9	-0.04	0.01	Coral	Porites sp.	Evans et al., 1998
+PRB 12	-66.6	17.89	349	-0.04	0.11	Planktonic foraminifera	Globigerinoides ruber	Nyberg et al., 2002
+PRP 12	-66.6	17.89	349	0	1.82	Planktonic foraminifera	Globigerinoides ruber	Nyberg et al., 2002
+PS21-295-4	-2	-78	3112	0.52	16.5	Planktonic foraminifera	Planktonic foraminifers	Imbrie et al., 1992
+PS2138-1	30.88	81.54	862	0.58	144.86	Benthic foraminifera	Cassidulina teretis	Wollenburg et al., 2000
+PS2138-1	30.88	81.54	862	0.58	144.86	Benthic foraminifera	Melonis zaandami	Wollenburg et al., 2000
+PS2138-1	59.7	85	862	0.58	144.86	Benthic foraminifera	Melonis zaandami	Wollenburg et al., 2001
+PS2138-1	59.7	85	862	0.58	144.86	Benthic foraminifera	Cassidulina teretis	Wollenburg et al., 2001
+PS2212-3	15.67	82.02	2531	0	170.98	Benthic foraminifera	Fontbotia wuellerstorfi	Wollenburg et al., 2000
+PS2212-3	15.67	82.02	2531	0	170.98	Benthic foraminifera	Oridorsalis tener	Wollenburg et al., 2000
+PS2212-3	15.67	82.02	2531	0	170.98	Benthic foraminifera	Cibicidoides wuellerstorfi	Wollenburg et al., 2001
+PS2212-3	15.67	82.02	2531	0	170.98	Benthic foraminifera	Oridorsalis tener	Wollenburg et al., 2001
+PS2489-2 (PS28/256)	8.97	-42.87	3794	2	543	Benthic foraminifera	Benthics	Becquey and gersonde, 2003
+PS2495-3	-14.49	-41.28	3134	2	305	Benthic foraminifera	Cibicidoides spp.	Mackensen et al., 2001
+PS2498-1	-14.23	-44.15	3783	0.1	129.8	Benthic foraminifera	Cibicidoides spp.	Mackensen et al., 2001
+PS2499-5	-15.33	-46.51	3175	0.1	135.2	Benthic foraminifera	Cibicidoides spp.	Mackensen et al., 2001
+PS62/003-2	-39.07	61.7	2192	14.68	47.84	Benthic foraminifera	Adjusted : cibicidoides wuellerstorfi + 0.64 per mil	Millo et al., 2006
+PS62/003-2	-39.07	61.7	2192	14.68	47.84	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2006
+PS62/003-2	-39.07	61.7	2192	14.68	47.84	Benthic foraminifera	Cibicidoides wuellerstorfi	Millo et al., 2006
+PS62/004-3	-38.12	61.53	2567	29.74	46.77	Benthic foraminifera	Adjusted : cibicidoides wuellerstorfi + 0.64 per mil	Millo et al., 2006
+PS62/004-3	-38.12	61.53	2567	29.74	46.77	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2006
+PS62/004-3	-38.12	61.53	2567	29.74	46.77	Benthic foraminifera	Cibicidoides wuellerstorfi	Millo et al., 2006
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Planktonic foraminifera	Neogloboquadrina pachyderma s	Millo et al., 2005
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Benthic foraminifera	Cibicides lobatulus raw	Millo et al., 2005
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Benthic foraminifera	Cibicides lobatulus raw	Millo et al., 2006
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Benthic foraminifera	Cibicides lobatulus adjusted	Millo et al., 2005
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Benthic foraminifera	Cibicides lobatulus adjusted	Millo et al., 2006
+PS62/015-3	-25.43	67.93	1013	17.26	18.46	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2005
+PS62/015-3	-25.43	67.93	1013	0	86.56	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Millo et al., 2006
+PS62/017-4	-24.59	67.85	1502	0	78.13	Planktonic foraminifera	Neogloboquadrina pachyderma s	Millo et al., 2005
+PTXT-2-P-5	-76.31	38.33	11.5	-0.03	0.44	Benthic foraminifera	Elphidium	Cronin et al., 2005
+Q200	172.03	-46	1370	2.7	116.71	Planktonic foraminifera	"""planktonics"""	Weaver et al., 1998
+Q200	172.03	-46	1370	2.7	116.71	Benthic foraminifera	"""benthics"""	Weaver et al., 1998
+R657	-178.49	-42.53	1408	0	160.15	Planktonic foraminifera	Globigerina bulloides	Weaver et al., 1998
+R657	-178.49	-42.53	1408	0	160.15	Benthic foraminifera	Uvigerina spp.	Weaver et al., 1998
+RAPID-12-1K	-17.83	62.08	1938	0	11.87	Planktonic foraminifera	Globigerina bulloides	Thornalley et al., 2009
+RAPID-12-1K	-17.83	62.08	1938	0	11.87	Planktonic foraminifera	Globorotalia inflata	Thornalley et al., 2009
+RAPID-12-1K	-17.83	62.08	1938	7	11.87	Planktonic foraminifera	Globigerina bulloides	Thornalley et al., 2010 (same data as thornalley 2009)
+RAPID-12-1K	-17.83	62.08	1938	7	11.87	Planktonic foraminifera	Globorotalia inflata	Thornalley et al., 2010 (same data as thornalley 2009)
+RAPID-15-4P	-17.13	62.29	2133	7.09	21.29	Planktonic foraminifera	Globigerina bulloides	Thornalley et al., 2010
+RAPID-15-4P	-17.13	62.29	2133	7.09	21.29	Planktonic foraminifera	Globorotalia inflata	Thornalley et al., 2010
+RC09-203	-1.97	36.13	1287	0.4	16.7	Benthic foraminifera	Cibicides spp.	Oppo and fairbanks 1987
+RC09-203	-1.97	36.13	1287	0.4	16.7	Benthic foraminifera	Uvigerina spp.	Oppo and fairbanks 1987
+RC10-196	177.08	54.7	1007	9.23	86.39	Planktonic foraminifera	Neogloboquadrina pachyderma	Kohfeld et al., 2011
+RC11-120	79.87	-43.52	3193	1.33	293	Planktonic foraminifera	Planktonic foraminifers	Imbrie et al., 1992
+RC11-120	79.87	-43.52	3193	0.75	294	Planktonic foraminifera	Planktonic foraminifers	Martinson et al., 1987
+RC11-120	79.87	-43.52	3193	0.75	294	Benthic foraminifera	Benthic foraminifers	Martinson et al., 1987
+RC11-120	79.87	-43.52	3193	2.7	293.7	Planktonic foraminifera	Globigerina bulloides	Mashiotta et al., 1999
+E11-2	79.87	-43.52	3193	8.11	108.45	Planktonic foraminifera	Neogloboquadrina pachyderma	Mashiotta et al., 1999
+RC11-238	-85.82	-1.51	2573	3.36	28.24	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+RC11-238	-85.82	-1.51	2573	3.36	28.24	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+RC11-83	9.72	-41.6	4718	1.27	74.2	Planktonic foraminifera	Neogloboquadrina pachyderma	Charles et al., 1996
+RC11-83	9.72	-41.6	4718	1.27	74.2	Benthic foraminifera	Cibicidoides mundulus	Charles et al., 1996
+RC11-83	9.72	-41.6	4718	1.27	74.2	Planktonic foraminifera	Globigerina bulloides	Charles et al., 1996
+RC11-83	9.72	-41.6	4718	0.76	78.73	Benthic foraminifera	Planulina wuellerstorfi	Unpublished (lynch-stieglitz thesis)
+RC13-110	-96	0	3231	0.36	609.7	Benthic foraminifera	Benthic foraminifers	Imbrie et al., 1992
+RC13-140	-87.75	-2.87	2246	2.28	30.75	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+RC13-140	-87.75	-2.87	2246	2.28	30.75	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+RC17-177	-159	-2	2600	0	135	Benthic foraminifera	Planktonic foraminifers	Imbrie et al., 1992
+RC27-23	57.59	17.99	815	0	19.85	Planktonic foraminifera	Globigerina bulloides	Overpeck et al., 1996
+RC27-61	59.86	16.63	1890	3.69	224	Planktonic foraminifera	Globigerinoides sacculifer	Clemens and prell, 2003
+RC27-61	59.86	16.63	1890	3.69	434.1	Benthic foraminifera	Planktonic foraminifers	Imbrie et al., 1992
+RC8-102	-86.85	-1.42	2180	5.39	27.07	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+RC8-102	-86.85	-1.42	2180	5.39	27.07	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+RC9-203	-1.98	36.13	1287	0.4	16.7	Benthic foraminifera	Cibicidoides	Oppo and fairbanks (1987, epsl, 86, 1-15)
+RC9-203	-1.98	36.13	1287	0.4	16.7	Benthic foraminifera	Uvigerina	Oppo and fairbanks (1987, epsl, 86, 1-15)
+RD/2209	-76.39	38.89	26	-0.05	0.98	Benthic foraminifera	Elphidium	Cronin et al., 2005
+RD-2-98	-76.39	38.89	26	-0.05	0.98	Benthic foraminifera	Elphidium	Cronin et al., 2005
+ROQ6	66.75	11.77	2	-0.05	0.03	Coral	Diploria strigosa	Hetzinger, 2007
+RS147-GC07	145.23	-45.15	3300	0.52	93.76	Planktonic foraminifera	Globigerina bulloides	Sikes et al., 2009
+RS147-GC07	145.23	-45.15	3300	0.52	93.76	Benthic foraminifera	Cibicidoides spp.	Sikes et al., 2009
+RS147-GC14	145.23	-46.43	3360	0	154.88	Planktonic foraminifera	Globigerina bulloides	Sikes et al., 2009
+RS147-GC14	145.23	-46.43	3360	0	154.88	Benthic foraminifera	Cibicidoides spp.	Sikes et al., 2009
+RS147-GC31	149.05	-44.53	3405	1	97.43	Planktonic foraminifera	Globigerina bulloides	Sikes et al., 2009
+RUS-93A	34.31	27.85	3	-0.04	0.05	Coral	Porites spp.	Moustafa et al., 2000
+RUS-93B	34.31	27.85	3	-0.04	0.01	Coral	Porites spp.	Moustafa et al., 2000
+RUS-95	34.3	27.84	5.5	-0.05	0.2	Coral	Porites sp.	Felis et al., 2000
+SAL-4	-22.9	16.75	3	-0.05	0.02	Coral	Siderastrea radians	Moses et al., 2006
+SCS90-36	111.49	18	2050	0.9	26.3	Planktonic foraminifera	Globigerinoides sacculifer	Huang et al., 1997
+SCS90-36	111.49	18	2050	0.9	26.3	Benthic foraminifera	Cibicidoides wuellerstorfi	Huang et al., 1997
+SCS90-36	111.49	18	2050	0.9	26.3	Planktonic foraminifera	Globorotalia menardii	Huang et al., 1997
+SINGLE SHELLS, NO CORE	-69.8	43.65	30	-0.05	0.92	Bivalve shell	Arctica islandica l	Wanamaker et al., 2008
+SO136-111	160.23	-56.66	3910	3.22	288.44	Unknown	Unknown	Crosta et al., 2004
+SO161/5_50SL	-74.7	-38.31	4380	12.47	141.24	Planktonic foraminifera	Globigerina bulloides	Blumberg et al., 2008
+SO164-17-2	-80.89	24.08	955	60	142	Planktonic foraminifera	Globorotalia crassaformi	Bahr et al., 2011
+SO164-17-2	-80.89	24.08	955	60	142	Benthic foraminifera	Cibicidoides wuellerstorfi	Bahr et al., 2011
+SO164-17-2	-80.89	24.08	955	60	142	Planktonic foraminifera	Globigerinoides ruber	Bahr et al., 2011
+SO201-2-101KL	170.69	58.88	630	12.56	20.05	Benthic foraminifera	Uvigerina peregrina	Riethdorf et al., 2012
+SO201-2-101KL	170.69	58.88	630	12.56	20.05	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Riethdorf et al., 2012
+SO201-2-12KL	162.38	53.99	2173	1.16	19.88	Benthic foraminifera	Uvigerina auberiana	Riethdorf et al., 2012
+SO201-2-12KL	162.38	53.99	2173	6.7	19.88	Benthic foraminifera	Uvigerina auberiana and peregrina	Riethdorf et al., 2012
+SO201-2-12KL	162.38	53.99	2173	1.16	19.88	Benthic foraminifera	Uvigerina peregrina	Riethdorf et al., 2012
+SO201-2-12KL	162.38	53.99	2173	6.05	19.88	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Riethdorf et al., 2012
+SO201-2-77KL	170.7	56.33	2130	2.55	20.56	Benthic foraminifera	Uvigerina auberiana	Riethdorf et al., 2012
+SO201-2-77KL	170.7	56.33	2130	2.55	20.56	Benthic foraminifera	Uvigerina peregrina	Riethdorf et al., 2012
+SO201-2-77KL	170.7	56.33	2130	3.22	20.56	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Riethdorf et al., 2012
+SO201-2-85KL	170.41	57.51	975	9.04	20.94	Benthic foraminifera	Uvigerina peregrina	Riethdorf et al., 2012
+SO201-2-85KL	170.41	57.51	975	8.85	20.94	Benthic foraminifera	Neogloboquadrina pachyderma sinistral	Riethdorf et al., 2012
+SO26-127KA	-85.39	-1.55	2463	0.24	37.63	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-127KA	-85.39	-1.55	2463	0.24	37.63	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-127KA	-85.39	-1.55	2463	0.24	37.63	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO26-12KA	-103.01	13.12	3105	0.5	80	Benthic foraminifera	Uvigerina hispida	Sarnthein et al., 1988
+SO26-12KA	-103.01	13.12	3105	0.5	80	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO26-12KA	-103.01	13.12	3105	0.5	80	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-12KA	-103.01	13.12	3105	0.5	80	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-131KA	-85	-3.52	3381	0.49	34.5	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-131KA	-85	-3.52	3381	0.49	34.5	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-189KA	-113.08	-18.59	3324	2.85	53.51	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-189KA	-113.08	-18.59	3324	2.85	53.51	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO26-47KA	-100.25	2.66	4027	2	34	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-47KA	-100.25	2.66	4027	2	34	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-58KA	-95.19	2.72	3200	1.61	41.2	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO26-58KA	-95.19	2.72	3200	1.61	41.2	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-58KA	-95.19	2.72	3200	1.61	41.2	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-90KA	-92.35	2.25	2211	0	54.62	Planktonic foraminifera	Neogloboquadrina dutertrei	Sarnthein et al., 1988
+SO26-90KA	-92.35	2.25	2211	0	54.62	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-90KA	-92.35	2.25	2211	0	54.62	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO26-96KA	-85.84	0.68	2706	0.01	43.63	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1988
+SO26-96KA	-85.84	0.68	2706	0.01	43.63	Planktonic foraminifera	Globigerinoides ruber white	Sarnthein et al., 1988
+SO42-74KL	57.35	14.32	3212	0.61	24.57	Planktonic foraminifera	Globigerinoides ruber	Sirocko, 1993
+SO90-39KG	65.92	24.83	695	0	0.12	Planktonic foraminifera	Globigerinoides ruber	Doose-rolinski (2001)
+SO90-56KA	65.92	24.83	695	0.15	4.88	Planktonic foraminifera	Globigerinoides ruber	Doose-rolinski (2001)
+SO90-88/93KL	64.22	23.59	1802	1.37	108.84	Planktonic foraminifera	Globigerinoides ruber	Schulz et al., 1998
+ST GILLES CORAL	55.15	-21.02	12	-0.05	0.12	Coral	Porites sp.	Pfeiffer et al., 2004
+SU81-18	-10.18	37.77	3135	0.61	20.76	Planktonic foraminifera	Globigerina bulloides	Gherardhi et al., 2005
+SU90-03	-32.05	40.51	2475	0	150	Benthic foraminifera	Benthics	Chapman and shackleton, 1998.
+SU90-03	-32.05	40.51	2475	0	150	Planktonic foraminifera	Globigerina bulloides	Chapman and shackleton, 1998.
+SU90-03	-32.05	40.51	2475	0	150	Benthic foraminifera	Cibicides	Chapman and shackleton, 1998.
+SU90-03	-32.05	40.51	2475	20.69	150	Benthic foraminifera	Uvigerina	Chapman and shackleton, 1998.
+SU90-07	-28.08	63.08	1625	11.32	26	Planktonic foraminifera	Neogloboquadrina pachyderma s.	Gif
+SU92-03	-9.86	40.58	2465	0.9	152.2	Planktonic foraminifera	Globorotalia inflata	Salgueiro et al., 2010
+SU92-03	-9.86	40.58	2465	0.9	152.2	Planktonic foraminifera	Globigerina bulloides	Salgueiro et al., 2010
+SU92-03	-9.86	40.58	2465	0.9	152.2	Planktonic foraminifera	Globigerinoides ruber	Salgueiro et al., 2010
+SU92-03	-9.86	40.58	2465	0.9	152.2	Benthic foraminifera	Cibicidoides spp. + uvigerina spp.	Salgueiro et al., 2010
+SU92-21	-23.5	36	4170	9.8	30.14	Benthic foraminifera	Cibicides wuellerstorfi	Schulz 1995 thesis / sarnthein 1997
+T86-15	-37.12	30.72	3375	9.8	32.7	Benthic foraminifera	Cibicides wuellerstorfi	Sarnthein et al., 1994
+Mentawai coral d18O record	98.55	-0.38	6	-0.05	0.09	Coral	Porites sp.	Abram et al., 2008
+TN057-10	5.92	-47.1	4390	0.16	194.63	Benthic foraminifera	Cibicidoides pachyderma	Hodell and ninnemann 2000
+TN057-6-PC	8.6	-42.91	3751	0	438.58	Planktonic foraminifera	Bulloides	Hodell and ninnemann 2000
+TN057-6-PC	8.6	-42.91	3751	0	438.58	Benthic foraminifera	Cib	Hodell and ninnemann 2000
+TN057-6-PC	8.6	-42.91	3751	0	438.58	Benthic foraminifera	Cibicidoides pachyderma	Hodell and ninnemann 2000
+TR163-19	-90.95	2.26	2348	1	361	Planktonic foraminifera	Globigerinoides ruber	Lea et al., 2000
+TR163-19	-90.95	2.26	2348	1	989	Benthic foraminifera	Uvigerina spp.	Lea et al., 2002
+TR163-19	-90.95	2.26	2348	1.1	150	Planktonic foraminifera	Neogloboquadrina dutertrei	Spero and lea, 2002
+TR163-19	-90.95	2.26	2348	1.1	150	Planktonic foraminifera	Globigerinoides ruber	Spero and lea, 2002
+TR163-19	-90.95	2.26	2348	1.1	37.8	Planktonic foraminifera	Globorotalia menardii	Spero et al., 2003
+TR163-19	-90.95	2.26	2348	1.1	361	Planktonic foraminifera	Neogloboquadrina dutertrei	Spero et al., 2003
+TR163-19	-90.95	2.26	2348	1.1	361	Planktonic foraminifera	Globigerinoides ruber	Spero et al., 2003
+TR163-19	-90.95	2.26	2348	1	361	Planktonic foraminifera	Globigerinoides sacculifer (small)	Spero et al., 2003
+TR163-19	-90.95	2.26	2348	10.2	28	Planktonic foraminifera	Globigerinoides sacculifer (large)	Spero et al., 2003
+TR163-22	-92.4	0.52	2830	1.2	135.1	Planktonic foraminifera	Globigerinoides ruber	Lea et al., 2006
+TR163-22	-92.4	0.52	2830	1.2	135.1	Benthic foraminifera	Uvigerina	Lea et al., 2006
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Globigerinoides ruber	Patrick and thunnel, 1997
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Globigerina bulloides	Patrick and thunnel, 1997
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Neogloboquadrina dutertrei	Patrick and thunnel, 1997
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Globorotalia menardii	Patrick and thunnel, 1997
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Globigerinoides sacculifer	Patrick and thunnel, 1997
+TR163-31B	-83.98	-3.62	3210	6.7	24.65	Planktonic foraminifera	Globorotalia inflata	Patrick and thunnel, 1997
+TR163-31P	-83.97	3.62	3209	55	129.99	Benthic foraminifera	Cibicidoides wuellerstorfi	Chapman and shackleton, 1999
+TR163-31P	-83.97	3.62	3210	5.28	237.17	Benthic foraminifera	Cibicidoides wuellerstorfi	Martin et al., 2002
+TROLL 3.1	-3.71	60.77	332	1.49	14.68	Benthic foraminifera	Neogloboquadrina pachyderma senestra	Lehman et al, nature 1991
+TROLL 3.1	-3.71	60.77	332	1.49	14.68	Benthic foraminifera	Cibicidoides wuellerstorfi	Lehman et al, nature 1991
+TROLL 3.1	-3.71	60.77	332	1.49	14.68	Benthic foraminifera	Neogloboquadrina pachyderma dextre	Lehman et al, nature 1991
+TT013-PC72	-139.4	0.1	4298	0	861	Benthic foraminifera	Benthic stack	Karner et al., 2002
+TT013-PC72	-139.4	-0.1	4298	2.74	1045.27	Benthic foraminifera	Cibicides wuellerstorfi	Murray et al., 2000
+TTN057	5.02	-53.03	2850	5.95	105.59	Planktonic foraminifera	Globorotalia truncatulinoides	Kanfoush et al., 2000
+TTN057	5.02	-53.03	2850	5.95	105.59	Benthic foraminifera	Cibicidoides wuellerstorfi	Kanfoush et al., 2000
+TTN057	5.02	-53.03	2850	5.95	105.59	Planktonic foraminifera	Globorotalia inflata	Kanfoush et al., 2000
+TTN057	5.02	-53.03	2850	5.95	105.59	Unknown	"""bull"" ???"	Kanfoush et al., 2000
+TTN057	5.02	-53.03	2850	5.95	105.59	Planktonic foraminifera	Globigerina bulloides	Kanfoush et al., 2000
+TTN07-13-PC4	5.02	-53.03	2850	0	37.8	Planktonic foraminifera	Neogloboquadrina pachyderma (sin.)	Kanfoush et al., 2002
+V17-179	-58.07	46.52	455	1.07	14.31	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral	Keigwin and jones, 1995
+V19-27	-82.07	-0.47	1373	0.54	377.8	Benthic foraminifera	Benthic foraminifers	Imbrie et al., 1992
+V19-27	-82.07	-0.47	1373	0.79	29.84	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+V19-27	-82.07	-0.47	1373	0.79	29.84	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+V19-28	-84.65	-2.37	2720	1.67	32.84	Planktonic foraminifera	Globigerinoides ruber white	Koutavas et al., 2012
+V19-30	-83.35	-3.35	3091	0	340.3	Benthic foraminifera	Benthic foraminifers	Imbrie et al., 1992
+V19-30	-83.35	-3.35	3091	0	338.8	Benthic foraminifera	Uvigerina	?
+V19-30	-83.35	-3.35	3091	0	342.3	Benthic foraminifera	Uvigerina	Shackleton and pisias (1985)
+V19-30	-83.35	-3.35	3091	0	342.3	Planktonic foraminifera	Neogloboquadrina dutertrei	Shackleton and pisias (1985)
+V21-29	-83.93	-3.58	2720	1.06	22.39	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+V21-30	-89.68	-1.22	617	1.66	31.16	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+V21-30	-89.68	-1.22	617	0.96	32.56	Planktonic foraminifera	Globigerinoides ruber white	Koutavas et al., 2012
+V21-40	-106.77	-5.52	3182	2.25	34.64	Planktonic foraminifera	Globigerinoides sacculifer	Koutavas and lynch-stieglitz, 2003
+V21-40	-106.77	-5.52	3182	2.25	34.64	Planktonic foraminifera	Globigerinoides ruber	Koutavas and lynch-stieglitz, 2003
+V27-60	8.58	72.18	2525	1	143	Planktonic foraminifera	"""forams"""	Mesures shackleton
+V27-60	8.58	72.18	2525	1	143	Benthic foraminifera	benthics	Mesures shackleton
+V27-60	8.58	72.18	2525	1	143	Planktonic foraminifera	Neogloboquadrina pachyderma left	Mesures shackleton
+V28-134	-85.43	6.9	2434	1.5	30.03	Planktonic foraminifera	Globigerinoides ruber white	Koutavas et al., 2012
+V29-135	8.88	-19.7	2675	0.74	57.6	Benthic foraminifera	Cibicidoides wuellerstorfi	Sarnthein, michael; winn, kyaw; jung, simon; duplessy, jean-claude; labeyrie, laurent; erlenkeuser, helmut; ganssen, gerald (1994): changes in east atlantic deepwater circulation over the last 30,000 years: eight time slice reconstructions, paleoceanography, 9(2), 209-267, doi:10.1029/93pa03301
+V29-135	8.88	-19.7	2675	0.1	57.6	Benthic foraminifera	Globigerina bulloides	Sarnthein, michael; winn, kyaw; jung, simon; duplessy, jean-claude; labeyrie, laurent; erlenkeuser, helmut; ganssen, gerald (1994): changes in east atlantic deepwater circulation over the last 30,000 years: eight time slice reconstructions, paleoceanography, 9(2), 209-267, doi:10.1029/93pa03301
+V29-135	8.88	-19.7	2675	0.74	57.6	Benthic foraminifera	Uvigerina peregrina	Sarnthein, michael; winn, kyaw; jung, simon; duplessy, jean-claude; labeyrie, laurent; erlenkeuser, helmut; ganssen, gerald (1994): changes in east atlantic deepwater circulation over the last 30,000 years: eight time slice reconstructions, paleoceanography, 9(2), 209-267, doi:10.1029/93pa03301
+V30-101K	-32.5	44.1	3519	0	11.58	Benthic foraminifera	Benthics	Mix and fairbanks, 1985
+V30-40	-23.15	-0.2	3706	1.5	22.4	Benthic foraminifera	Cibicides cibicides in oppo et fairbanks, epsl, 86, 1-15, 1987	Oppo and fairbanks (1987, epsl, 86, 1-15)
+V30-97	-32.93	41	3371	14.1	135	Benthic foraminifera	Benthics	Gif (mix and fairbanks, 1985)
+V35-05	112.08	7.2	1953	0.2	24.7	Benthic foraminifera	Cibicides	Andree et al., 1986 / oppo and fairbanks 1987
+VINO-37GGC	167.73	50.42	3300	3.87	23.2	Benthic foraminifera	Hispid uvigerina	Keigwin, 1998
+VINO-37GGC	167.73	50.42	3300	3.87	5.48	Benthic foraminifera	Uvigerina peregrina	Keigwin, 1998
+VINO-37GGC	167.73	50.42	3300	3.87	23.2	Benthic foraminifera	Cibicidoides spp.	Keigwin, 1998
+VINO-37GGC	167.73	50.42	3300	3.87	23.2	Planktonic foraminifera	Neogloboquadrina pachyderma sinistral and dextral	Keigwin, 1998
+VM28-122	-78.68	11.93	3623	2.78	41.04	Planktonic foraminifera	Globigerinoides ruber	Schmidt et al., 2004
+VM29-191 merged with MC52	-16.78	54.27	2370	0	10.79	Planktonic foraminifera	Neogloboquadrina pachyderma dextral	Bond et al., 2001
+W167-79GGC	-83.58	24.6	530	0	5.21	Planktonic foraminifera	Globigerinoides ruber	Lund and curry 2004
+W167-79GGC	-83.58	24.6	530	0	5.21	Planktonic foraminifera	Globigerinoides ruber	Lund and curry, 2006
+WIND 28K	51.01	-10.15	4157	4.33	67.53	Planktonic foraminifera	Globigerinoides ruber	Kiefer, 2006
+WIND 28K	51.01	-10.15	4157	4.33	67.53	Planktonic foraminifera	Neogloboquadrina dutertrei	Kiefer, 2006
+WIND 28K	51.01	-10.15	4157	4.33	67.53	Benthic foraminifera	Cibicidoides wuellerstorfi	Kiefer, 2006

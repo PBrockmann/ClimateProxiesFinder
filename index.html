@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<!--
+ ##########################################################################
+ Patrick.Brockmann@lsce.ipsl.fr
+ PLEASE DO NOT COPY OR DISTRIBUTE WITHOUT PERMISSION
+ ##########################################################################
+-->
+  <head>
+    <meta charset="utf-8">
+    <title>Climate Proxies Finder</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+    <link rel="stylesheet" href="lib/leaflet-0.7/leaflet.css" />
+    <script src="lib/leaflet-0.7/leaflet.js"></script>
+
+    <link rel="stylesheet" href="lib/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="lib/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="lib/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script src="lib/Leaflet.Graticule/L.Graticule.js"></script>
+    <script src="lib/Leaflet.MousePosition/src/L.Control.MousePosition.js"></script>
+    <link rel="stylesheet" href="lib/Leaflet.MousePosition/src/L.Control.MousePosition.css" />
+    <script src="lib/Leaflet-MiniMap/src/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="lib/Leaflet-MiniMap/src/Control.MiniMap.css" />
+
+    <script src="lib/d3.js"></script>
+    <script src="lib/crossfilter.js"></script>
+
+    <script src="lib/dc.js-1.6.0/dc.js"></script>
+    <link rel="stylesheet" href="lib/dc.js-1.6.0/dc.css" />
+
+    <script src="setup.js"></script>
+
+    <script src="lib/jquery-1.10.2.min.js"></script>
+
+    <link href="lib/bootstrap-3.0.2-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="lib/bootstrap-3.0.2-dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+
+  </head>
+
+  <body onload='init();'>
+
+    <div id="wrap">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Climate Proxies Finder</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="help.html">Help</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+      	<div class="row">
+      		<div id="map" style="width: 1000px; height: 300px;"></div>
+        </div>
+      	<div class="row">
+           	    <div id="chart-depth" class="dc-chart col-md-4">
+			<span>Depth (m)</span>
+			<a class="reset" href="javascript:depthChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<span class="reset" style="display: none;"><span class="filter"></span></span>
+			<br>
+			<br>
+           	    </div>
+           	     <div id="chart-age" class="dc-chart col-md-4">
+             		<span>Oldest age (ka)</span>
+			<a class="reset" href="javascript:ageChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<span class="reset" style="display: none;"><span class="filter"></span></span>
+			<br>
+			<br>
+           	     </div>
+           	     <div id="chart-proxy" class="dc-chart col-md-4">
+             		<span>Proxy</span>
+			<a class="reset" href="javascript:proxyChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<br>
+			<span class="reset" style="display: none;"><span class="filter"></span></span>
+			<br>
+           	     </div>
+        </div>
+      	<div class="row">
+			<div id="totals"><span id="active">-</span> of <span id="total">-</span> proxies selected.</div>
+        </div>
+      	<div class="row">
+      		<div id="proxiesListTitle" class="col-md-12"  style="width: 1000px;"></div>
+      		<div id="proxiesList" class="col-md-12" style="width: 1000px; max-height: 160px; overflow-y:auto;"></div>
+        </div>
+      </div><!-- /.container -->
+
+    </div>
+
+    <div id="footer">
+       <div class="container">
+       		<p class="text-muted credit">Realised by <span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span> &nbsp;<img src="LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.3 - 2014/10/29</p>
+      </div><!-- /.container -->
+    </div>
+
+  </body>
+</html>

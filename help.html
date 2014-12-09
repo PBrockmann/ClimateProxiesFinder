@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<!--
+ ##########################################################################
+ Patrick.Brockmann@lsce.ipsl.fr
+ PLEASE DO NOT COPY OR DISTRIBUTE WITHOUT PERMISSION
+ ##########################################################################
+-->
+  <head>
+    <meta charset="utf-8">
+    <title>Climate Proxies Finder</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <link href="lib/bootstrap-3.0.2-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="lib/bootstrap-3.0.2-dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div id="wrap">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Climate Proxies Finder</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="help.html">Help</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+      	<div class="row">
+              <div class="col-md-12">
+		<div class="col-md-12"><b>Description:</b></br>
+		This application lets you select different paleo-oceanographic proxies collected at LSCE
+		from their dimension (spatial position, depth, proxies ages).
+		</br>
+		</br>
+		</div>
+	      </div>
+        </div>
+
+      	<div class="row">
+		<div class="col-md-3">
+		<img class="imghelp img-responsive" src="img_help/filter_01.png"/>
+		You can refine your research by applying filters on dimension such as depth dimension, oldest age of the proxies and species
+		of the proxies. 
+		<img class="imghelp img-responsive" src="img_help/filter_02.png"/>
+		To cancel a filter, click on "reset".
+		</div>
+
+		<div class="col-md-3">
+		<img class="imghelp img-responsive" src="img_help/proxy_01.png"/>
+		You can display a proxy description (id, position, dates, ...) when you pass the mouse over its position.
+		In the same time, the proxy is focussed with a bold style from the list of proxies that contains the proxy, 
+		the species and the reference of the paper.
+		</div>
+
+		<div class="col-md-3">
+		<img class="imghelp img-responsive" src="img_help/cluster_02.png"/>
+		When several proxies share the same location, they appear as a group of proxies called cluster.
+		Zoom to the last zoom level then click on a cluster to display all proxies.
+		</div>
+
+		<div class="col-md-3">
+		<img class="imghelp img-responsive" src="img_help/cluster_01.png"/>
+		Clusters are colored in red when they represent more than 100 proxies, colored in yellow when more than 10 then colored in green.
+		</div>
+        </div>
+
+	</br>
+      	<div class="row">
+              <div class="col-md-6">
+		<p><b>Technical architecture:</b>
+		<p>This application uses following javascript libraries:
+			<ul>
+			<li><b>D3.js</b> for Data-Driven Documents<br>
+				<a target="_blank" href="http://d3js.org">http://d3js.org</a>
+			<li><b>Leaflet</b> for An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps<br>
+				<a target="_blank" href="http://leafletjs.com">http://leafletjs.com</a>
+			<li><b>Crossfilter</b> for Fast Multidimensional Filtering for Coordinated Views<br>
+				<a target="_blank" href="http://square.github.io/crossfilter">http://square.github.io/crossfilter</a>
+			<li><b>dc.js</b> for Dimensional Charting Javascript Library
+				<a target="_blank" href="http://nickqizhu.github.io/dc.js">http://nickqizhu.github.io/dc.js</a>
+			</ul>
+
+		<p>The background tiles are provided by the ArcGis Online service<br>
+		<a target="_blank" href="http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer">http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer</a>
+              </div>
+              <div class="col-md-6">
+		<p><b>Known problems:</b>
+			<ul>
+			<li>The projection used is a "Spherical Mercator" with an extension to North and South limited to 85°.
+			    This is a problem for data collected at northen or southern position. In those case, proxies positions
+			    are set to 85°.
+			</ul>
+              </div>
+        </div>
+      </div><!-- /.container -->
+
+    </div>
+
+    <div id="footer">
+       <div class="container">
+       		<p class="text-muted credit">Realised by <span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span> &nbsp;<img src="LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.3 - 2014/10/29</p>
+      </div><!-- /.container -->
+    </div>
+
+  </body>
+</html>
