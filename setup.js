@@ -24,8 +24,8 @@ var idGrouping;
 //====================================================================
 function init() {
 
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+d3.tsv("proxies_select.tsv", function(data) {
+//d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
 	d.Longitude = +d.Longitude;
 	d.Latitude = +d.Latitude;
