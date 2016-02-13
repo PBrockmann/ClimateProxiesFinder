@@ -189,7 +189,7 @@ function initCrossfilter() {
   depthChart
     .width(380)
     .height(200)
-    .margins({top: 10, right: 20, bottom: 30, left: 30})	
+    .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .centerBar(false)
     .elasticY(true)
     .dimension(depthDimension)
@@ -210,7 +210,7 @@ function initCrossfilter() {
   ageChart
     .width(380)
     .height(200)
-    .margins({top: 10, right: 20, bottom: 30, left: 30})	
+    .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .colors(["#F5B441"])
     .centerBar(false)
     .elasticY(true)
