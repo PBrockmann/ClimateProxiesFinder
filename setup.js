@@ -24,8 +24,8 @@ var idGrouping;
 //====================================================================
 function init() {
 
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
 	d.Longitude = +d.Longitude;
 	d.Latitude = +d.Latitude;
@@ -162,26 +162,35 @@ function initCrossfilter() {
       });
   depthGrouping = depthDimension.group();
 
-  ageRange = [-10., 500.];
+  //-----------------------------------
+  age1Range = [-10., 600.];
+  age2Range = [-10., 600.];
   ageBinWidth = 10.;
   ageDimension = filter.dimension( function(d) {
 	// Threshold
-	var ageThresholded = d.OldestDate;
-	if (ageThresholded <= ageRange[0]) ageThresholded = ageRange[0];
-	if (ageThresholded >= ageRange[1]) ageThresholded = ageRange[1]- ageBinWidth;
-        return ageBinWidth*Math.floor(ageThresholded/ageBinWidth);
+	var age1Thresholded = d.RecentDate;
+	if (age1Thresholded <= age1Range[0]) age1Thresholded = age1Range[0];
+	if (age1Thresholded >= age1Range[1]) age1Thresholded = age1Range[1] - ageBinWidth;
+	var age1 = ageBinWidth*Math.floor(age1Thresholded/ageBinWidth);
+	var age2Thresholded = d.OldestDate;
+	if (age2Thresholded <= age2Range[0]) age2Thresholded = age2Range[0];
+	if (age2Thresholded >= age2Range[1]) age2Thresholded = age2Range[1] - ageBinWidth;
+	var age2 = ageBinWidth*Math.floor(age2Thresholded/ageBinWidth);
+        return [age2, age1];
       });
   ageGrouping = ageDimension.group();
 
+  //-----------------------------------
   archiveDimension = filter.dimension( function(d) { return d.Archive; });
   archiveGrouping = archiveDimension.group();
 
+  //-----------------------------------
   materialDimension = filter.dimension( function(d) { return d.Material; });
   materialGrouping = materialDimension.group();
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
-  ageChart  = dc.barChart("#chart-age");
+  ageChart  = dc.scatterPlot("#chart-age");
   archiveChart  = dc.rowChart("#chart-archive");
   materialChart  = dc.rowChart("#chart-material");
 
@@ -189,7 +198,7 @@ function initCrossfilter() {
   depthChart
     .width(380)
     .height(200)
-    .margins({top: 10, right: 20, bottom: 30, left: 30})	
+    .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .centerBar(false)
     .elasticY(true)
     .dimension(depthDimension)
@@ -210,23 +219,26 @@ function initCrossfilter() {
   ageChart
     .width(380)
     .height(200)
-    .margins({top: 10, right: 20, bottom: 30, left: 30})	
-    .colors(["#F5B441"])
-    .centerBar(false)
-    .elasticY(true)
+    .margins({top: 10, right: 20, bottom: 30, left: 40})	
+    .colors("#F5B441")
     .dimension(ageDimension)
     .group(ageGrouping)
+    //.xAxisLabel("Oldest age")
+    //.yAxisLabel("Most recent age")
+    .symbolSize(8)
+    .highlightedSize(4)
     .on("preRedraw",update0)
-    .x(d3.scale.linear().domain(ageRange))
-    .xUnits(dc.units.fp.precision(ageBinWidth))
+    //.mouseZoomable(true)
+    .x(d3.scale.linear().domain(age1Range))
+    .y(d3.scale.linear().domain(age2Range))
     .round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
-    .gap(0)
-    .renderHorizontalGridLines(true);
+    .renderHorizontalGridLines(true)
+    .renderVerticalGridLines(true);
 
   xAxis_ageChart = ageChart.xAxis();
   xAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
   yAxis_ageChart = ageChart.yAxis();
-  yAxis_ageChart.tickFormat(d3.format("d")).tickSubdivide(0);	//tickSubdivide(0) still 1 subtick
+  yAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
 
   //-----------------------------------
   Ice_color = "#d6dbe0";
