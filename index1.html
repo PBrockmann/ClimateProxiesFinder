@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>histogram with dc.js</title>
+
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/crossfilter/crossfilter.min.js"></script>
+
+    <script src="lib/dc/dc.min.js"></script>
+    <link rel="stylesheet" href="lib/dc/dc.min.css" />
+
+    <script src="setup1.js"></script>
+
+  </head>
+
+  <body onload='init();'>
+
+      <div id="chart-depth">
+          <div>Depth (m)</div>
+          <a class="reset" href="javascript:depthChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+          <span class="reset" style="display: none;"><span class="filter"></span></span>
+          <br>
+          <br>
+      </div>
+
+      <div id="dataTable" style="height: 300px;">
+	<div class='header'>
+          <span>Id</span>
+          <span>Depth</span>
+        </div>
+      </div>
+
+  </body>
+</html>
