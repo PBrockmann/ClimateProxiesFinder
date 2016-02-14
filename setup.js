@@ -24,8 +24,8 @@ var idGrouping;
 //====================================================================
 function init() {
 
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
 	d.Longitude = +d.Longitude;
 	d.Latitude = +d.Latitude;
@@ -75,6 +75,7 @@ d3.tsv("proxies_select.tsv", function(data) {
 function initMap() {
 
 var mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+//var mapmadeUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     mapmadeAttribution = 'LSCE &copy; 2014 | Baselayer &copy; ArcGis',
     mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: 10, attribution: mapmadeAttribution}),
     maplatlng = new L.LatLng(0, 0);
@@ -102,7 +103,7 @@ myIconBright = L.icon({
     iconAnchor: [10, 0] 
 });
 
-markerGroup = new L.MarkerClusterGroup({maxClusterRadius: 50, showCoverageOnHover: false});
+markerGroup = new L.MarkerClusterGroup({chunkedLoading: true, maxClusterRadius: 50, showCoverageOnHover: false});
 
 //http://stackoverflow.com/questions/17423261/how-to-pass-data-with-marker-in-leaflet-js
 customMarker = L.Marker.extend({
@@ -113,7 +114,7 @@ customMarker = L.Marker.extend({
 
 // create array of markers from points and add them to the map
 for (var i = 0; i < points.length; i++) {
-   //markers[i] = new L.Marker([point.Latitude, point.Longitude], {icon: myIcon});
+//   markers[i] = new L.Marker(new L.LatLng(points[i].Latitude, points[i].Longitude));
    markers[i] = new customMarker([points[i].Latitude, points[i].Longitude], {icon: myIcon, Id: (i+1).toString()});
    markers[i].bindPopup(
 		  "Id: " + "<b>" + points[i].Id + "</b></br>"
