@@ -21,7 +21,8 @@ var lngDimension;
 var idDimension;
 var idGrouping;
 
-var  Ice_color = "#008cb2";
+//var  Ice_color = "#008cb2";
+var  Ice_color = "#FF0000";
 var  Lake_color = "#b9d9eb";
 var  Ocean_color = "#81a6d3";
 var  Speleothem_color = "#afa393";
@@ -32,7 +33,6 @@ var  Cellulose_color = "#00ff00";
 var  Coral_color = "#ff7f50";
 var  PlanktonicForaminifera_color = Ocean_color;
 var  BenthicForaminifera_color = Ocean_color;
-var  Ice_color = Ice_color;
 var  Unkown_color = "#FF4400";
 var  Others_color = "#FF4400";
 
@@ -74,8 +74,7 @@ d3.tsv("proxies_select.tsv", function(data) {
   idGrouping = idDimension.group(function(id) { return id; });
 
   // Render the total.
-  d3.selectAll("#total")
-            .text(filter.size());
+  d3.selectAll("#total").text(filter.size());
 
   initList();
 
@@ -196,18 +195,16 @@ function initCrossfilter() {
   //ageGrouping = ageDimension.group();
   ageGrouping = ageDimension.group().reduce(
     function (p, v) {
-        ++p.count;
+	p.count = p.count ? p.count + 1 : 1;
         p.archive = v.Archive;
         return p;
     },
     function (p, v) {
-        --p.count;
-        p.archive = "";
+	p.count -= 1;
         return p;
     },
-    function () { 
-        return {};
-    });    
+    function () { return {}; }
+    );    
 
   //-----------------------------------
   archiveDimension = filter.dimension( function(d) { return d.Archive; });
@@ -250,24 +247,6 @@ function initCrossfilter() {
         .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
    	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
 
-  //-----------------------------------
-  var newOrderArchive = {
-		      "Carbonate": 1, 
-		      "Non-Carbonate": 2,
-		      "Coral": 3,
-		      "Benthic foraminifera": 4,
-		      "Planktonic foraminifera": 5,
-		      "Ice": 6,
-		      "Speleothem": 7,
-                      "Others":8, 
-                      "Unknown": 9 };
-  var materialColors = d3.scale.ordinal()
-        .domain(["Carbonate", "Non-Carbonate", "Coral", "Benthic foraminifera",
-		 "Planktonic foraminifera", "Ice", "Speleothem", "Others", "Unknown" ])
-   	.range([Carbonate_color, NonCarbonate_color, Coral_color, BenthicForaminifera_color,
-		PlanktonicForaminifera_color, Ice_color, Speleothem_color, Others_color, Unkown_color]);
-
-  //-----------------------------------
   ageChart
     .width(380)
     .height(200)
@@ -285,10 +264,11 @@ function initCrossfilter() {
     .renderVerticalGridLines(true)
     .symbolSize(8)
     .highlightedSize(8)
-    .existenceAccessor(function(d) { return d.value.archive; })
-    // http://jsfiddle.net/za8ksj45/8/
+    .existenceAccessor(function(d) { return d.value.count; })
     .colorAccessor(function (d) { return d.value.archive; })
-    .colors(function (d) { return archiveColors(d); });                  
+    .colors(function (d) { console.log(d, archiveColors(d)); return archiveColors(d); });
+    // http://jsfiddle.net/za8ksj45/8/
+    // http://www.bgcook.com/scotch/
     //.colors("#ff0000");
 
   xAxis_ageChart = ageChart.xAxis();
@@ -309,6 +289,22 @@ function initCrossfilter() {
     .xAxis().ticks(4);
 
   //-----------------------------------
+  var newOrderMaterial = {
+		      "Carbonate": 1, 
+		      "Non-Carbonate": 2,
+		      "Coral": 3,
+		      "Benthic foraminifera": 4,
+		      "Planktonic foraminifera": 5,
+		      "Ice": 6,
+		      "Speleothem": 7,
+                      "Others":8, 
+                      "Unknown": 9 };
+  var materialColors = d3.scale.ordinal()
+        .domain(["Carbonate", "Non-Carbonate", "Coral", "Benthic foraminifera",
+		 "Planktonic foraminifera", "Ice", "Speleothem", "Others", "Unknown" ])
+   	.range([Carbonate_color, NonCarbonate_color, Coral_color, BenthicForaminifera_color,
+		PlanktonicForaminifera_color, Ice_color, Speleothem_color, Others_color, Unkown_color]);
+
   materialChart
     .width(180)
     .height(200)
@@ -318,7 +314,7 @@ function initCrossfilter() {
     .colors(materialColors) 
     .elasticX(true)
     .gap(2)
-    .ordering(function (d) { return newOrderArchive[d.key]; })
+    .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
 
   //-----------------------------------
