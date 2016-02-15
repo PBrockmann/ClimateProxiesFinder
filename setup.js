@@ -21,11 +21,26 @@ var lngDimension;
 var idDimension;
 var idGrouping;
 
+var  Ice_color = "#008cb2";
+var  Lake_color = "#b9d9eb";
+var  Ocean_color = "#81a6d3";
+var  Speleothem_color = "#afa393";
+var  Tree_color = "#568e14";
+var  Carbonate_color = "#ff0000";
+var  NonCarbonate_color = "#903373";
+var  Cellulose_color = "#00ff00";
+var  Coral_color = "#ff7f50";
+var  PlanktonicForaminifera_color = Ocean_color;
+var  BenthicForaminifera_color = Ocean_color;
+var  Ice_color = Ice_color;
+var  Unkown_color = "#FF4400";
+var  Others_color = "#FF4400";
+
 //====================================================================
 function init() {
 
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+d3.tsv("proxies_select.tsv", function(data) {
+//d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
 	d.Longitude = +d.Longitude;
 	d.Latitude = +d.Latitude;
@@ -55,7 +70,7 @@ d3.tsv("proxies.tsv", function(data) {
   });
 
 // dimension and group for looking up currently selected markers
-  idDimension = filter.dimension(function(d, i) { return i; });
+  idDimension = filter.dimension(function(d, i) { return i; });		
   idGrouping = idDimension.group(function(id) { return id; });
 
   // Render the total.
@@ -69,7 +84,6 @@ d3.tsv("proxies.tsv", function(data) {
 });
 
 }
-
 
 //====================================================================
 function initMap() {
@@ -119,7 +133,7 @@ for (var i = 0; i < points.length; i++) {
    markers[i].bindPopup(
 		  "Id: " + "<b>" + points[i].Id + "</b></br>"
 		+ "Position: " + "<b>" + points[i].Longitude.toFixed(2) + "°E</b>, <b>" + points[i].Latitude.toFixed(2) + "°N</b></br>"
-		+ "Depth (m): " + "<span style='color: #2EA3DB;'><b>" +  points[i].Depth.toFixed(2) + "</b></span></br>"
+		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  points[i].Depth.toFixed(2) + "</b></span></br>"
 		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + points[i].RecentDate.toFixed(2) + "</b> to <b>" + points[i].OldestDate.toFixed(2) + "</b></span></br>"
 		+ "Archive: " + "<b>" + points[i].Archive + "</b></br>"
 		+ "Material: " + "<b>" + points[i].Material + "</b></br>"
@@ -164,9 +178,9 @@ function initCrossfilter() {
   depthGrouping = depthDimension.group();
 
   //-----------------------------------
-  age1Range = [-10., 600.];
-  age2Range = [-10., 600.];
-  ageBinWidth = 10.;
+  age1Range = [-10., 50.];
+  age2Range = [-10., 50.];
+  ageBinWidth = 1.;
   ageDimension = filter.dimension( function(d) {
 	// Threshold
 	var age1Thresholded = d.RecentDate;
@@ -179,7 +193,21 @@ function initCrossfilter() {
 	var age2 = ageBinWidth*Math.floor(age2Thresholded/ageBinWidth);
         return [age2, age1];
       });
-  ageGrouping = ageDimension.group();
+  //ageGrouping = ageDimension.group();
+  ageGrouping = ageDimension.group().reduce(
+    function (p, v) {
+        ++p.count;
+        p.archive = v.Archive;
+        return p;
+    },
+    function (p, v) {
+        --p.count;
+        p.archive = "";
+        return p;
+    },
+    function () { 
+        return {};
+    });    
 
   //-----------------------------------
   archiveDimension = filter.dimension( function(d) { return d.Archive; });
@@ -209,7 +237,8 @@ function initCrossfilter() {
     .xUnits(dc.units.fp.precision(depthBinWidth))
     .round(function(d) {return depthBinWidth*Math.floor(d/depthBinWidth)})
     .gap(0)
-    .renderHorizontalGridLines(true);
+    .renderHorizontalGridLines(true)
+    .colors(Ocean_color);
 
   xAxis_depthChart = depthChart.xAxis();
   xAxis_depthChart.ticks(6).tickFormat(d3.format("d"));
@@ -217,24 +246,50 @@ function initCrossfilter() {
   yAxis_depthChart.tickFormat(d3.format("d")).tickSubdivide(0);
 
   //-----------------------------------
+  var archiveColors = d3.scale.ordinal()
+        .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
+   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
+
+  //-----------------------------------
+  var newOrderArchive = {
+		      "Carbonate": 1, 
+		      "Non-Carbonate": 2,
+		      "Coral": 3,
+		      "Benthic foraminifera": 4,
+		      "Planktonic foraminifera": 5,
+		      "Ice": 6,
+		      "Speleothem": 7,
+                      "Others":8, 
+                      "Unknown": 9 };
+  var materialColors = d3.scale.ordinal()
+        .domain(["Carbonate", "Non-Carbonate", "Coral", "Benthic foraminifera",
+		 "Planktonic foraminifera", "Ice", "Speleothem", "Others", "Unknown" ])
+   	.range([Carbonate_color, NonCarbonate_color, Coral_color, BenthicForaminifera_color,
+		PlanktonicForaminifera_color, Ice_color, Speleothem_color, Others_color, Unkown_color]);
+
+  //-----------------------------------
   ageChart
     .width(380)
     .height(200)
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
-    .colors("#F5B441")
     .dimension(ageDimension)
     .group(ageGrouping)
     //.xAxisLabel("Oldest age")
     //.yAxisLabel("Most recent age")
-    .symbolSize(8)
-    .highlightedSize(4)
     .on("preRedraw",update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
     .round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
     .renderHorizontalGridLines(true)
-    .renderVerticalGridLines(true);
+    .renderVerticalGridLines(true)
+    .symbolSize(8)
+    .highlightedSize(8)
+    .existenceAccessor(function(d) { return d.value.archive; })
+    // http://jsfiddle.net/za8ksj45/8/
+    .colorAccessor(function (d) { return d.value.archive; })
+    .colors(function (d) { return archiveColors(d); });                  
+    //.colors("#ff0000");
 
   xAxis_ageChart = ageChart.xAxis();
   xAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
@@ -242,14 +297,6 @@ function initCrossfilter() {
   yAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
 
   //-----------------------------------
-  Ice_color = "#d6dbe0";
-  Lake_color = "#6d87a8";
-  Ocean_color = "#008cb2";
-  Speleothem_color = "#afa393";
-  Tree_color = "#568e14";
-  var archiveColors = d3.scale.ordinal()
-   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
-
   archiveChart
     .width(180)
     .height(200)
@@ -268,9 +315,10 @@ function initCrossfilter() {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(materialDimension)
     .group(materialGrouping)
-    .colors(d3.scale.category10()) 
+    .colors(materialColors) 
     .elasticX(true)
     .gap(2)
+    .ordering(function (d) { return newOrderArchive[d.key]; })
     .xAxis().ticks(4);
 
   //-----------------------------------
@@ -328,7 +376,8 @@ function initList() {
   		.attr("class", "row");
   proxyItem.append("div")
    	.attr("class", "col-md-1")
-   	.style("width", "50px")
+   	.style("width", "80px")
+   	.style("text-align", "left")
    	.text("Id");
   proxyItem.append("div")
    	.attr("class", "col-md-1")
@@ -357,7 +406,7 @@ function initList() {
    	.text("DOI");
   proxyItem.append("div")
         .attr("class", "col-md-3")
-   	.style("width", "350px")
+   	.style("width", "320px")
    	.style("text-align", "left")
    	.text("Reference");
 
@@ -372,7 +421,8 @@ function initList() {
          		.attr("id", (i+1).toString());
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
-   		.style("width", "50px")
+   		.style("width", "80px")
+         	.style("text-align", "left")
          	.attr("title", "#"+ points[i].Id)
          	.text("#"+points[i].Id)
 		.on("mouseover", function() { d3.select(this).style("font-weight", "bold"); })
@@ -382,7 +432,8 @@ function initList() {
          	.attr("class", "col-md-1")
    		.style("width", "80px")
          	.style("text-align", "right")
-		.style("color", "#2EA3DB")
+		//.style("color", "#2EA3DB")
+		.style("color", Ocean_color)
          	.attr("title", points[i].Depth)
          	.text(format1(points[i].Depth));
   	proxyItem.append("div")
@@ -417,7 +468,7 @@ function initList() {
 		.on("click", function(d,i) { window.open("https://scholar.google.fr/scholar?q=" + points[i].DOI); });
   	proxyItem.append("div")
          	.attr("class", "col-md-3")
-   		.style("width", "350px")
+   		.style("width", "320px")
          	.style("text-align", "left")
          	.attr("title", points[i].Reference)
          	.text(points[i].Reference);

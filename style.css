@@ -43,21 +43,6 @@
   fill: #333;
 }
 
-#chart-depth .brush rect.extent {
-  fill: #2EA3DB;
-  fill-opacity: .25;
-}
-
-#chart-age .brush rect.extent {
-  fill: #F5B441;
-  fill-opacity: .25;
-}
-
-.brush .resize path {
-  fill: #eee;
-  stroke: #666;
-}
-
 #map-div {
   height: 512px;
 }
