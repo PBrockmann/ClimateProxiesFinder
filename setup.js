@@ -21,9 +21,8 @@ var lngDimension;
 var idDimension;
 var idGrouping;
 
-//var  Ice_color = "#008cb2";
-var  Ice_color = "#FF0000";
-var  Lake_color = "#b9d9eb";
+var  Ice_color = "#008cb2";
+var  Lake_color = "#314f6f";
 var  Ocean_color = "#81a6d3";
 var  Speleothem_color = "#afa393";
 var  Tree_color = "#568e14";
@@ -190,21 +189,9 @@ function initCrossfilter() {
 	if (age2Thresholded <= age2Range[0]) age2Thresholded = age2Range[0];
 	if (age2Thresholded >= age2Range[1]) age2Thresholded = age2Range[1] - ageBinWidth;
 	var age2 = ageBinWidth*Math.floor(age2Thresholded/ageBinWidth);
-        return [age2, age1];
+        return [age2, age1, d.Archive];
       });
-  //ageGrouping = ageDimension.group();
-  ageGrouping = ageDimension.group().reduce(
-    function (p, v) {
-	p.count = p.count ? p.count + 1 : 1;
-        p.archive = v.Archive;
-        return p;
-    },
-    function (p, v) {
-	p.count -= 1;
-        return p;
-    },
-    function () { return {}; }
-    );    
+  ageGrouping = ageDimension.group();
 
   //-----------------------------------
   archiveDimension = filter.dimension( function(d) { return d.Archive; });
@@ -259,17 +246,26 @@ function initCrossfilter() {
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
-    .round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
+    //.round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)
     .symbolSize(8)
     .highlightedSize(8)
-    .existenceAccessor(function(d) { return d.value.count; })
-    .colorAccessor(function (d) { return d.value.archive; })
-    .colors(function (d) { console.log(d, archiveColors(d)); return archiveColors(d); });
-    // http://jsfiddle.net/za8ksj45/8/
-    // http://www.bgcook.com/scotch/
-    //.colors("#ff0000");
+    .existenceAccessor(function(d) { return d.value > 0 ; })
+    .colorAccessor(function (d) { return d.key[2]; })
+    .colors(archiveColors)
+    .filterHandler(function(dim, filters) {
+  	if(!filters || !filters.length)
+    		dim.filter(null);
+    	else {
+      	// assume it's one RangedTwoDimensionalFilter
+    	dim.filterFunction(function(d) {
+      		return filters[0].isFiltered([d[0],d[1]]);
+      		})
+    	}
+    });
+    // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/
+    // .colors("#ff0000");
 
   xAxis_ageChart = ageChart.xAxis();
   xAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
