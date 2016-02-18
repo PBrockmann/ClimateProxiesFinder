@@ -44,6 +44,9 @@
   fill: #F5B441;
 }
 
+#chart-age {
+  padding-top: 1em;
+}
 .axis path, .axis line {
   fill: none;
   stroke: #333;

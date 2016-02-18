@@ -46,6 +46,10 @@ d3.tsv("proxies_select.tsv", function(data) {
         d.Depth = +d.Depth;
         d.OldestDate = +d.OldestDate;
         d.RecentDate = +d.RecentDate;
+
+	// Limit latitudes according to latitude map range (-85:85)
+        if (d.Latitude < -85) d.Latitude = -85;
+        if (d.Latitude > 85) d.Latitude = 85;
   });
   points=data;
 
@@ -241,8 +245,8 @@ function initCrossfilter() {
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .dimension(ageDimension)
     .group(ageGrouping)
-    //.xAxisLabel("Oldest age")
-    //.yAxisLabel("Most recent age")
+    .xAxisLabel("Most recent age")
+    .yAxisLabel("Oldest age")
     .on("preRedraw",update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
