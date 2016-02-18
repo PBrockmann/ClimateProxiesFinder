@@ -64,8 +64,8 @@
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="help.html">Help</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="help.html" target="_blank">Help</a></li>
+              <li><a href="contact.html" target="_blank">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -80,12 +80,21 @@
            	    <div class="dc-chart col-md-4" id="chart-depth">
 			<div class="dc-chart-title">Depth (m)</div>
 			<a class="reset" href="javascript:depthChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<a class="preset" href="javascript:depthChart.filterAll();depthChart.filter(dc.filters.RangedFilter(0., 500.));dc.redrawAll();">0:500</a>
+			<a class="preset" href="javascript:depthChart.filterAll();depthChart.filter(dc.filters.RangedFilter(0., 2000.));dc.redrawAll();">0:2000</a>
+			<a class="preset" href="javascript:depthChart.filterAll();depthChart.filter(dc.filters.RangedFilter(2000., 5000.));dc.redrawAll();">2000:5000</a>
 			<span class="reset" style="display: none;"><span class="filter"></span></span>
 			<br>
            	    </div>
            	     <div class="dc-chart col-md-4" id="chart-age">
 			<div class="dc-chart-title">Age (ka)</div>
 			<a class="reset" href="javascript:ageChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<a class="preset" href="javascript:ageChart.filterAll();ageChart.filter(dc.filters.RangedFilter([-2.5, -2.5], [6.5, 6.5]));dc.redrawAll();" 
+					title="Mid-Holocene">MH</a>
+			<a class="preset" href="javascript:ageChart.filterAll();ageChart.filter(dc.filters.RangedFilter([-2.5, -2.5], [23, 23]));dc.redrawAll();" 
+					title="Last Glacial Maximum">LGM</a>
+			<a class="preset" href="javascript:ageChart.filterAll();ageChart.filter(dc.filters.RangedFilter([-2.5, -2.5], [50, 50]));dc.redrawAll();" 
+					title="Last Interglacial">LI</a>
 			<span class="reset" style="display: none;"><span class="filter"></span></span>
 			<br>
            	     </div>

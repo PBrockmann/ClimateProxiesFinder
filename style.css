@@ -4,6 +4,12 @@
   padding: 0 0;
 }
 
+.disabled {
+  opacity: 0.2; 
+  pointer-events: none; 
+  cursor: default;
+}
+
 .chart {
   display: inline-block;
   margin: 0 20px 20px;
@@ -11,6 +17,12 @@
 }
 
 .reset {
+  padding-left: 1em;
+  font-size: smaller;
+  color: #555;
+}
+
+.preset {
   padding-left: 1em;
   font-size: smaller;
   color: #555;

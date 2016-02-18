@@ -41,11 +41,11 @@ function init() {
 d3.tsv("proxies_select.tsv", function(data) {
 //d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
-	d.Longitude = +d.Longitude;
-	d.Latitude = +d.Latitude;
-	d.Depth = +d.Depth;
-	d.OldestDate = +d.OldestDate;
-	d.RecentDate = +d.RecentDate;
+        d.Longitude = +d.Longitude;
+        d.Latitude = +d.Latitude;
+        d.Depth = +d.Depth;
+        d.OldestDate = +d.OldestDate;
+        d.RecentDate = +d.RecentDate;
   });
   points=data;
 
@@ -85,6 +85,7 @@ d3.tsv("proxies_select.tsv", function(data) {
 
 //====================================================================
 function initMap() {
+
 
 var mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
 //var mapmadeUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
@@ -176,8 +177,8 @@ function initCrossfilter() {
   depthGrouping = depthDimension.group();
 
   //-----------------------------------
-  age1Range = [-10., 50.];
-  age2Range = [-10., 50.];
+  age1Range = [-2.5, 50.];
+  age2Range = [-2.5, 50.];
   ageBinWidth = 1.;
   ageDimension = filter.dimension( function(d) {
 	// Threshold
@@ -246,7 +247,7 @@ function initCrossfilter() {
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
-    //.round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
+    .round(function(d) {return ageBinWidth*Math.floor(d/ageBinWidth)})
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)
     .symbolSize(8)
@@ -416,7 +417,7 @@ function initList() {
    		.style("width", "80px")
          	.style("text-align", "left")
          	.attr("title", "#"+ points[i].Id)
-         	.text("#"+points[i].Id)
+         	.text("#"+ points[i].Id)
 		.on("mouseover", function() { d3.select(this).style("font-weight", "bold"); })
 		.on("mouseout", function() { d3.select(this).style("font-weight", "normal"); })
 		.on('click', popupfromlist);
