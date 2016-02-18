@@ -97,7 +97,10 @@ var mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Ba
     mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: 10, attribution: mapmadeAttribution}),
     maplatlng = new L.LatLng(0, 0);
 
-map = new L.Map('map', {center: maplatlng, zoom: 1, layers: [mapmade]});
+map = new L.Map('map', {center: maplatlng, zoom: 1, layers: [mapmade], zoomControl: false});
+
+var zoomHome = L.Control.zoomHome();
+zoomHome.addTo(map);
 
 grat_10 = L.graticule({ interval: 10, style: { color: '#333', weight: 1, opacity: 1. } }).addTo(map);
 grat_05 = L.graticule({ interval: 05, style: { color: '#333', weight: 1, opacity: 0. } }).addTo(map);
@@ -221,7 +224,7 @@ function initCrossfilter() {
     .elasticY(true)
     .dimension(depthDimension)
     .group(depthGrouping)
-    .on("preRedraw",update0)
+    .on("preRedraw", update0)
     .x(d3.scale.linear().domain(depthRange))
     .xUnits(dc.units.fp.precision(depthBinWidth))
     .round(function(d) {return depthBinWidth*Math.floor(d/depthBinWidth)})
@@ -247,7 +250,7 @@ function initCrossfilter() {
     .group(ageGrouping)
     .xAxisLabel("Most recent age")
     .yAxisLabel("Oldest age")
-    .on("preRedraw",update0)
+    .on("preRedraw", update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
@@ -284,6 +287,7 @@ function initCrossfilter() {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(archiveDimension)
     .group(archiveGrouping)
+    .on("preRedraw", update0)
     .colors(archiveColors)
     .elasticX(true)
     .gap(2)
@@ -312,6 +316,7 @@ function initCrossfilter() {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(materialDimension)
     .group(materialGrouping)
+    .on("preRedraw", update0)
     .colors(materialColors) 
     .elasticX(true)
     .gap(2)
