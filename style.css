@@ -13,7 +13,6 @@
 .chart {
   display: inline-block;
   margin: 0 20px 20px;
-
 }
 
 .reset {
@@ -44,9 +43,10 @@
   fill: #F5B441;
 }
 
-#chart-age {
+#chart-age svg {
   padding-top: 1em;
 }
+
 .axis path, .axis line {
   fill: none;
   stroke: #333;
@@ -54,6 +54,10 @@
 }
 
 .axis text {
+  font: 10px sans-serif;
+  fill: #333;
+}
+.x-axis-label,.y-axis-label {
   font: 10px sans-serif;
   fill: #333;
 }

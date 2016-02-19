@@ -38,8 +38,10 @@ var  Others_color = "#FF4400";
 //====================================================================
 function init() {
 
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+var t0 = performance.now();
+
+d3.tsv("proxies_select.tsv", function(data) {
+//d3.tsv("proxies2.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -57,8 +59,10 @@ d3.tsv("proxies.tsv", function(data) {
   initCrossfilter();
 
 // bind map bounds to lat/lng filter dimensions
-  latDimension = filter.dimension(function(d) { return d.Latitude; });
-  lngDimension = filter.dimension(function(d) { return d.Longitude; });
+  //latDimension = filter.dimension(function(d) { return d.Latitude; });
+  //lngDimension = filter.dimension(function(d) { return d.Longitude; });
+  latDimension = filter.dimension(function(d) { return Math.round(d.Latitude); });
+  lngDimension = filter.dimension(function(d) { return Math.round(d.Longitude); });
 
   map.on("moveend", function() {
     var bounds = map.getBounds();
@@ -84,6 +88,9 @@ d3.tsv("proxies.tsv", function(data) {
   update1();
 
 });
+
+var t1 = performance.now();
+console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
 
 }
 
@@ -123,7 +130,7 @@ myIconBright = L.icon({
     iconAnchor: [10, 0] 
 });
 
-markerGroup = new L.MarkerClusterGroup({chunkedLoading: true, maxClusterRadius: 50, showCoverageOnHover: false});
+markerGroup = new L.MarkerClusterGroup({maxClusterRadius: 50, showCoverageOnHover: false});
 
 //http://stackoverflow.com/questions/17423261/how-to-pass-data-with-marker-in-leaflet-js
 customMarker = L.Marker.extend({
@@ -406,11 +413,11 @@ function initList() {
         .attr("class", "col-md-2")
    	.style("text-align", "left")
    	.text("DOI");
-  proxyItem.append("div")
-        .attr("class", "col-md-3")
-   	.style("width", "320px")
-   	.style("text-align", "left")
-   	.text("Reference");
+  //proxyItem.append("div")
+  //      .attr("class", "col-md-3")
+  // 	.style("width", "320px")
+  // 	.style("text-align", "left")
+  // 	.text("Reference");
 
   format1 = d3.format(".0f");
   format2 = d3.format(".2f");
@@ -468,12 +475,12 @@ function initList() {
 		.on("mouseover", function() { d3.select(this).style("color", "#0645AD"); })
 		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
 		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
-  	proxyItem.append("div")
-         	.attr("class", "col-md-3")
-   		.style("width", "320px")
-         	.style("text-align", "left")
-         	.attr("title", points[i].Reference)
-         	.text(points[i].Reference);
+  	//proxyItem.append("div")
+        // 	.attr("class", "col-md-3")
+   	//	.style("width", "320px")
+        // 	.style("text-align", "left")
+        // 	.attr("title", points[i].Reference)
+        // 	.text(points[i].Reference);
   }
 }
 
