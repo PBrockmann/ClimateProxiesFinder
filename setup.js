@@ -38,8 +38,8 @@ var  Others_color = "#FF4400";
 //====================================================================
 function init() {
 
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -74,7 +74,7 @@ d3.tsv("proxies_select.tsv", function(data) {
 
 // dimension and group for looking up currently selected markers
   idDimension = filter.dimension(function(d, i) { return i; });		
-  idGrouping = idDimension.group(function(id) { return id; });
+  idGrouping = idDimension.group();
 
   // Render the total.
   d3.selectAll("#total").text(filter.size());
@@ -352,7 +352,7 @@ function update0() {
 // Update dc charts, map markers, list and number of selected
 function update1() {
   dc.redrawAll();
-  updateMarkers();
+  //updateMarkers();
   updateList();
   d3.select("#active").text(filter.groupAll().value());
   levelZoom = map.getZoom();
