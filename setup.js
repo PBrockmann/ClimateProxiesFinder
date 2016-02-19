@@ -467,7 +467,7 @@ function initList() {
          	.text(points[i].DOI)
 		.on("mouseover", function() { d3.select(this).style("color", "#0645AD"); })
 		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
-		.on("click", function(d,i) { window.open("https://scholar.google.fr/scholar?q=" + points[i].DOI); });
+		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
   	proxyItem.append("div")
          	.attr("class", "col-md-3")
    		.style("width", "320px")
