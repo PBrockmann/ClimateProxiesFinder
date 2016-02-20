@@ -38,10 +38,8 @@ var  Others_color = "#FF4400";
 //====================================================================
 function init() {
 
-var t0 = performance.now();
-
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+d3.tsv("proxies_select.tsv", function(data) {
+//d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -88,9 +86,6 @@ d3.tsv("proxies.tsv", function(data) {
   update1();
 
 });
-
-var t1 = performance.now();
-console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
 
 }
 
