@@ -45,6 +45,7 @@
 
 #chart-age svg {
   padding-top: 1em;
+  overflow: visible;
 }
 
 .axis path, .axis line {
