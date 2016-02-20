@@ -1,6 +1,8 @@
 
 //====================================================================
 var map;
+var mapMaxZoom = 8;
+
 var markers = [] ;
 var markerGroup ;
 
@@ -38,8 +40,9 @@ var  Others_color = "#FF4400";
 //====================================================================
 function init() {
 
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//-----------------------------------------
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -54,14 +57,23 @@ d3.tsv("proxies_select.tsv", function(data) {
   points=data;
 
   initMap();
+  initList();
+
   initCrossfilter();
 
 // bind map bounds to lat/lng filter dimensions
-  //latDimension = filter.dimension(function(d) { return d.Latitude; });
-  //lngDimension = filter.dimension(function(d) { return d.Longitude; });
   latDimension = filter.dimension(function(d) { return Math.round(d.Latitude); });
   lngDimension = filter.dimension(function(d) { return Math.round(d.Longitude); });
 
+// dimension and group for looking up currently selected markers
+  idDimension = filter.dimension(function(d, i) { return i; });		
+  idGrouping = idDimension.group();
+
+  // Render the total.
+  d3.selectAll("#total").text(filter.size());
+  update1();
+
+//-----------------------------------------
   map.on("moveend", function() {
     var bounds = map.getBounds();
     var northEast = bounds.getNorthEast();
@@ -74,17 +86,7 @@ d3.tsv("proxies_select.tsv", function(data) {
     update1();
   });
 
-// dimension and group for looking up currently selected markers
-  idDimension = filter.dimension(function(d, i) { return i; });		
-  idGrouping = idDimension.group();
-
-  // Render the total.
-  d3.selectAll("#total").text(filter.size());
-
-  initList();
-
-  update1();
-
+//-----------------------------------------
 });
 
 }
@@ -92,11 +94,10 @@ d3.tsv("proxies_select.tsv", function(data) {
 //====================================================================
 function initMap() {
 
-
 var mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
 //var mapmadeUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     mapmadeAttribution = 'LSCE &copy; 2014 | Baselayer &copy; ArcGis',
-    mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: 10, attribution: mapmadeAttribution}),
+    mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: mapMaxZoom, attribution: mapmadeAttribution}),
     maplatlng = new L.LatLng(0, 0);
 
 map = new L.Map('map', {center: maplatlng, zoom: 1, layers: [mapmade], zoomControl: false});
@@ -110,8 +111,8 @@ grat_01 = L.graticule({ interval: 01, style: { color: '#333', weight: 1, opacity
 
 mousepos = new L.Control.MousePosition({lngFirst: true}).addTo(map);
 
-mapmade2 = new L.TileLayer(mapmadeUrl, { maxZoom: 7, attribution: mapmadeAttribution });
-miniMap = new L.Control.MiniMap(mapmade2, { toggleDisplay: true, zoomLevelOffset: -6 }).addTo(map);
+mapmade2 = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1, attribution: mapmadeAttribution });
+miniMap = new L.Control.MiniMap(mapmade2, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(map);
 
 myIcon = L.icon({
     iconUrl: 'LSCE_Icon.png',
@@ -125,7 +126,7 @@ myIconBright = L.icon({
     iconAnchor: [10, 0] 
 });
 
-markerGroup = new L.MarkerClusterGroup({maxClusterRadius: 50, showCoverageOnHover: false});
+markerGroup = new L.MarkerClusterGroup({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true});
 
 //http://stackoverflow.com/questions/17423261/how-to-pass-data-with-marker-in-leaflet-js
 customMarker = L.Marker.extend({
@@ -150,21 +151,22 @@ for (var i = 0; i < points.length; i++) {
    markers[i].on('mouseover', function(e) {
 	 e.target.setIcon(myIconBright);
 	 e.target.openPopup();
-	 //console.log(e.target.options.Id);
-	 var container = $("#proxiesList");
 	 var scrollTo = $("#"+e.target.options.Id);
+	 var container = $("#proxiesList");
 	 container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
 	 scrollTo.css("font-weight", "bold");
+	 scrollTo.css("background", "#ccc");
 	});
    markers[i].on('mouseout', function(e) {
 	 e.target.setIcon(myIcon);
 	 e.target.closePopup();
-         $(".proxyItem").css("font-weight", "normal");
+	 var scrollTo = $("#"+e.target.options.Id);
+	 scrollTo.css("font-weight", "normal");
+	 scrollTo.css("background", "#eee");
 	});
    markerGroup.addLayer(markers[i]);
 }
 map.addLayer(markerGroup);
-
 }
 
 //====================================================================
@@ -343,7 +345,7 @@ function updateMarkers() {
 }
 
 //====================================================================
-// Update map markers, list and number of selected
+// Trigger by dc.charts to update map markers, list and number of selected 
 function update0() {
   updateMarkers();
   updateList();
@@ -354,7 +356,7 @@ function update0() {
 // Update dc charts, map markers, list and number of selected
 function update1() {
   dc.redrawAll();
-  //updateMarkers();
+  updateMarkers();
   updateList();
   d3.select("#active").text(filter.groupAll().value());
   levelZoom = map.getZoom();
@@ -417,39 +419,39 @@ function initList() {
   format1 = d3.format(".0f");
   format2 = d3.format(".2f");
 
-  var pointIds = idGrouping.all();
-  for (var i = 0; i < pointIds.length; i++) {
+  for (var i = 0; i < points.length; i++) {
   	var proxyItem = d3.select("#proxiesList")
     			.append("div")
     			.attr("class", "proxyItem row")
-         		.attr("id", (i+1).toString());
+         		.attr("id", (i+1).toString())
+			.on("mouseover", function() { 
+				d3.select(this).style("font-weight", "bold")
+					       .style("background", "#ccc"); })
+			.on("mouseout", function() { 
+				d3.select(this).style("font-weight", "normal")
+					       .style("background", "#eee"); });
   	proxyItem.append("div")
-         	.attr("class", "col-md-1")
+         	.attr("class", "col-md-1 pointer")
    		.style("width", "80px")
          	.style("text-align", "left")
          	.attr("title", "#"+ points[i].Id)
          	.text("#"+ points[i].Id)
-		.on("mouseover", function() { d3.select(this).style("font-weight", "bold"); })
-		.on("mouseout", function() { d3.select(this).style("font-weight", "normal"); })
-		.on('click', popupfromlist);
+		.on('click', popupFromList);
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
    		.style("width", "80px")
          	.style("text-align", "right")
-		//.style("color", "#2EA3DB")
-		.style("color", Ocean_color)
+		//.style("color", Ocean_color)
          	.attr("title", points[i].Depth)
          	.text(format1(points[i].Depth));
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
          	.style("text-align", "right")
-		.style("color", "#F5B441")
                 .attr("title", points[i].RecentDate)
                 .text(format2(points[i].RecentDate));
         proxyItem.append("div")
                 .attr("class", "col-md-1")
                 .style("text-align", "right")
-                .style("color", "#F5B441")
          	.attr("title", points[i].OldestDate)
          	.text(format2(points[i].OldestDate));
   	proxyItem.append("div")
@@ -463,7 +465,7 @@ function initList() {
          	.attr("title", points[i].Material)
          	.text(points[i].Material);
   	proxyItem.append("div")
-         	.attr("class", "col-md-2")
+         	.attr("class", "col-md-2 pointer")
          	.style("text-align", "left")
          	.attr("title", points[i].DOI)
          	.text(points[i].DOI)
@@ -480,25 +482,21 @@ function initList() {
 }
 
 //====================================================================
-function popupfromlist() {
+function popupFromList() {
 	var id = d3.select(this).text().split('#').pop();
 	var i = id -1;
 	var lng = points[i].Longitude;
 	var lat = points[i].Latitude;
-	//map.setView(new L.LatLng(lat,lng), 6);
-	//map.panTo(new L.LatLng(lat,lng));
-	//markers[i].openPopup();
-	// https://github.com/Leaflet/Leaflet.markercluster/issues/46
 	var m = markers[i];
-	markerGroup.zoomToShowLayer(m, function () {
-				map.setView(new L.LatLng(lat,lng), 6);  // added to handle single marker
-				m.openPopup();
-			});
+        markerGroup.zoomToShowLayer(m, function () {
+                                map.setView(new L.LatLng(lat,lng), mapMaxZoom);
+                                m.openPopup();
+                        });
 	var container = $("#proxiesList");
 	var scrollTo = $("#" + id);
 	container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
-        $(".proxyItem").css("font-weight", "normal");
-	$("#"+this.id).css("font-weight", "bold");
+	scrollTo.css("font-weight", "bold");
+	scrollTo.css("background", "#ccc");
 }
 
 //====================================================================

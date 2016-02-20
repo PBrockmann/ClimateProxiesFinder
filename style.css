@@ -109,6 +109,10 @@
   border-radius: 10px;
 } 
 
+.pointer {
+  cursor: pointer;
+}
+
 .symbol {
   opacity: 0.5;
 }
