@@ -40,8 +40,8 @@ function init() {
 
 var t0 = performance.now();
 
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies2.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -413,11 +413,11 @@ function initList() {
         .attr("class", "col-md-2")
    	.style("text-align", "left")
    	.text("DOI");
-  //proxyItem.append("div")
-  //      .attr("class", "col-md-3")
-  // 	.style("width", "320px")
-  // 	.style("text-align", "left")
-  // 	.text("Reference");
+  proxyItem.append("div")
+        .attr("class", "col-md-3")
+   	.style("width", "320px")
+   	.style("text-align", "left")
+   	.text("Reference");
 
   format1 = d3.format(".0f");
   format2 = d3.format(".2f");
@@ -475,12 +475,12 @@ function initList() {
 		.on("mouseover", function() { d3.select(this).style("color", "#0645AD"); })
 		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
 		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
-  	//proxyItem.append("div")
-        // 	.attr("class", "col-md-3")
-   	//	.style("width", "320px")
-        // 	.style("text-align", "left")
-        // 	.attr("title", points[i].Reference)
-        // 	.text(points[i].Reference);
+  	proxyItem.append("div")
+         	.attr("class", "col-md-3")
+   		.style("width", "320px")
+         	.style("text-align", "left")
+         	.attr("title", points[i].Reference)
+         	.text(points[i].Reference);
   }
 }
 
