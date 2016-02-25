@@ -56,7 +56,7 @@ d3.tsv("proxies.tsv", function(data) {
   });
   points=data;
 
-  initMap();
+  //initMap();
   initList();
 
   initCrossfilter();
