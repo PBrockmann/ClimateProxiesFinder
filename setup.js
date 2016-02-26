@@ -1,27 +1,22 @@
 
 //====================================================================
 var map;
-var mapMaxZoom = 8;
+var mapMaxZoom = 6;
 
 var markers = [] ;
 var markerGroup ;
 
 var grat;
 
-var filter;
-var depthDimension;
-var depthGrouping;
-var ageDimension;
-var ageGrouping;
-var archiveDimension;
-var archiveGrouping;
-var materialDimension;
-var materialGrouping;
-
-var latDimension;
-var lngDimension;
-var idDimension;
-var idGrouping;
+var xf;
+var depthDim;
+var depthGroup;
+var ageDim;
+var ageGroup;
+var archiveDim;
+var archiveGroup;
+var materialDim;
+var materialGroup;
 
 var  Ice_color = "#008cb2";
 var  Lake_color = "#314f6f";
@@ -37,12 +32,18 @@ var  BenthicForaminifera_color = Ocean_color;
 var  Unkown_color = "#FF4400";
 var  Others_color = "#FF4400";
 
+myIcon = L.icon({
+    iconUrl: 'LSCE_Icon.png',
+    iconSize: [20, 20], 
+    iconAnchor: [10, 0] 
+});
+
 //====================================================================
 function init() {
 
 //-----------------------------------------
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+d3.tsv("proxies_select.tsv", function(data) {
+//d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -54,37 +55,13 @@ d3.tsv("proxies.tsv", function(data) {
         if (d.Latitude < -85) d.Latitude = -85;
         if (d.Latitude > 85) d.Latitude = 85;
   });
-  points=data;
 
-  initMap();
-  initList();
-
-  initCrossfilter();
-
-// bind map bounds to lat/lng filter dimensions
-  latDimension = filter.dimension(function(d) { return Math.round(d.Latitude); });
-  lngDimension = filter.dimension(function(d) { return Math.round(d.Longitude); });
-
-// dimension and group for looking up currently selected markers
-  idDimension = filter.dimension(function(d, i) { return i; });		
-  idGrouping = idDimension.group();
+  //initList(data);
+  initCrossfilter(data);
 
   // Render the total.
-  d3.selectAll("#total").text(filter.size());
-  update1();
-
-//-----------------------------------------
-  map.on("moveend", function() {
-    var bounds = map.getBounds();
-    var northEast = bounds.getNorthEast();
-    var southWest = bounds.getSouthWest();
-
-    // NOTE: need to be careful with the dateline here
-    latDimension.filterRange([southWest.lat, northEast.lat]);
-    lngDimension.filterRange([southWest.lng, northEast.lng]);
-
-    update1();
-  });
+  d3.selectAll("#total").text(xf.size());
+  //update1();
 
 //-----------------------------------------
 });
@@ -170,28 +147,28 @@ map.addLayer(markerGroup);
 }
 
 //====================================================================
-function initCrossfilter() {
+function initCrossfilter(data) {
 
   //-----------------------------------
-  filter = crossfilter(points);
+  xf = crossfilter(data);
 
   //-----------------------------------
   depthRange = [0., 5000.];
   depthBinWidth = 100.;
-  depthDimension = filter.dimension( function(d) { 
+  depthDim = xf.dimension( function(d) { 
 	// Threshold
 	var depthThresholded = d.Depth;
 	if (depthThresholded <= depthRange[0]) depthThresholded = depthRange[0];
 	if (depthThresholded >= depthRange[1]) depthThresholded = depthRange[1] - depthBinWidth;
 	return depthBinWidth*Math.floor(depthThresholded/depthBinWidth);
       });
-  depthGrouping = depthDimension.group();
+  depthGroup = depthDim.group();
 
   //-----------------------------------
   age1Range = [-2.5, 50.];
   age2Range = [-2.5, 50.];
   ageBinWidth = 1.;
-  ageDimension = filter.dimension( function(d) {
+  ageDim = xf.dimension( function(d) {
 	// Threshold
 	var age1Thresholded = d.RecentDate;
 	if (age1Thresholded <= age1Range[0]) age1Thresholded = age1Range[0];
@@ -203,32 +180,60 @@ function initCrossfilter() {
 	var age2 = ageBinWidth*Math.floor(age2Thresholded/ageBinWidth);
         return [age2, age1, d.Archive];
       });
-  ageGrouping = ageDimension.group();
+  ageGroup = ageDim.group();
 
   //-----------------------------------
-  archiveDimension = filter.dimension( function(d) { return d.Archive; });
-  archiveGrouping = archiveDimension.group();
+  archiveDim = xf.dimension( function(d) { return d.Archive; });
+  archiveGroup = archiveDim.group();
 
   //-----------------------------------
-  materialDimension = filter.dimension( function(d) { return d.Material; });
-  materialGrouping = materialDimension.group();
+  materialDim = xf.dimension( function(d) { return d.Material; });
+  materialGroup = materialDim.group();
+
+  //-----------------------------------
+  mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude]; });
+  mapGroup = mapDim.group();
+
+  //-----------------------------------
+  mapChart  = dc.leafletMarkerChart("#chart-map");
+
+  mapChart
+      .width(1000)
+      .height(300)
+      .dimension(mapDim)
+      .group(mapGroup)
+      .center([0,0])
+      .mapOptions({maxZoom: mapMaxZoom})
+      .zoom(1)
+      .filterByArea(true)
+      .cluster(true) 
+      .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
+      .icon(function(d,map) {
+		return myIcon;
+       })
+      .popup(function(d,marker) {
+		console.log(data[10]);
+		console.log(marker);
+		return  "Id: " + "<b>" + d.Id + "</b></br>";
+		//+ "Position: " + "<b>" + d.Longitude.toFixed(2) + "°E</b>, <b>" + d.Latitude.toFixed(2) + "°N</b></br>"
+		//+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  d.Depth.toFixed(2) + "</b></span></br>"
+		//+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + d.RecentDate.toFixed(2) + "</b> to <b>" + d.OldestDate.toFixed(2) + "</b></span></br>"
+		//+ "Archive: " + "<b>" + d.Archive + "</b></br>"
+		//+ "Material: " + "<b>" + d.Material + "</b></br>";
+       });  
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
-  ageChart  = dc.scatterPlot("#chart-age");
-  archiveChart  = dc.rowChart("#chart-archive");
-  materialChart  = dc.rowChart("#chart-material");
 
-  //-----------------------------------
   depthChart
     .width(380)
     .height(200)
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .centerBar(false)
     .elasticY(true)
-    .dimension(depthDimension)
-    .group(depthGrouping)
-    .on("preRedraw", update0)
+    .dimension(depthDim)
+    .group(depthGroup)
+    //.on("preRedraw", update0)
     .x(d3.scale.linear().domain(depthRange))
     .xUnits(dc.units.fp.precision(depthBinWidth))
     .round(function(d) {return depthBinWidth*Math.floor(d/depthBinWidth)})
@@ -246,15 +251,17 @@ function initCrossfilter() {
         .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
    	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
 
+  ageChart  = dc.scatterPlot("#chart-age");
+
   ageChart
     .width(380)
     .height(200)
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
-    .dimension(ageDimension)
-    .group(ageGrouping)
+    .dimension(ageDim)
+    .group(ageGroup)
     .xAxisLabel("Most recent age")
     .yAxisLabel("Oldest age")
-    .on("preRedraw", update0)
+    //.on("preRedraw", update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
@@ -285,13 +292,15 @@ function initCrossfilter() {
   yAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
 
   //-----------------------------------
+  archiveChart  = dc.rowChart("#chart-archive");
+
   archiveChart
     .width(180)
     .height(200)
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
-    .dimension(archiveDimension)
-    .group(archiveGrouping)
-    .on("preRedraw", update0)
+    .dimension(archiveDim)
+    .group(archiveGroup)
+    //.on("preRedraw", update0)
     .colors(archiveColors)
     .elasticX(true)
     .gap(2)
@@ -315,13 +324,15 @@ function initCrossfilter() {
    	.range([Carbonate_color, NonCarbonate_color, Cellulose_color, Coral_color, BenthicForaminifera_color,
 		PlanktonicForaminifera_color, Ice_color, Speleothem_color, Others_color, Unkown_color]);
 
+  materialChart  = dc.rowChart("#chart-material");
+
   materialChart
     .width(180)
     .height(200)
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
-    .dimension(materialDimension)
-    .group(materialGrouping)
-    .on("preRedraw", update0)
+    .dimension(materialDim)
+    .group(materialGroup)
+    //.on("preRedraw", update0)
     .colors(materialColors) 
     .elasticX(true)
     .gap(2)
@@ -336,7 +347,7 @@ function initCrossfilter() {
 //====================================================================
 // set visibility of markers based on crossfilter
 function updateMarkers() {
-  var pointIds = idGrouping.all();
+  var pointIds = idGroup.all();
   for (var i = 0; i < pointIds.length; i++) {
     if (pointIds[i].value > 0)
     	markerGroup.addLayer(markers[i]);
@@ -348,36 +359,36 @@ function updateMarkers() {
 //====================================================================
 // Trigger by dc.charts to update map markers, list and number of selected 
 function update0() {
-  updateMarkers();
+  //updateMarkers();
   updateList();
-  d3.select("#active").text(filter.groupAll().value());
+  d3.select("#active").text(xf.groupAll().value());
 }
 
 //====================================================================
 // Update dc charts, map markers, list and number of selected
 function update1() {
   dc.redrawAll();
-  updateMarkers();
+  //updateMarkers();
   updateList();
-  d3.select("#active").text(filter.groupAll().value());
-  levelZoom = map.getZoom();
-  switch(true) {
-	case (levelZoom > 5): 
-		grat_01.setStyle({opacity: 1.});
-		break;
-	case (levelZoom > 3): 
-		grat_01.setStyle({opacity: 0.});
-		grat_05.setStyle({opacity: 1.});
-		break;
-	default : 
-		grat_01.setStyle({opacity: 0.});
-		grat_05.setStyle({opacity: 0.});
-		break;
-  }
+  d3.select("#active").text(xf.groupAll().value());
+  //levelZoom = map.getZoom();
+  //switch(true) {
+  //      case (levelZoom > 5): 
+  //      	grat_01.setStyle({opacity: 1.});
+  //      	break;
+  //      case (levelZoom > 3): 
+  //      	grat_01.setStyle({opacity: 0.});
+  //      	grat_05.setStyle({opacity: 1.});
+  //      	break;
+  //      default : 
+  //      	grat_01.setStyle({opacity: 0.});
+  //      	grat_05.setStyle({opacity: 0.});
+  //      	break;
+  //}
 }
 
 //====================================================================
-function initList() {
+function initList(data) {
   var proxyItem = d3.select("#proxiesListTitle")
   		.append("div")
   		.attr("class", "row");
@@ -420,7 +431,7 @@ function initList() {
   format1 = d3.format(".0f");
   format2 = d3.format(".2f");
 
-  for (var i = 0; i < points.length; i++) {
+  for (var i = 0; i < data.length; i++) {
   	var proxyItem = d3.select("#proxiesList")
     			.append("div")
     			.attr("class", "proxyItem row")
@@ -435,41 +446,41 @@ function initList() {
          	.attr("class", "col-md-1 pointer")
    		.style("width", "80px")
          	.style("text-align", "left")
-         	.attr("title", "#"+ points[i].Id)
-         	.text("#"+ points[i].Id)
+         	.attr("title", "#"+ data[i].Id)
+         	.text("#"+ data[i].Id)
 		.on('click', popupFromList);
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
    		.style("width", "80px")
          	.style("text-align", "right")
 		//.style("color", Ocean_color)
-         	.attr("title", points[i].Depth)
-         	.text(format1(points[i].Depth));
+         	.attr("title", data[i].Depth)
+         	.text(format1(data[i].Depth));
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
          	.style("text-align", "right")
-                .attr("title", points[i].RecentDate)
-                .text(format2(points[i].RecentDate));
+                .attr("title", data[i].RecentDate)
+                .text(format2(data[i].RecentDate));
         proxyItem.append("div")
                 .attr("class", "col-md-1")
                 .style("text-align", "right")
-         	.attr("title", points[i].OldestDate)
-         	.text(format2(points[i].OldestDate));
+         	.attr("title", data[i].OldestDate)
+         	.text(format2(data[i].OldestDate));
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
          	.style("text-align", "left")
-         	.attr("title", points[i].Archive)
-         	.text(points[i].Archive);
+         	.attr("title", data[i].Archive)
+         	.text(data[i].Archive);
   	proxyItem.append("div")
          	.attr("class", "col-md-2")
          	.style("text-align", "left")
-         	.attr("title", points[i].Material)
-         	.text(points[i].Material);
+         	.attr("title", data[i].Material)
+         	.text(data[i].Material);
   	proxyItem.append("div")
          	.attr("class", "col-md-2 pointer")
          	.style("text-align", "left")
-         	.attr("title", points[i].DOI)
-         	.text(points[i].DOI)
+         	.attr("title", data[i].DOI)
+         	.text(data[i].DOI)
 		.on("mouseover", function() { d3.select(this).style("color", "#0645AD"); })
 		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
 		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
@@ -477,8 +488,8 @@ function initList() {
          	.attr("class", "col-md-3")
    		.style("width", "320px")
          	.style("text-align", "left")
-         	.attr("title", points[i].Reference)
-         	.text(points[i].Reference);
+         	.attr("title", data[i].Reference)
+         	.text(data[i].Reference);
   }
 }
 
@@ -502,7 +513,7 @@ function popupFromList() {
 
 //====================================================================
 function updateList() {
-  var pointIds = idGrouping.all();
+  var pointIds = idGroup.all();
   for (var i = 0; i < pointIds.length; i++) {
     if (pointIds[i].value > 0)
 	 $("#"+(i+1)).show();

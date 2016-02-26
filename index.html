@@ -12,30 +12,20 @@
 
     <script src="lib/jquery-1.12.0.min.js"></script> 
 
-    <script src="lib/Leaflet-0.7.7/leaflet.js"></script> 
-    <link rel="stylesheet" href="lib/Leaflet-0.7.7/leaflet.css" />
-
-    <script src="lib/Leaflet.markercluster/leaflet.markercluster.js"></script>
-    <link rel="stylesheet" href="lib/Leaflet.markercluster/MarkerCluster.css" />
-    <link rel="stylesheet" href="lib/Leaflet.markercluster/MarkerCluster.Default.css" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/Leaflet.zoomhome/leaflet.zoomhome.css"/>
-    <script src="lib/Leaflet.zoomhome/leaflet.zoomhome.js"></script>
-
-    <script src="lib/Leaflet.Graticule/L.Graticule.js"></script>
-
-    <script src="lib/Leaflet.MousePosition/L.Control.MousePosition.js"></script>
-    <link rel="stylesheet" href="lib/Leaflet.MousePosition/L.Control.MousePosition.css" />
-
-    <script src="lib/Leaflet-MiniMap/Control.MiniMap.js"></script>
-    <link rel="stylesheet" href="lib/Leaflet-MiniMap/Control.MiniMap.css" />
-
-    <script src="lib/d3-3.5.15.min.js"></script>
-    <script src="lib/crossfilter-1.3.12.min.js"></script>
-
-    <script src="lib/dc/dc.min.js"></script>
-    <link rel="stylesheet" href="lib/dc/dc.min.css" />
+    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+    <script type="text/javascript" src="bower_components/crossfilter/crossfilter.min.js"></script>
+    
+    <script type="text/javascript" src="bower_components/dcjs/dc.min.js"></script>
+    <link rel="stylesheet" href="bower_components/dcjs/dc.min.css" />
+    
+    <script type="text/javascript" src="bower_components/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    
+    <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    
+    <script src="bower_components/dc-addons/dist/leaflet-map/dc-leaflet.js"></script>
 
     <script src="setup.js"></script>
 
@@ -45,8 +35,10 @@
 
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
 
+<!--
     <script src="lib/pace.min.js"></script>
     <link href="lib/pace-theme-loading-bar.css" rel="stylesheet" />
+-->
 
   </head>
 
@@ -78,7 +70,7 @@
       <!-- Begin page content -->
       <div class="container">
       	<div class="row">
-      		<div id="map" class="col-md-12" style="height: 300px;"></div>
+      		<div id="chart-map" class="dc-chart col-md-12" style="height: 300px;"></div>
         </div>
       	<div class="row">
            	    <div class="dc-chart col-md-4" id="chart-depth">
