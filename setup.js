@@ -37,12 +37,14 @@ var  BenthicForaminifera_color = Ocean_color;
 var  Unkown_color = "#FF4400";
 var  Others_color = "#FF4400";
 
+var DB_path = "/data01/brock/ClimateProxiesFinder_DB/20150923_html";
+
 //====================================================================
 function init() {
 
 //-----------------------------------------
-//d3.tsv("proxies_select.tsv", function(data) {
-d3.tsv("proxies.tsv", function(data) {
+d3.tsv("proxies_full_select.tsv", function(data) {
+//d3.tsv("proxies_full.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -388,6 +390,11 @@ function initList() {
    	.text("Id");
   proxyItem.append("div")
    	.attr("class", "col-md-1")
+   	.style("width", "20px")
+   	.style("text-align", "left")
+   	.text("File");
+  proxyItem.append("div")
+   	.attr("class", "col-md-1")
    	.style("width", "80px")
    	.style("text-align", "right")
    	.text("Depth");
@@ -412,8 +419,8 @@ function initList() {
    	.style("text-align", "left")
    	.text("DOI");
   proxyItem.append("div")
-        .attr("class", "col-md-3")
-   	.style("width", "320px")
+        .attr("class", "col-md-2")
+   	.style("width", "280px")
    	.style("text-align", "left")
    	.text("Reference");
 
@@ -438,6 +445,13 @@ function initList() {
          	.attr("title", "#"+ points[i].Id)
          	.text("#"+ points[i].Id)
 		.on('click', popupFromList);
+  	proxyItem.append("div")
+         	.attr("class", "col-md-1 pointer")
+   		.style("width", "20px")
+         	.style("text-align", "left")
+         	.attr("title", points[i].Filename)
+         	.text(points[i].Filename)
+		.on("click", function() { window.open(DB_path + "/" + d3.select(this).text() + ".html"); });
   	proxyItem.append("div")
          	.attr("class", "col-md-1")
    		.style("width", "80px")
@@ -474,8 +488,8 @@ function initList() {
 		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
 		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
   	proxyItem.append("div")
-         	.attr("class", "col-md-3")
-   		.style("width", "320px")
+         	.attr("class", "col-md-2")
+   		.style("width", "280px")
          	.style("text-align", "left")
          	.attr("title", points[i].Reference)
          	.text(points[i].Reference);
