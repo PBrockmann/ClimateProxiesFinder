@@ -56,7 +56,7 @@ d3.tsv("proxies.tsv", function(data) {
   });
   points=data;
 
-  //initMap();
+  initMap();
   initList();
 
   initCrossfilter();
@@ -301,17 +301,18 @@ function initCrossfilter() {
   var newOrderMaterial = {
 		      "Carbonate": 1, 
 		      "Non-Carbonate": 2,
-		      "Coral": 3,
-		      "Benthic foraminifera": 4,
-		      "Planktonic foraminifera": 5,
-		      "Ice": 6,
-		      "Speleothem": 7,
-                      "Others":8, 
-                      "Unknown": 9 };
+		      "Cellulose": 3,
+		      "Coral": 4,
+		      "Benthic foraminifera": 5,
+		      "Planktonic foraminifera": 6,
+		      "Ice": 7,
+		      "Speleothem": 8,
+                      "Others": 9, 
+                      "Unknown": 10 };
   var materialColors = d3.scale.ordinal()
-        .domain(["Carbonate", "Non-Carbonate", "Coral", "Benthic foraminifera",
+        .domain(["Carbonate", "Non-Carbonate", "Cellulose", "Coral", "Benthic foraminifera",
 		 "Planktonic foraminifera", "Ice", "Speleothem", "Others", "Unknown" ])
-   	.range([Carbonate_color, NonCarbonate_color, Coral_color, BenthicForaminifera_color,
+   	.range([Carbonate_color, NonCarbonate_color, Cellulose_color, Coral_color, BenthicForaminifera_color,
 		PlanktonicForaminifera_color, Ice_color, Speleothem_color, Others_color, Unkown_color]);
 
   materialChart
