@@ -290,11 +290,45 @@ function initCrossfilter(data) {
     .sortBy(function(d){ return d.Id; })
     .order(d3.ascending);
 
-  //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
-  $('#dcTable').on('click', '.dc-table-row', function() {
-    var id = d3.select(this).select(".dc-table-column._0").text();
-    console.log("id: ", id)
-  });
+  // ADD INTERACTIVE FUNCTIONALITY FOR DC TABLE    
+
+  // popup window for extra-long entries
+  //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
+  $('#dcTable').on('mouseover', '.dc-table-column', function() {      
+
+    var $this = $(this);
+
+      // always displays popup for DOI and Reference columns
+      // if (d3.select(this).attr("class") === "dc-table-column _7" || 
+      //     d3.select(this).attr("class") === "dc-table-column _6") {
+      //   $this.attr('title', $this.text());
+      // }
+
+    // displays popup only if text does not fit in col width
+    if (this.offsetWidth < this.scrollWidth) {
+      $this.attr('title', $this.text());
+    }
+
+    // change DOI colour to blue to indicate hyperlink
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      d3.select(this).style("color", "#0645AD");
+    }
+  })
+
+  // reset DOI colour to default
+  $('#dcTable').on('mouseout', '.dc-table-column', function() {
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      d3.select(this).style("color", "#333");
+    }
+  })
+
+  //bind mouse click to DOI entry that opens google scholar page
+  $('#dcTable').on('click', '.dc-table-column', function() {
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      console.log("DOI", d3.select(this).text())
+      window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
+    }
+  })
 
   //-----------------------------------
   dc.renderAll();

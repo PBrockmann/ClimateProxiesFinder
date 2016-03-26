@@ -105,6 +105,14 @@
   vertical-align: top;
 }
 
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
 .imghelp {
   border-radius: 10px;
 } 
