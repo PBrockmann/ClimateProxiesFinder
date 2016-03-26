@@ -117,6 +117,12 @@ function initCrossfilter(data) {
   mapGroup = mapDim.group();
 
   //-----------------------------------
+  tableIdDimension = xf.dimension(function(d) {
+    return +d.Id;
+  });
+
+
+  //-----------------------------------
   mapChart  = dc.leafletMarkerChart("#chart-map");
 
   mapChart
@@ -260,6 +266,35 @@ function initCrossfilter(data) {
     .gap(2)
     .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
+
+  //-----------------------------------  
+  dataTable = dc.dataTable("#dcTable");
+
+  dataTable
+    .width(1060)
+    .height(800)
+    .dimension(tableIdDimension)
+    .group(function(d) { return "Proxies Table"})
+    .size(6)
+    //.size(csv.length) //display all data
+    .columns([
+      function(d) { return d.Id; },
+      function(d) { return d.Depth; },
+      function(d) { return d.RecentDate; },
+      function(d) { return d.OldestDate; },
+      function(d) { return d.Archive; },
+      function(d) { return d.Material; },
+      function(d) { return d.DOI; },
+      function(d) { return d.Reference; }                  
+    ])
+    .sortBy(function(d){ return d.Id; })
+    .order(d3.ascending);
+
+  //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
+  $('#dcTable').on('click', '.dc-table-row', function() {
+    var id = d3.select(this).select(".dc-table-column._0").text();
+    console.log("id: ", id)
+  });
 
   //-----------------------------------
   dc.renderAll();
