@@ -287,7 +287,7 @@ function initCrossfilter(data) {
       function(d) { return d.DOI; },
       function(d) { return d.Reference; }                  
     ])
-    .sortBy(function(d){ return d.Id; })
+    .sortBy(function(d){ return +d.Id; })
     .order(d3.ascending);
 
   // ADD INTERACTIVE FUNCTIONALITY FOR DC TABLE    
@@ -298,11 +298,11 @@ function initCrossfilter(data) {
 
     var $this = $(this);
 
-      // always displays popup for DOI and Reference columns
-      // if (d3.select(this).attr("class") === "dc-table-column _7" || 
-      //     d3.select(this).attr("class") === "dc-table-column _6") {
-      //   $this.attr('title', $this.text());
-      // }
+    // always displays popup for DOI and Reference columns
+    // if (d3.select(this).attr("class") === "dc-table-column _7" || 
+    //     d3.select(this).attr("class") === "dc-table-column _6") {
+    //   $this.attr('title', $this.text());
+    // }
 
     // displays popup only if text does not fit in col width
     if (this.offsetWidth < this.scrollWidth) {
@@ -329,6 +329,41 @@ function initCrossfilter(data) {
       window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
     }
   })
+
+  // bind dcTable to other dc charts when row is clicked
+  //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
+  //$('#dcTable').on('click', '.dc-table-column._0', function() {
+  $('#dcTable').on('click', '.dc-table-row', function() {
+    var id = d3.select(this).select(".dc-table-column._0").text();
+     
+    console.log("id: ", id)
+    console.log("this row: ", d3.select(this))
+    console.log("this text", $(this).text())
+      
+    //d3.select(this).attr("font-weight", "bold");
+
+    if (d3.select("#rowClicked").size() != 0) {
+      d3.select("#rowClicked")
+        .attr("id", null)
+        .style("font-weight", "normal");
+    }
+
+    d3.select(this)
+      .attr("id", "rowClicked")
+      .style("font-weight", "bold");
+
+
+  
+
+        // dataDim.dispose();
+        // dataDim = xf.dimension(function(d) {return d[column];});
+        // dataTable.dimension(dataDim)
+        // dataTable.sortBy(function(d) {
+        //   return d[column];
+        // });
+        // dataTable.redraw();
+  });
+
 
   //-----------------------------------
   dc.renderAll();
