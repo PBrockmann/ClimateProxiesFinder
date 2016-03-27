@@ -293,7 +293,7 @@ function initCrossfilter(data) {
 
   // ADD INTERACTIVE FUNCTIONALITY FOR DC TABLE    
 
-  // popup window for extra-long entries
+  // Add ellipses for long entries and make DOI a hyperlink to google scholar
   //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
   $('#dcTable').on('mouseover', '.dc-table-column', function() {      
 
@@ -316,14 +316,14 @@ function initCrossfilter(data) {
     }
   })
 
-  // reset DOI colour to default
+  // Reset DOI colour to default
   $('#dcTable').on('mouseout', '.dc-table-column', function() {
     if (d3.select(this).attr("class") === "dc-table-column _6") {
       d3.select(this).style("color", "#333");
     }
   })
 
-  //bind mouse click to DOI entry that opens google scholar page
+  // Make DOI a hyperlink to google scholar
   $('#dcTable').on('click', '.dc-table-column', function() {
     if (d3.select(this).attr("class") === "dc-table-column _6") {
       console.log("DOI", d3.select(this).text())
@@ -331,9 +331,8 @@ function initCrossfilter(data) {
     }
   })
 
-  // bind dcTable to other dc charts when row is clicked
+  // Bind dcTable to other dc charts when row is clicked
   //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
-  //$('#dcTable').on('click', '.dc-table-column._0', function() {
   $('#dcTable').on('click', '.dc-table-row', function() {
     var id = d3.select(this).select(".dc-table-column._0").text();
 
@@ -343,6 +342,9 @@ function initCrossfilter(data) {
     dataTable.dimension(tableIdDimension) 
     dataTable.redraw();
     dc.redrawAll();
+
+    // make reset link visible
+    d3.select("#resetTableLink").style("display", "inline")
 
   });
 
@@ -359,12 +361,14 @@ function initCrossfilter(data) {
 function resetTable() {
   tableIdDimension.dispose(); //important! table dim will not be updated without it
   tableIdDimension = xf.dimension(function(d) {
-    console.log("d: ", d)
     return +d.Id;
   });
 
   dataTable.dimension(tableIdDimension) 
   dataTable.redraw();
   dc.redrawAll();
+
+  // make reset link invisible
+  d3.select("#resetTableLink").style("display", "none")
 
 }
