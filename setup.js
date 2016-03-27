@@ -117,10 +117,7 @@ function initCrossfilter(data) {
   mapGroup = mapDim.group();
 
   //-----------------------------------
-  tableIdDimension = xf.dimension(function(d) {
-    return +d.Id;
-  });
-
+ 
 
   //-----------------------------------
   mapChart  = dc.leafletMarkerChart("#chart-map");
@@ -137,17 +134,17 @@ function initCrossfilter(data) {
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
       .icon(function(d,map) {
-		return myIcon;
-       })
+		    return myIcon;
+      })
       .popup(function(d,marker) {
-		console.log(data[10]);
-		console.log(marker);
-		return  "Id: " + "<b>" + d.Id + "</b></br>";
-		//+ "Position: " + "<b>" + d.Longitude.toFixed(2) + "°E</b>, <b>" + d.Latitude.toFixed(2) + "°N</b></br>"
-		//+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  d.Depth.toFixed(2) + "</b></span></br>"
-		//+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + d.RecentDate.toFixed(2) + "</b> to <b>" + d.OldestDate.toFixed(2) + "</b></span></br>"
-		//+ "Archive: " + "<b>" + d.Archive + "</b></br>"
-		//+ "Material: " + "<b>" + d.Material + "</b></br>";
+    		console.log(data[10]);
+    		console.log(marker);
+    		return  "Id: " + "<b>" + d.Id + "</b></br>";
+    		//+ "Position: " + "<b>" + d.Longitude.toFixed(2) + "°E</b>, <b>" + d.Latitude.toFixed(2) + "°N</b></br>"
+    		//+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  d.Depth.toFixed(2) + "</b></span></br>"
+    		//+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + d.RecentDate.toFixed(2) + "</b> to <b>" + d.OldestDate.toFixed(2) + "</b></span></br>"
+    		//+ "Archive: " + "<b>" + d.Archive + "</b></br>"
+    		//+ "Material: " + "<b>" + d.Material + "</b></br>";
        });  
 
   //-----------------------------------
@@ -268,6 +265,10 @@ function initCrossfilter(data) {
     .xAxis().ticks(4);
 
   //-----------------------------------  
+   tableIdDimension = xf.dimension(function(d) {
+    return +d.Id;
+  });
+
   dataTable = dc.dataTable("#dcTable");
 
   dataTable
@@ -335,33 +336,14 @@ function initCrossfilter(data) {
   //$('#dcTable').on('click', '.dc-table-column._0', function() {
   $('#dcTable').on('click', '.dc-table-row', function() {
     var id = d3.select(this).select(".dc-table-column._0").text();
-     
-    console.log("id: ", id)
-    console.log("this row: ", d3.select(this))
-    console.log("this text", $(this).text())
-      
-    //d3.select(this).attr("font-weight", "bold");
 
-    if (d3.select("#rowClicked").size() != 0) {
-      d3.select("#rowClicked")
-        .attr("id", null)
-        .style("font-weight", "normal");
-    }
+    tableIdDimension.filter(id);
 
-    d3.select(this)
-      .attr("id", "rowClicked")
-      .style("font-weight", "bold");
+    //console.log("tableIdDimension: ", tableIdDimension.top(Infinity))
+    dataTable.dimension(tableIdDimension) 
+    dataTable.redraw();
+    dc.redrawAll();
 
-
-  
-
-        // dataDim.dispose();
-        // dataDim = xf.dimension(function(d) {return d[column];});
-        // dataTable.dimension(dataDim)
-        // dataTable.sortBy(function(d) {
-        //   return d[column];
-        // });
-        // dataTable.redraw();
   });
 
 
