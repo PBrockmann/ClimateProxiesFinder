@@ -265,7 +265,7 @@ function initCrossfilter(data) {
     .xAxis().ticks(4);
 
   //-----------------------------------  
-   tableIdDimension = xf.dimension(function(d) {
+  tableIdDimension = xf.dimension(function(d) {
     return +d.Id;
   });
 
@@ -355,3 +355,16 @@ function initCrossfilter(data) {
 
 
 //====================================================================
+// reset dcTable
+function resetTable() {
+  tableIdDimension.dispose(); //important! table dim will not be updated without it
+  tableIdDimension = xf.dimension(function(d) {
+    console.log("d: ", d)
+    return +d.Id;
+  });
+
+  dataTable.dimension(tableIdDimension) 
+  dataTable.redraw();
+  dc.redrawAll();
+
+}
