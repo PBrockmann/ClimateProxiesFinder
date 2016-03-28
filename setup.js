@@ -158,12 +158,7 @@ function initCrossfilter(data) {
     		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id - 1].RecentDate.toFixed(2) + "</b> to <b>" + data[id - 1].OldestDate.toFixed(2) + "</b></span></br>"
     		+ "Archive: " + "<b>" + data[id - 1].Archive + "</b></br>"
     		+ "Material: " + "<b>" + data[id - 1].Material + "</b></br>";
-       })
-      .label(function (d) {
-        console.log("label d: ", d)
-      });
-
-
+       });
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
