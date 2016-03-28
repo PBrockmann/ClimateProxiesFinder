@@ -113,11 +113,17 @@ function initCrossfilter(data) {
   materialGroup = materialDim.group();
 
   //-----------------------------------
-  mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude]; });
-  mapGroup = mapDim.group();
+  // mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude]; });
+  // mapGroup = mapDim.group();
+
+  //add Id to group for map popup window
+  mapDimPopup = xf.dimension(function(d) { return [d.Latitude, d.Longitude, d.Id]; });
+  mapGroupPopup = mapDimPopup.group();
 
   //-----------------------------------
- 
+  tableIdDimension = xf.dimension(function(d) {
+    return +d.Id;
+  });
 
   //-----------------------------------
   mapChart  = dc.leafletMarkerChart("#chart-map");
@@ -125,27 +131,39 @@ function initCrossfilter(data) {
   mapChart
       .width(1000)
       .height(300)
-      .dimension(mapDim)
-      .group(mapGroup)
+      .dimension(mapDimPopup)
+      .group(mapGroupPopup)
       .center([0,0])
       .mapOptions({maxZoom: mapMaxZoom})
       .zoom(1)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function(d,map) {
+      .icon(function() {
 		    return myIcon;
       })
-      .popup(function(d,marker) {
-    		console.log(data[10]);
-    		console.log(marker);
-    		return  "Id: " + "<b>" + d.Id + "</b></br>";
-    		//+ "Position: " + "<b>" + d.Longitude.toFixed(2) + "°E</b>, <b>" + d.Latitude.toFixed(2) + "°N</b></br>"
-    		//+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  d.Depth.toFixed(2) + "</b></span></br>"
-    		//+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + d.RecentDate.toFixed(2) + "</b> to <b>" + d.OldestDate.toFixed(2) + "</b></span></br>"
-    		//+ "Archive: " + "<b>" + d.Archive + "</b></br>"
-    		//+ "Material: " + "<b>" + d.Material + "</b></br>";
-       });  
+      .popup(function (d) {
+        
+        id = d.key[2];
+        // console.log("d.key[2]: ", id)
+        // console.log("data: ", data)
+        // console.log("data[id]: ", data[id - 1])
+        // console.log("data[id].Id: ", data[id - 1].Id)
+        // console.log("mapDim.top: ", mapDim.top(Infinity))
+        // console.log("mapDimPopup.top: ", mapDimPopup.top(Infinity))
+
+    		return  "Id: " + "<b>" + data[id - 1].Id + "</b></br>"
+    		+ "Position: " + "<b>" + data[id - 1].Longitude.toFixed(2) + "°E</b>, <b>" + data[id - 1].Latitude.toFixed(2) + "°N</b></br>"
+    		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id - 1].Depth.toFixed(2) + "</b></span></br>"
+    		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id - 1].RecentDate.toFixed(2) + "</b> to <b>" + data[id - 1].OldestDate.toFixed(2) + "</b></span></br>"
+    		+ "Archive: " + "<b>" + data[id - 1].Archive + "</b></br>"
+    		+ "Material: " + "<b>" + data[id - 1].Material + "</b></br>";
+       })
+      .label(function (d) {
+        console.log("label d: ", d)
+      });
+
+
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
@@ -264,11 +282,7 @@ function initCrossfilter(data) {
     .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
 
-  //-----------------------------------  
-  tableIdDimension = xf.dimension(function(d) {
-    return +d.Id;
-  });
-
+  //-----------------------------------
   dataTable = dc.dataTable("#dcTable");
 
   dataTable
