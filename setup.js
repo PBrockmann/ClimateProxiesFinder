@@ -42,8 +42,8 @@ myIcon = L.icon({
 function init() {
 
 //-----------------------------------------
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -191,7 +191,7 @@ function initCrossfilter(data) {
   materialGroup = materialDim.group();
 
   //-----------------------------------
-  mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude]; });
+  mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude, d.Id]; });
   mapGroup = mapDim.group();
 
   //-----------------------------------
@@ -208,18 +208,17 @@ function initCrossfilter(data) {
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function(d,map) {
+      .icon(function() {
 		return myIcon;
        })
-      .popup(function(d,marker) {
-		console.log(data[10]);
-		console.log(marker);
-		return  "Id: " + "<b>" + d.Id + "</b></br>";
-		//+ "Position: " + "<b>" + d.Longitude.toFixed(2) + "°E</b>, <b>" + d.Latitude.toFixed(2) + "°N</b></br>"
-		//+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  d.Depth.toFixed(2) + "</b></span></br>"
-		//+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + d.RecentDate.toFixed(2) + "</b> to <b>" + d.OldestDate.toFixed(2) + "</b></span></br>"
-		//+ "Archive: " + "<b>" + d.Archive + "</b></br>"
-		//+ "Material: " + "<b>" + d.Material + "</b></br>";
+      .popup(function(d) {
+		id = d.key[2] -1;
+    		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
+    		+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
+    		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"
+    		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
+    		+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
+    		+ "Material: " + "<b>" + data[id].Material + "</b></br>";
        });  
 
   //-----------------------------------
