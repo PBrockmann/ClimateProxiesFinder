@@ -19,7 +19,7 @@
         var _renderPopup = true;
         var _mapOptions = false;
         var _defaultCenter = false;
-        var _defaultZoom = false;
+        var _defaultZoom = true;
         var _brushOn = false;
 
         var _tiles = function (map) {
@@ -533,7 +533,7 @@
         };
 
         var zoomFilter = function (e) {
-            if (e.type === 'moveend' && (_zooming || e.hard)) {
+            if (e.type === 'moveend' && (_zooming || e.hard)) {                
                 return;
             }
             _zooming = false;
@@ -541,6 +541,7 @@
             _disableFitOnRedraw = true;
 
             if (_filterByArea) {
+                console.log("filter by area")
                 var filter;
                 if (_chart.map().getCenter().equals(_chart.center()) && _chart.map().getZoom() === _chart.zoom()) {
                     filter = null;
@@ -559,7 +560,7 @@
                 });
             } else if (_chart.filter() && (e.type === 'click' ||
                                            (_markerList.indexOf(_chart.filter()) !== -1 &&
-                                            !_chart.map().getBounds().contains(_markerList[_chart.filter()].getLatLng())))) {
+                                            !_chart.map().getBounds().contains(_markerList[_chart.filter()].getLatLng())))) {                
                 dc.events.trigger(function () {
                     _chart.filter(null);
                     if (_renderPopup) {

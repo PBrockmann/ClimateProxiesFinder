@@ -135,9 +135,9 @@ function initCrossfilter(data) {
       .group(mapGroupPopup)
       .center([0,0])
       .mapOptions({maxZoom: mapMaxZoom})
-      .zoom(1)
+      .zoom(7)      
       .title(function() { return null; }) //turns off small popup when hovering over icon
-      .filterByArea(true)
+      .filterByArea(false)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
       .icon(function() {
@@ -209,6 +209,7 @@ function initCrossfilter(data) {
     .renderVerticalGridLines(true)
     .symbolSize(8)
     .highlightedSize(8)
+    .excludedSize(8)
     .existenceAccessor(function(d) { return d.value > 0 ; })
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)

@@ -9010,7 +9010,7 @@ dc.scatterPlot = function (parent, chartGroup) {
     var _emptySize = 0;
     var _filtered = [];
 
-    _symbol.size(function (d, i) {
+    _symbol.size(function (d, i) {        
         if (!_existenceAccessor(d)) {
             return _emptySize;
         } else if (_filtered[i]) {
@@ -9139,7 +9139,7 @@ dc.scatterPlot = function (parent, chartGroup) {
      * @return {Number}
      * @return {dc.scatterPlot}
      */
-    _chart.highlightedSize = function (highlightedSize) {
+    _chart.highlightedSize = function (highlightedSize) {         
         if (!arguments.length) {
             return _highlightedSize;
         }
