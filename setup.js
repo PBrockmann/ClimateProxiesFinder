@@ -1,7 +1,7 @@
 
 //====================================================================
 var map;
-var mapMaxZoom = 6;
+var mapMaxZoom = 8;
 
 var markers = [] ;
 var markerGroup ;
@@ -56,94 +56,20 @@ d3.tsv("proxies.tsv", function(data) {
         if (d.Latitude > 85) d.Latitude = 85;
   });
 
-  //initList(data);
   initCrossfilter(data);
 
-  // Render the total.
-  d3.selectAll("#total").text(xf.size());
-  //update1();
+  theMap = mapChart.map();
+  //grat_10 = new L.graticule({ interval: 10, style: { color: '#333', weight: 1, opacity: 1. } }).addTo(theMap);
+  mousepos = new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
+  zoomHome = new L.Control.zoomHome().addTo(theMap);
+
+  mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+  mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
+  //miniMap = new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
 //-----------------------------------------
 });
 
-}
-
-//====================================================================
-function initMap() {
-
-var mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
-//var mapmadeUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-    mapmadeAttribution = 'LSCE &copy; 2014 | Baselayer &copy; ArcGis',
-    mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: mapMaxZoom, attribution: mapmadeAttribution}),
-    maplatlng = new L.LatLng(0, 0);
-
-map = new L.Map('map', {center: maplatlng, zoom: 1, layers: [mapmade], zoomControl: false});
-
-var zoomHome = L.Control.zoomHome();
-zoomHome.addTo(map);
-
-grat_10 = L.graticule({ interval: 10, style: { color: '#333', weight: 1, opacity: 1. } }).addTo(map);
-grat_05 = L.graticule({ interval: 05, style: { color: '#333', weight: 1, opacity: 0. } }).addTo(map);
-grat_01 = L.graticule({ interval: 01, style: { color: '#333', weight: 1, opacity: 0. } }).addTo(map);
-
-mousepos = new L.Control.MousePosition({lngFirst: true}).addTo(map);
-
-mapmade2 = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1, attribution: mapmadeAttribution });
-miniMap = new L.Control.MiniMap(mapmade2, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(map);
-
-myIcon = L.icon({
-    iconUrl: 'LSCE_Icon.png',
-    iconSize: [20, 20], 
-    iconAnchor: [10, 0] 
-});
-
-myIconBright = L.icon({
-    iconUrl: 'LSCE_IconBright.png',
-    iconSize: [20, 20], 
-    iconAnchor: [10, 0] 
-});
-
-markerGroup = new L.MarkerClusterGroup({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true});
-
-//http://stackoverflow.com/questions/17423261/how-to-pass-data-with-marker-in-leaflet-js
-customMarker = L.Marker.extend({
-   options: { 
-      Id: 'Custom data!'
-   }
-});
-
-// create array of markers from points and add them to the map
-for (var i = 0; i < points.length; i++) {
-//   markers[i] = new L.Marker(new L.LatLng(points[i].Latitude, points[i].Longitude));
-   markers[i] = new customMarker([points[i].Latitude, points[i].Longitude], {icon: myIcon, Id: (i+1).toString()});
-   markers[i].bindPopup(
-		  "Id: " + "<b>" + points[i].Id + "</b></br>"
-		+ "Position: " + "<b>" + points[i].Longitude.toFixed(2) + "°E</b>, <b>" + points[i].Latitude.toFixed(2) + "°N</b></br>"
-		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  points[i].Depth.toFixed(2) + "</b></span></br>"
-		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + points[i].RecentDate.toFixed(2) + "</b> to <b>" + points[i].OldestDate.toFixed(2) + "</b></span></br>"
-		+ "Archive: " + "<b>" + points[i].Archive + "</b></br>"
-		+ "Material: " + "<b>" + points[i].Material + "</b></br>"
-		,{autoPan: true, keepInView: true, closeOnClick: false}
-		);
-   markers[i].on('mouseover', function(e) {
-	 e.target.setIcon(myIconBright);
-	 e.target.openPopup();
-	 var scrollTo = $("#"+e.target.options.Id);
-	 var container = $("#proxiesList");
-	 container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
-	 scrollTo.css("font-weight", "bold");
-	 scrollTo.css("background", "#ccc");
-	});
-   markers[i].on('mouseout', function(e) {
-	 e.target.setIcon(myIcon);
-	 e.target.closePopup();
-	 var scrollTo = $("#"+e.target.options.Id);
-	 scrollTo.css("font-weight", "normal");
-	 scrollTo.css("background", "#eee");
-	});
-   markerGroup.addLayer(markers[i]);
-}
-map.addLayer(markerGroup);
 }
 
 //====================================================================
@@ -195,31 +121,45 @@ function initCrossfilter(data) {
   mapGroup = mapDim.group();
 
   //-----------------------------------
+  tableIdDimension = xf.dimension(function(d) {
+    return +d.Id;
+  });
+
+  //-----------------------------------
   mapChart  = dc.leafletMarkerChart("#chart-map");
+
+  mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+  mapmadeAttribution = 'LSCE &copy; 2016 | Baselayer &copy; ArcGis',
+  mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: mapMaxZoom, attribution: mapmadeAttribution}),
+  maplatlng = new L.LatLng(0, 0);
 
   mapChart
       .width(1000)
       .height(300)
       .dimension(mapDim)
       .group(mapGroup)
-      .center([0,0])
-      .mapOptions({maxZoom: mapMaxZoom})
-      .zoom(1)
+      .mapOptions({zoomControl: false})
+      .center([40,0])
+      .zoom(4)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
       .icon(function() {
 		return myIcon;
        })
+      .title(function() {})
       .popup(function(d) {
 		id = d.key[2] -1;
     		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
-    		+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
-    		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"
-    		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
-    		+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
-    		+ "Material: " + "<b>" + data[id].Material + "</b></br>";
+    			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
+    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) 
+				+ "</b></span></br>"
+    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) 
+				+ "</b></span></br>"
+    			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
+    			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
        });  
+
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
@@ -232,7 +172,6 @@ function initCrossfilter(data) {
     .elasticY(true)
     .dimension(depthDim)
     .group(depthGroup)
-    //.on("preRedraw", update0)
     .x(d3.scale.linear().domain(depthRange))
     .xUnits(dc.units.fp.precision(depthBinWidth))
     .round(function(d) {return depthBinWidth*Math.floor(d/depthBinWidth)})
@@ -260,7 +199,6 @@ function initCrossfilter(data) {
     .group(ageGroup)
     .xAxisLabel("Most recent age")
     .yAxisLabel("Oldest age")
-    //.on("preRedraw", update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
@@ -268,7 +206,8 @@ function initCrossfilter(data) {
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)
     .symbolSize(8)
-    .highlightedSize(8)
+    //.excludedSize(4)
+    //.excludedOpacity(0.1)
     .existenceAccessor(function(d) { return d.value > 0 ; })
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
@@ -299,7 +238,6 @@ function initCrossfilter(data) {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(archiveDim)
     .group(archiveGroup)
-    //.on("preRedraw", update0)
     .colors(archiveColors)
     .elasticX(true)
     .gap(2)
@@ -331,194 +269,124 @@ function initCrossfilter(data) {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(materialDim)
     .group(materialGroup)
-    //.on("preRedraw", update0)
     .colors(materialColors) 
     .elasticX(true)
     .gap(2)
     .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
 
+//-----------------------------------
+  dataCount = dc.dataCount('.dc-data-count');
+
+  dataCount 
+        .dimension(xf)
+        .group(xf.groupAll())
+        .html({
+            some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
+                ' | <a href=\'javascript:dc.filterAll(); dc.redrawAll();\'>Reset All</a>',
+            all: 'All records selected. Please click on the graph to apply filters.'
+        });
+
+//-----------------------------------
+  dataTable = dc.dataTable("#dcTable");
+
+  format1 = d3.format(".0f");
+  format2 = d3.format(".2f");
+
+  dataTable
+    .dimension(tableIdDimension)
+    .group(function(d) {})
+    .showGroups(false)
+    .size(10)
+    //.size(xf.size()) //display all data
+    .columns([
+      function(d) { return d.Id; },
+      function(d) { return format1(d.Depth); },
+      function(d) { return format2(d.RecentDate); },
+      function(d) { return format2(d.OldestDate); },
+      function(d) { return d.Archive; },
+      function(d) { return d.Material; },
+      function(d) { return d.DOI; },
+      function(d) { return d.Reference; }                  
+    ])
+    .sortBy(function(d){ return +d.Id; })
+    .order(d3.ascending);
+
+  // ADD INTERACTIVE FUNCTIONALITY FOR DC TABLE    
+
+  // Add ellipses for long entries and make DOI a hyperlink to google scholar
+  //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
+  $('#dcTable').on('mouseover', '.dc-table-column', function() {      
+
+    var $this = $(this);
+
+    // always displays popup for DOI and Reference columns
+    // if (d3.select(this).attr("class") === "dc-table-column _7" || 
+    //     d3.select(this).attr("class") === "dc-table-column _6") {
+    //   $this.attr('title', $this.text());
+    // }
+
+    // displays popup only if text does not fit in col width
+    if (this.offsetWidth < this.scrollWidth) {
+      $this.attr('title', $this.text());
+    }
+
+    // change DOI colour to blue to indicate hyperlink
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      d3.select(this).style("color", "#0645AD");
+    }
+  })
+
+  // Reset DOI colour to default
+  $('#dcTable').on('mouseout', '.dc-table-column', function() {
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      d3.select(this).style("color", "#333");
+    }
+  })
+
+  // Make DOI a hyperlink to google scholar
+  $('#dcTable').on('click', '.dc-table-column', function() {
+    if (d3.select(this).attr("class") === "dc-table-column _6") {
+      console.log("DOI", d3.select(this).text())
+      window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
+    }
+  })
+
+  // Bind dcTable to other dc charts when row is clicked
+  //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
+  $('#dcTable').on('click', '.dc-table-row', function() {
+    var id = d3.select(this).select(".dc-table-column._0").text();
+
+    tableIdDimension.filter(id);
+
+    //console.log("tableIdDimension: ", tableIdDimension.top(Infinity))
+    dataTable.dimension(tableIdDimension) 
+    dc.redrawAll();
+
+    // make reset link visible
+    d3.select("#resetTableLink").style("display", "inline")
+
+  });
+
+
   //-----------------------------------
   dc.renderAll();
 
 }
 
-//====================================================================
-// set visibility of markers based on crossfilter
-function updateMarkers() {
-  var pointIds = idGroup.all();
-  for (var i = 0; i < pointIds.length; i++) {
-    if (pointIds[i].value > 0)
-    	markerGroup.addLayer(markers[i]);
-    else  
-    	markerGroup.removeLayer(markers[i]);
-  }
-}
+// reset dcTable
+function resetTable() {
+  tableIdDimension.dispose(); //important! table dim will not be updated without it
+  tableIdDimension = xf.dimension(function(d) {
+    return +d.Id;
+  });
 
-//====================================================================
-// Trigger by dc.charts to update map markers, list and number of selected 
-function update0() {
-  //updateMarkers();
-  updateList();
-  d3.select("#active").text(xf.groupAll().value());
-}
-
-//====================================================================
-// Update dc charts, map markers, list and number of selected
-function update1() {
+  dataTable.dimension(tableIdDimension) 
   dc.redrawAll();
-  //updateMarkers();
-  updateList();
-  d3.select("#active").text(xf.groupAll().value());
-  //levelZoom = map.getZoom();
-  //switch(true) {
-  //      case (levelZoom > 5): 
-  //      	grat_01.setStyle({opacity: 1.});
-  //      	break;
-  //      case (levelZoom > 3): 
-  //      	grat_01.setStyle({opacity: 0.});
-  //      	grat_05.setStyle({opacity: 1.});
-  //      	break;
-  //      default : 
-  //      	grat_01.setStyle({opacity: 0.});
-  //      	grat_05.setStyle({opacity: 0.});
-  //      	break;
-  //}
-}
 
-//====================================================================
-function initList(data) {
-  var proxyItem = d3.select("#proxiesListTitle")
-  		.append("div")
-  		.attr("class", "row");
-  proxyItem.append("div")
-   	.attr("class", "col-md-1")
-   	.style("width", "80px")
-   	.style("text-align", "left")
-   	.text("Id");
-  proxyItem.append("div")
-   	.attr("class", "col-md-1")
-   	.style("width", "80px")
-   	.style("text-align", "right")
-   	.text("Depth");
-  proxyItem.append("div")
-   	.attr("class", "col-md-1")
-   	.style("text-align", "right")
-   	.text("Most recent");
-  proxyItem.append("div")
-   	.attr("class", "col-md-1")
-   	.style("text-align", "right")
-   	.text("Oldest");
-  proxyItem.append("div")
-   	.attr("class", "col-md-1")
-   	.style("text-align", "left")
-   	.text("Archive");
-  proxyItem.append("div")
-   	.attr("class", "col-md-2")
-   	.style("text-align", "left")
-   	.text("Material");
-  proxyItem.append("div")
-        .attr("class", "col-md-2")
-   	.style("text-align", "left")
-   	.text("DOI");
-  proxyItem.append("div")
-        .attr("class", "col-md-3")
-   	.style("width", "320px")
-   	.style("text-align", "left")
-   	.text("Reference");
+  // make reset link invisible
+  d3.select("#resetTableLink").style("display", "none");
 
-  format1 = d3.format(".0f");
-  format2 = d3.format(".2f");
-
-  for (var i = 0; i < data.length; i++) {
-  	var proxyItem = d3.select("#proxiesList")
-    			.append("div")
-    			.attr("class", "proxyItem row")
-         		.attr("id", (i+1).toString())
-			.on("mouseover", function() { 
-				d3.select(this).style("font-weight", "bold")
-					       .style("background", "#ccc"); })
-			.on("mouseout", function() { 
-				d3.select(this).style("font-weight", "normal")
-					       .style("background", "#eee"); });
-  	proxyItem.append("div")
-         	.attr("class", "col-md-1 pointer")
-   		.style("width", "80px")
-         	.style("text-align", "left")
-         	.attr("title", "#"+ data[i].Id)
-         	.text("#"+ data[i].Id)
-		.on('click', popupFromList);
-  	proxyItem.append("div")
-         	.attr("class", "col-md-1")
-   		.style("width", "80px")
-         	.style("text-align", "right")
-		//.style("color", Ocean_color)
-         	.attr("title", data[i].Depth)
-         	.text(format1(data[i].Depth));
-  	proxyItem.append("div")
-         	.attr("class", "col-md-1")
-         	.style("text-align", "right")
-                .attr("title", data[i].RecentDate)
-                .text(format2(data[i].RecentDate));
-        proxyItem.append("div")
-                .attr("class", "col-md-1")
-                .style("text-align", "right")
-         	.attr("title", data[i].OldestDate)
-         	.text(format2(data[i].OldestDate));
-  	proxyItem.append("div")
-         	.attr("class", "col-md-1")
-         	.style("text-align", "left")
-         	.attr("title", data[i].Archive)
-         	.text(data[i].Archive);
-  	proxyItem.append("div")
-         	.attr("class", "col-md-2")
-         	.style("text-align", "left")
-         	.attr("title", data[i].Material)
-         	.text(data[i].Material);
-  	proxyItem.append("div")
-         	.attr("class", "col-md-2 pointer")
-         	.style("text-align", "left")
-         	.attr("title", data[i].DOI)
-         	.text(data[i].DOI)
-		.on("mouseover", function() { d3.select(this).style("color", "#0645AD"); })
-		.on("mouseout", function() { d3.select(this).style("color", "#333"); })
-		.on("click", function() { window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text()); });
-  	proxyItem.append("div")
-         	.attr("class", "col-md-3")
-   		.style("width", "320px")
-         	.style("text-align", "left")
-         	.attr("title", data[i].Reference)
-         	.text(data[i].Reference);
-  }
-}
-
-//====================================================================
-function popupFromList() {
-	var id = d3.select(this).text().split('#').pop();
-	var i = id -1;
-	var lng = points[i].Longitude;
-	var lat = points[i].Latitude;
-	var m = markers[i];
-        markerGroup.zoomToShowLayer(m, function () {
-                                map.setView(new L.LatLng(lat,lng), mapMaxZoom);
-                                m.openPopup();
-                        });
-	var container = $("#proxiesList");
-	var scrollTo = $("#" + id);
-	container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
-	scrollTo.css("font-weight", "bold");
-	scrollTo.css("background", "#ccc");
-}
-
-//====================================================================
-function updateList() {
-  var pointIds = idGroup.all();
-  for (var i = 0; i < pointIds.length; i++) {
-    if (pointIds[i].value > 0)
-	 $("#"+(i+1)).show();
-    else
-	 $("#"+(i+1)).hide();
-  }
 }
 
 //====================================================================

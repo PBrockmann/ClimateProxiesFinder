@@ -24,11 +24,11 @@
 
         var _tiles = function (map) {
             L.tileLayer(
-               // 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-		'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}.png',
+		'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+                //'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                 {
-                    attribution: 'LSCE &copy; 2014 | Baselayer &copy; ArcGis'
                     //attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    attribution: 'LSCE &copy; 2016 | Baselayer &copy; ArcGis'
                 }
             ).addTo(map);
         };
@@ -340,8 +340,7 @@
         };
 
         var _popup = function (d,marker) {
-            //return _chart.title()(d);			// change Patrick
-            return _chart.title()(d), marker;
+            return _chart.title()(d);
         };
 
         _chart._postRender = function () {

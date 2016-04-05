@@ -27,6 +27,18 @@
     
     <script src="bower_components/dc-addons/dist/leaflet-map/dc-leaflet.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/Leaflet.zoomhome/leaflet.zoomhome.css"/>
+    <script src="lib/Leaflet.zoomhome/leaflet.zoomhome.js"></script>
+
+    <script src="lib/Leaflet.Graticule/L.Graticule.js"></script>
+
+    <script src="lib/Leaflet.MousePosition/L.Control.MousePosition.js"></script>
+    <link rel="stylesheet" href="lib/Leaflet.MousePosition/L.Control.MousePosition.css" />
+
+    <script src="lib/Leaflet-MiniMap/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="lib/Leaflet-MiniMap/Control.MiniMap.css" />
+
     <script src="setup.js"></script>
 
     <script src="lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
@@ -105,8 +117,30 @@
 			<br>
            	     </div>
         </div>
-      	<div class="row">
-			<div id="totals"><span id="active">-</span> of <span id="total">-</span> proxies selected.</div>
+        <div class="row">
+		<div class='dc-data-count'>
+			<span class='filter-count'></span>selected out of <span class='total-count'></span> records.
+		</div>
+        </div>
+        <div class='row'>
+           <a id="resetTableLink" class="reset" href="javascript:resetTable();" style="display: none;">Reset Table</a>
+           <div class='span12'>
+             <table class='table table-hover' id='dcTable'>
+            
+             <thead>
+               <tr class='header'>
+                 <th>Id</th>
+                 <th>Depth</th>
+                 <th>Most Recent</th>
+                 <th>Oldest</th>
+                 <th>Archive</th>
+                 <th>Material</th>
+                 <th>DOI</th>
+                 <th>Reference</th>
+               </tr>
+             </thead>
+             </table>
+           </div>
         </div>
       	<div class="row">
       		<div id="proxiesListTitle" class="col-md-12"></div>
