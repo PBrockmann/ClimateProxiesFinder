@@ -136,6 +136,7 @@ function initCrossfilter(data) {
       .center([0,0])
       .mapOptions({maxZoom: mapMaxZoom})
       .zoom(1)
+      .title(function() { return null; }) //turns off small popup when hovering over icon
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
