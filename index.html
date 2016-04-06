@@ -15,7 +15,7 @@
     <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
     <script type="text/javascript" src="bower_components/crossfilter/crossfilter.min.js"></script>
     
-    <script type="text/javascript" src="bower_components/dcjs/dc.min.js"></script>
+    <script type="text/javascript" src="bower_components/dcjs/dc.js"></script>
     <link rel="stylesheet" href="bower_components/dcjs/dc.min.css" />
     
     <script type="text/javascript" src="bower_components/leaflet/dist/leaflet.js"></script>
@@ -122,29 +122,23 @@
 			<span class='filter-count'></span>selected out of <span class='total-count'></span> records.
 		</div>
         </div>
+        <br>
         <div class='row'>
            <a id="resetTableLink" class="reset" href="javascript:resetTable();" style="display: none;">Reset Table</a>
-           <div class='span12'>
-             <table class='table table-hover' id='dcTable'>
-            
+           <table class='span12 table table-hover' id='dcTable'>
              <thead>
                <tr class='header'>
-                 <th>Id</th>
-                 <th>Depth</th>
-                 <th>Most Recent</th>
-                 <th>Oldest</th>
-                 <th>Archive</th>
-                 <th>Material</th>
-                 <th>DOI</th>
-                 <th>Reference</th>
+                 <th class="th_Id" >Id</th>
+                 <th class="th_Dep">Depth</th>
+                 <th class="th_Mos">Most Recent</th>
+                 <th class="th_Old">Oldest</th>
+                 <th class="th_Arc">Archive</th>
+                 <th class="th_Mat">Material</th>
+                 <th class="th_DOI">DOI</th>
+                 <th class="th_Ref">Reference</th>
                </tr>
              </thead>
-             </table>
-           </div>
-        </div>
-      	<div class="row">
-      		<div id="proxiesListTitle" class="col-md-12"></div>
-      		<div id="proxiesList" class="col-md-12" style="max-height: 160px; overflow-y:auto;"></div>
+           </table>
         </div>
       </div><!-- /.container -->
 
@@ -152,7 +146,7 @@
 
     <div id="footer">
        <div class="container">
-		<p class="text-muted credit">Realised by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.4 - 2016/02/08</p>
+		<p class="text-muted credit">Realised by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.6 - 2016/04/06</p>
       </div><!-- /.container -->
     </div>
 

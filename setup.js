@@ -59,13 +59,13 @@ d3.tsv("proxies.tsv", function(data) {
   initCrossfilter(data);
 
   theMap = mapChart.map();
-  //grat_10 = new L.graticule({ interval: 10, style: { color: '#333', weight: 1, opacity: 1. } }).addTo(theMap);
-  mousepos = new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
-  zoomHome = new L.Control.zoomHome().addTo(theMap);
+  new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
+  new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
+  new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [0, 0]}).addTo(theMap);
 
   mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
   mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
-  //miniMap = new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
+  miniMap = new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
 //-----------------------------------------
 });
@@ -126,25 +126,26 @@ function initCrossfilter(data) {
   });
 
   //-----------------------------------
-  mapChart  = dc.leafletMarkerChart("#chart-map");
+  var archiveColors = d3.scale.ordinal()
+        .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
+   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
 
-  mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
-  mapmadeAttribution = 'LSCE &copy; 2016 | Baselayer &copy; ArcGis',
-  mapmade = new L.TileLayer(mapmadeUrl, {maxZoom: mapMaxZoom, attribution: mapmadeAttribution}),
-  maplatlng = new L.LatLng(0, 0);
+  mapChart  = dc.leafletMarkerChart("#chart-map");
 
   mapChart
       .width(1000)
       .height(300)
       .dimension(mapDim)
       .group(mapGroup)
-      .mapOptions({zoomControl: false})
+      .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .center([40,0])
       .zoom(4)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function() {
+      .icon(function(d,map) {
+		//id = d.key[2] -1;
+		//console.log(archiveColors(data[id].Archive));
 		return myIcon;
        })
       .title(function() {})
@@ -185,10 +186,6 @@ function initCrossfilter(data) {
   yAxis_depthChart.tickFormat(d3.format("d")).tickSubdivide(0);
 
   //-----------------------------------
-  var archiveColors = d3.scale.ordinal()
-        .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
-   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
-
   ageChart  = dc.scatterPlot("#chart-age");
 
   ageChart
@@ -206,8 +203,7 @@ function initCrossfilter(data) {
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)
     .symbolSize(8)
-    //.excludedSize(4)
-    //.excludedOpacity(0.1)
+    .excludedSize(4)
     .existenceAccessor(function(d) { return d.value > 0 ; })
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
@@ -217,9 +213,9 @@ function initCrossfilter(data) {
     	else {
       	// assume it's one RangedTwoDimensionalFilter
     	dim.filterFunction(function(d) {
-      		return filters[0].isFiltered([d[0],d[1]]);
-      		})
-    	}
+      	   return filters[0].isFiltered([d[0],d[1]]);
+     	})
+      }
     });
     // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/
     // .colors("#ff0000");
@@ -297,7 +293,7 @@ function initCrossfilter(data) {
     .dimension(tableIdDimension)
     .group(function(d) {})
     .showGroups(false)
-    .size(10)
+    .size(100)
     //.size(xf.size()) //display all data
     .columns([
       function(d) { return d.Id; },
