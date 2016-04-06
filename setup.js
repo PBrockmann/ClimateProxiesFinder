@@ -42,8 +42,8 @@ myIcon = L.icon({
 function init() {
 
 //-----------------------------------------
-d3.tsv("proxies_select.tsv", function(data) {
-//d3.tsv("proxies.tsv", function(data) {
+//d3.tsv("proxies_select.tsv", function(data) {
+d3.tsv("proxies.tsv", function(data) {
   data.forEach(function(d) {
         d.Longitude = +d.Longitude;
         d.Latitude = +d.Latitude;
@@ -218,7 +218,7 @@ function initCrossfilter(data) {
       		dim.filter(null);
       else {
        	// assume it's one RangedTwoDimensionalFilter
-      	dim.filterFunction(function(d, i) {
+      	dim.filterFunction(function(d, i) {          
           return filters[0].isFiltered([d[0],d[1]]);
         })
       }

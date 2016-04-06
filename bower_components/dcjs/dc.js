@@ -946,9 +946,9 @@ dc.filters.RangedTwoDimensionalFilter = function (filter) {
     } else {
         fromBottomLeft = [[filter[0], -Infinity], [filter[1], Infinity]];
     }
-
+    
     f.isFiltered = function (value) {
-        var x, y;
+        var x, y;    
 
         if (value instanceof Array) {
             if (value.length !== 2) {
@@ -956,14 +956,16 @@ dc.filters.RangedTwoDimensionalFilter = function (filter) {
             }
             x = value[0];
             y = value[1];
-        } else {
+        } else {            
             x = value;
-            y = fromBottomLeft[0][1];
-        }
+            y = fromBottomLeft[0][1];            
+        }    
 
         return x >= fromBottomLeft[0][0] && x < fromBottomLeft[1][0] &&
                y >= fromBottomLeft[0][1] && y < fromBottomLeft[1][1];
+     
     };
+
     f.filterType = 'RangedTwoDimensionalFilter';
 
     return f;
@@ -9030,7 +9032,7 @@ dc.scatterPlot = function (parent, chartGroup) {
 
     _chart.plotData = function () {
         var symbols = _chart.chartBodyG().selectAll('path.symbol')
-                .data(_chart.data());
+                .data(_chart.data());        
 
         symbols
             .enter()
@@ -9040,9 +9042,9 @@ dc.scatterPlot = function (parent, chartGroup) {
             .attr('fill', _chart.getColor)
             .attr('transform', _locator);
 
-        symbols.each(function (d, i) {       
-            //_filtered[i] = !_chart.filter() || _chart.filter().isFiltered(d.key);
-            _filtered[i] = !_chart.filter() || _chart.filter().isFiltered(d.key[0],d.key[1]);          
+        symbols.each(function (d, i) {
+            //_filtered[i] = !_chart.filter() || _chart.filter().isFiltered(d.key);              
+            _filtered[i] = !_chart.filter() || _chart.filter().isFiltered([d.key[0], d.key[1]]);
         });
 
         dc.transition(symbols, _chart.transitionDuration())
