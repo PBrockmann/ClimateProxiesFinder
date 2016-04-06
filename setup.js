@@ -214,14 +214,19 @@ function initCrossfilter(data) {
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
     .filterHandler(function(dim, filters) {
-  	if(!filters || !filters.length)
-    		dim.filter(null);
-    	else {
-      	// assume it's one RangedTwoDimensionalFilter
-    	dim.filterFunction(function(d) {
-      		return filters[0].isFiltered([d[0],d[1]]);
-      		})
-    	}
+    	if(!filters || !filters.length)
+      		dim.filter(null);
+      else {
+       	// assume it's one RangedTwoDimensionalFilter
+      	dim.filterFunction(function(d, i) {
+          // gray out points not in filter selection     
+          d3.select("#chart-age").select(".chart-body").selectAll(".symbol")
+            .style("fill", function(d, i) {             
+              if (filters[0].isFiltered([d.key[0],d.key[1]]) === false) return "#DCDCDC"; 
+             }); 
+          return filters[0].isFiltered([d[0],d[1]]);
+        })
+      }
     });
     // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/
     // .colors("#ff0000");
