@@ -209,7 +209,7 @@ function initCrossfilter(data) {
     .renderVerticalGridLines(true)
     .symbolSize(8)
     .highlightedSize(8)
-    .excludedSize(8)
+    .excludedSize(3)
     .existenceAccessor(function(d) { return d.value > 0 ; })
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
@@ -219,11 +219,6 @@ function initCrossfilter(data) {
       else {
        	// assume it's one RangedTwoDimensionalFilter
       	dim.filterFunction(function(d, i) {
-          // gray out points not in filter selection     
-          d3.select("#chart-age").select(".chart-body").selectAll(".symbol")
-            .style("fill", function(d, i) {             
-              if (filters[0].isFiltered([d.key[0],d.key[1]]) === false) return "#DCDCDC"; 
-             }); 
           return filters[0].isFiltered([d[0],d[1]]);
         })
       }
