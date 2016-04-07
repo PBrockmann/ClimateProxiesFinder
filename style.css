@@ -142,3 +142,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/*
+.marker-cluster-large div, .marker-cluster-medium div, .marker-cluster-small div {
+  background-color: #ccc;
+}
+
+.marker-cluster-large, .marker-cluster-medium, .marker-cluster-small {
+  background-color: #993366;
+}
+*/

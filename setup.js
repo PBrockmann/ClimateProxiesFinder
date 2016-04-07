@@ -31,12 +31,6 @@ var BenthicForaminifera_color = Ocean_color;
 var Unkown_color = "#FF4400";
 var Others_color = "#FF4400";
 
-myIcon = L.icon({
-    iconUrl: 'LSCE_Icon.png',
-    iconSize: [20, 20], 
-    iconAnchor: [10, 0] 
-});
-
 //====================================================================
 $(document).ready(function() {
 
@@ -65,6 +59,14 @@ $(document).ready(function() {
     mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
     mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
     new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
+
+    $('.leaflet-control-zoomhome-home')[0].click();
+    $('#chart-map').on('click', '.leaflet-marker-icon', function() {
+	      a=$('.leaflet-popup-content').text();
+	      console.log(a);
+	      tableIdDimension.filter(141);
+	      dc.redrawAll();
+    });
 
   });
 
@@ -140,8 +142,19 @@ function initCrossfilter(data) {
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function() {
-		return myIcon;
+      .icon(function(d) {
+		id = d.key[2] -1;
+		if (data[id].Archive == "Ice") 
+			icon=L.icon({ iconUrl: 'marker_Ice.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+		else if (data[id].Archive == "Lake") 
+			icon=L.icon({ iconUrl: 'marker_Lake.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+		else if (data[id].Archive == "Ocean") 
+			icon=L.icon({ iconUrl: 'marker_Ocean.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+		else if (data[id].Archive == "Speleothem") 
+			icon=L.icon({ iconUrl: 'marker_Speleothem.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+		else if (data[id].Archive == "Tree") 
+			icon=L.icon({ iconUrl: 'marker_Tree.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+		return icon;
        })
       .title(function() {})  
       .popup(function(d) {
@@ -347,14 +360,6 @@ function initCrossfilter(data) {
     	// make reset link visible
     	d3.select("#resetTableLink").style("display", "inline")
     }
-  });
-
-  //$('.leaflet-control-zoomhome-home')[0].click();
-  $('#chart-map').on('click', '.leaflet-marker-icon', function() {
-	      a=$('.leaflet-popup-content').text();
-	      console.log(a);
-	      tableIdDimension.filter(141);
-	      dc.redrawAll();
   });
 
   //-----------------------------------
