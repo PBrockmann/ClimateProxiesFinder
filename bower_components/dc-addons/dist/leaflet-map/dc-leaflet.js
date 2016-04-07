@@ -70,8 +70,7 @@
         _chart.zoom = function (_) {
             if (!arguments.length) {
                 return _defaultZoom;
-            }
-
+            }            
             _defaultZoom = _;
             return _chart;
         };
@@ -138,7 +137,7 @@
         _chart._doRender = function () {
             var _map = L.map(_chart.root().node(), _chart.mapOptions());
 
-            if (_chart.center() && _chart.zoom()) {
+            if (_chart.center() && _chart.zoom()) {                
                 _map.setView(_chart.toLocArray(_chart.center()), _chart.zoom());
             }
 
@@ -539,8 +538,7 @@
 
             _disableFitOnRedraw = true;
 
-            if (_filterByArea) {
-                console.log("filter by area")
+            if (_filterByArea) {                
                 var filter;
                 if (_chart.map().getCenter().equals(_chart.center()) && _chart.map().getZoom() === _chart.zoom()) {
                     filter = null;
