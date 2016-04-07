@@ -95,63 +95,52 @@
 #dcTable td {
   cursor: pointer;
   color: #333;
-  padding: 0px;
   font-size: 13px;
+  padding: 0px;
   background: #eee;
 }
 
-#dcTable td {
-  background: #eee;
+#dcTable tr {
+  background: #ddd;
 }
 
 #dcTable tr:hover td {
-  background: #ffc;
+  font-weight: bold;
+  background: #ccc;
 }
 
 #dcTable th {
   color: #333;
   font-weight: normal;
   font-style: italic;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background: #ccc;
-  font-size: 13px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-#dcTable .dc-table-column {
-  color: #333;
+  padding: 0px;
+  background: #ddd;
 }
 
 #dcTable tbody {
     display: block;
-    height: 100px;       /* Just for the demo          */
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
+    height: 150px;     
+    overflow-y: auto;  
+    overflow-x: hidden;  
 }
 
 #dcTable>thead>tr>th, #dcTable>tbody>tr>td {
     float: left;
-    padding-left: 0px;
 }
 
-#dcTable .th_Id , #dcTable .dc-table-column._0 { width: 30px;  text-align: right; z-index: 1000; }
-#dcTable .th_Dep, #dcTable .dc-table-column._1 { width: 80px; text-align: right; }
+#dcTable .th_Id , #dcTable .dc-table-column._0 { width: 40px;  text-align: right; padding-right: 5px; }
+#dcTable .th_Dep, #dcTable .dc-table-column._1 { width: 50px; text-align: right; }
 #dcTable .th_Mos, #dcTable .dc-table-column._2 { width: 100px; text-align: right; padding-left: 20px; }
 #dcTable .th_Old, #dcTable .dc-table-column._3 { width: 80px; text-align: right; }
-#dcTable .th_Arc, #dcTable .dc-table-column._4 { width: 140px; text-align: left; padding-left: 40px; }
+#dcTable .th_Arc, #dcTable .dc-table-column._4 { width: 130px; text-align: left; padding-left: 40px; }
 #dcTable .th_Mat, #dcTable .dc-table-column._5 { width: 160px; text-align: left; }
 #dcTable .th_DOI, #dcTable .dc-table-column._6 { width: 220px; text-align: left; }
-#dcTable .th_Ref, #dcTable .dc-table-column._7 { width: 340px; text-align: left; }
+#dcTable .th_Ref, #dcTable .dc-table-column._7 { width: 374px; text-align: left; }
 
 #dcTable .dc-table-column._4, #dcTable .dc-table-column._5, #dcTable .dc-table-column._6, #dcTable .dc-table-column._7 {
 }
 
 #dcTable .dc-table-column._6, #dcTable .dc-table-column._7 {
-  max-width: 100ch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -1,6 +1,6 @@
 
 //====================================================================
-var map;
+var theMap;
 var mapMaxZoom = 8;
 
 var markers = [] ;
@@ -50,6 +50,7 @@ d3.tsv("proxies.tsv", function(data) {
         d.Depth = +d.Depth;
         d.OldestDate = +d.OldestDate;
         d.RecentDate = +d.RecentDate;
+        d.DOI = (d.DOI.length ==  0) ? "Not available" : d.DOI		// to handle empty DOI
 
 	// Limit latitudes according to latitude map range (-85:85)
         if (d.Latitude < -85) d.Latitude = -85;
@@ -58,17 +59,19 @@ d3.tsv("proxies.tsv", function(data) {
 
   initCrossfilter(data);
 
-  theMap = mapChart.map();
-  new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
+  var theMap = mapChart.map();
+  //new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
   new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
-  new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [0, 0]}).addTo(theMap);
+  new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [45, -20]}).addTo(theMap);
 
   mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
   mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
-  miniMap = new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
+  new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
+  theMap.setView([45, -20], 2);
 //-----------------------------------------
 });
+
 
 }
 
@@ -138,14 +141,13 @@ function initCrossfilter(data) {
       .dimension(mapDim)
       .group(mapGroup)
       .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
-      .center([40,0])
-      .zoom(4)
+      .center([45, -20])
+      .zoom(2)         
+      .fitOnRender(false)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function(d,map) {
-		//id = d.key[2] -1;
-		//console.log(archiveColors(data[id].Archive));
+      .icon(function() {
 		return myIcon;
        })
       .title(function() {})
@@ -313,54 +315,50 @@ function initCrossfilter(data) {
   // Add ellipses for long entries and make DOI a hyperlink to google scholar
   //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
   $('#dcTable').on('mouseover', '.dc-table-column', function() {      
-
     var $this = $(this);
-
-    // always displays popup for DOI and Reference columns
-    // if (d3.select(this).attr("class") === "dc-table-column _7" || 
-    //     d3.select(this).attr("class") === "dc-table-column _6") {
-    //   $this.attr('title', $this.text());
-    // }
-
     // displays popup only if text does not fit in col width
     if (this.offsetWidth < this.scrollWidth) {
       $this.attr('title', $this.text());
     }
 
     // change DOI colour to blue to indicate hyperlink
-    if (d3.select(this).attr("class") === "dc-table-column _6") {
+    if (d3.select(this).attr("class") == "dc-table-column _6") {
       d3.select(this).style("color", "#0645AD");
     }
   })
 
   // Reset DOI colour to default
   $('#dcTable').on('mouseout', '.dc-table-column', function() {
-    if (d3.select(this).attr("class") === "dc-table-column _6") {
+    if (d3.select(this).attr("class") == "dc-table-column _6") {
       d3.select(this).style("color", "#333");
     }
   })
 
+  DOI_link = false;
   // Make DOI a hyperlink to google scholar
   $('#dcTable').on('click', '.dc-table-column', function() {
-    if (d3.select(this).attr("class") === "dc-table-column _6") {
-      console.log("DOI", d3.select(this).text())
+    if (d3.select(this).attr("class") == "dc-table-column _6") {
+      DOI_link = true;
       window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
-    }
+    } else
+      DOI_link = false;
   })
 
   // Bind dcTable to other dc charts when row is clicked
   //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
   $('#dcTable').on('click', '.dc-table-row', function() {
-    var id = d3.select(this).select(".dc-table-column._0").text();
+    if (! DOI_link && d3.select(this).attr("class") != "dc-table-column _6") {		// filter only if not clicked on DOI
+    	var id = d3.select(this).select(".dc-table-column._0").text();
 
-    tableIdDimension.filter(id);
+    	tableIdDimension.filter(id);
 
-    //console.log("tableIdDimension: ", tableIdDimension.top(Infinity))
-    dataTable.dimension(tableIdDimension) 
-    dc.redrawAll();
+    	//console.log("tableIdDimension: ", tableIdDimension.top(Infinity))
+    	dataTable.dimension(tableIdDimension) 
+    	dc.redrawAll();
 
-    // make reset link visible
-    d3.select("#resetTableLink").style("display", "inline")
+    	// make reset link visible
+    	d3.select("#resetTableLink").style("display", "inline")
+    }
 
   });
 
