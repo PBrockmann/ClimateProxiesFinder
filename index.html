@@ -49,7 +49,7 @@
 
   </head>
 
-  <body onload='init();'>
+  <body>
 
     <div id="wrap">
 
@@ -113,14 +113,14 @@
            	     </div>
         </div>
         <div class="row">
-		<div class='dc-data-count'>
+		<div class='dc-data-count' id='chart-count'>
 			<span class='filter-count'></span>selected out of <span class='total-count'></span> records.
 		</div>
         </div>
         <div class='row'>
            <a id="resetTableLink" class="reset" href="javascript:resetTable();" style="display: none;">reset</a>
 	   <br>
-           <table class='span12 table table-hover' id='dcTable'>
+           <table class='span12 table table-hover' id='chart-table'>
              <thead>
                <tr class='header'>
                  <th class="th_Id" >Id</th>

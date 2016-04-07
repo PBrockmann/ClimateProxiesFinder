@@ -88,11 +88,11 @@
   opacity: 0.5;
 }
 
-#dcTable table {
+#chart-table table {
  table-layout: fixed;
 }
 
-#dcTable td {
+#chart-table td {
   cursor: pointer;
   color: #333;
   font-size: 13px;
@@ -100,16 +100,16 @@
   background: #eee;
 }
 
-#dcTable tr {
+#chart-table tr {
   background: #ddd;
 }
 
-#dcTable tr:hover td {
+#chart-table tr:hover td {
   font-weight: bold;
   background: #ccc;
 }
 
-#dcTable th {
+#chart-table th {
   color: #333;
   font-weight: normal;
   font-style: italic;
@@ -117,30 +117,27 @@
   background: #ddd;
 }
 
-#dcTable tbody {
+#chart-table tbody {
     display: block;
     height: 150px;     
     overflow-y: auto;  
     overflow-x: hidden;  
 }
 
-#dcTable>thead>tr>th, #dcTable>tbody>tr>td {
+#chart-table>thead>tr>th, #chart-table>tbody>tr>td {
     float: left;
 }
 
-#dcTable .th_Id , #dcTable .dc-table-column._0 { width: 40px;  text-align: right; padding-right: 5px; }
-#dcTable .th_Dep, #dcTable .dc-table-column._1 { width: 50px; text-align: right; }
-#dcTable .th_Mos, #dcTable .dc-table-column._2 { width: 100px; text-align: right; padding-left: 20px; }
-#dcTable .th_Old, #dcTable .dc-table-column._3 { width: 80px; text-align: right; }
-#dcTable .th_Arc, #dcTable .dc-table-column._4 { width: 130px; text-align: left; padding-left: 40px; }
-#dcTable .th_Mat, #dcTable .dc-table-column._5 { width: 160px; text-align: left; }
-#dcTable .th_DOI, #dcTable .dc-table-column._6 { width: 220px; text-align: left; }
-#dcTable .th_Ref, #dcTable .dc-table-column._7 { width: 374px; text-align: left; }
+#chart-table .th_Id , #chart-table .dc-table-column._0 { width: 40px;  text-align: right; padding-right: 5px; }
+#chart-table .th_Dep, #chart-table .dc-table-column._1 { width: 50px; text-align: right; }
+#chart-table .th_Mos, #chart-table .dc-table-column._2 { width: 100px; text-align: right; padding-left: 20px; }
+#chart-table .th_Old, #chart-table .dc-table-column._3 { width: 80px; text-align: right; }
+#chart-table .th_Arc, #chart-table .dc-table-column._4 { width: 130px; text-align: left; padding-left: 40px; }
+#chart-table .th_Mat, #chart-table .dc-table-column._5 { width: 160px; text-align: left; }
+#chart-table .th_DOI, #chart-table .dc-table-column._6 { width: 220px; text-align: left; }
+#chart-table .th_Ref, #chart-table .dc-table-column._7 { width: 374px; text-align: left; }
 
-#dcTable .dc-table-column._4, #dcTable .dc-table-column._5, #dcTable .dc-table-column._6, #dcTable .dc-table-column._7 {
-}
-
-#dcTable .dc-table-column._6, #dcTable .dc-table-column._7 {
+#chart-table .dc-table-column._6, #chart-table .dc-table-column._7 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
