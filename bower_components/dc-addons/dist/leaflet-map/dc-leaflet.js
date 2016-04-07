@@ -19,7 +19,7 @@
         var _renderPopup = true;
         var _mapOptions = false;
         var _defaultCenter = false;
-        var _defaultZoom = false;
+        var _defaultZoom = true;
         var _brushOn = false;
 
         var _tiles = function (map) {
@@ -70,8 +70,7 @@
         _chart.zoom = function (_) {
             if (!arguments.length) {
                 return _defaultZoom;
-            }
-
+            }            
             _defaultZoom = _;
             return _chart;
         };
@@ -138,7 +137,7 @@
         _chart._doRender = function () {
             var _map = L.map(_chart.root().node(), _chart.mapOptions());
 
-            if (_chart.center() && _chart.zoom()) {
+            if (_chart.center() && _chart.zoom()) {                
                 _map.setView(_chart.toLocArray(_chart.center()), _chart.zoom());
             }
 
@@ -532,14 +531,14 @@
         };
 
         var zoomFilter = function (e) {
-            if (e.type === 'moveend' && (_zooming || e.hard)) {
+            if (e.type === 'moveend' && (_zooming || e.hard)) {                
                 return;
             }
             _zooming = false;
 
             _disableFitOnRedraw = true;
 
-            if (_filterByArea) {
+            if (_filterByArea) {                
                 var filter;
                 if (_chart.map().getCenter().equals(_chart.center()) && _chart.map().getZoom() === _chart.zoom()) {
                     filter = null;
@@ -558,7 +557,7 @@
                 });
             } else if (_chart.filter() && (e.type === 'click' ||
                                            (_markerList.indexOf(_chart.filter()) !== -1 &&
-                                            !_chart.map().getBounds().contains(_markerList[_chart.filter()].getLatLng())))) {
+                                            !_chart.map().getBounds().contains(_markerList[_chart.filter()].getLatLng())))) {                
                 dc.events.trigger(function () {
                     _chart.filter(null);
                     if (_renderPopup) {

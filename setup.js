@@ -139,18 +139,19 @@ function initCrossfilter(data) {
       .group(mapGroup)
       .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .center([40,0])
-      .zoom(4)
+      .fitOnRender(false)
+      .zoom(2)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
       .icon(function(d,map) {
-		//id = d.key[2] -1;
-		//console.log(archiveColors(data[id].Archive));
-		return myIcon;
+    		//id = d.key[2] -1;
+    		//console.log(archiveColors(data[id].Archive));
+    		return myIcon;
        })
       .title(function() {})
       .popup(function(d) {
-		id = d.key[2] -1;
+		    id = d.key[2] -1;
     		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
     			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
     			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) 
@@ -159,8 +160,7 @@ function initCrossfilter(data) {
 				+ "</b></span></br>"
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
     			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
-       });  
-
+       });
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
@@ -208,13 +208,13 @@ function initCrossfilter(data) {
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
     .filterHandler(function(dim, filters) {
-  	if(!filters || !filters.length)
+  	  if(!filters || !filters.length)
     		dim.filter(null);
     	else {
       	// assume it's one RangedTwoDimensionalFilter
-    	dim.filterFunction(function(d) {
-      	   return filters[0].isFiltered([d[0],d[1]]);
-     	})
+    	  dim.filterFunction(function(d) {
+         return filters[0].isFiltered([d[0],d[1]]);
+     	  })
       }
     });
     // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/

@@ -946,9 +946,9 @@ dc.filters.RangedTwoDimensionalFilter = function (filter) {
     } else {
         fromBottomLeft = [[filter[0], -Infinity], [filter[1], Infinity]];
     }
-
+    
     f.isFiltered = function (value) {
-        var x, y;
+        var x, y;    
 
         if (value instanceof Array) {
             if (value.length !== 2) {
@@ -956,14 +956,16 @@ dc.filters.RangedTwoDimensionalFilter = function (filter) {
             }
             x = value[0];
             y = value[1];
-        } else {
+        } else {            
             x = value;
-            y = fromBottomLeft[0][1];
-        }
+            y = fromBottomLeft[0][1];            
+        }    
 
         return x >= fromBottomLeft[0][0] && x < fromBottomLeft[1][0] &&
                y >= fromBottomLeft[0][1] && y < fromBottomLeft[1][1];
+     
     };
+
     f.filterType = 'RangedTwoDimensionalFilter';
 
     return f;
@@ -9010,7 +9012,7 @@ dc.scatterPlot = function (parent, chartGroup) {
     var _emptySize = 0;
     var _filtered = [];
 
-    _symbol.size(function (d, i) {
+    _symbol.size(function (d, i) {        
         if (!_existenceAccessor(d)) {
             return _emptySize;
         } else if (_filtered[i]) {
@@ -9030,7 +9032,7 @@ dc.scatterPlot = function (parent, chartGroup) {
 
     _chart.plotData = function () {
         var symbols = _chart.chartBodyG().selectAll('path.symbol')
-                .data(_chart.data());
+                .data(_chart.data());        
 
         symbols
             .enter()
@@ -9141,7 +9143,7 @@ dc.scatterPlot = function (parent, chartGroup) {
      * @return {Number}
      * @return {dc.scatterPlot}
      */
-    _chart.highlightedSize = function (highlightedSize) {
+    _chart.highlightedSize = function (highlightedSize) {         
         if (!arguments.length) {
             return _highlightedSize;
         }
