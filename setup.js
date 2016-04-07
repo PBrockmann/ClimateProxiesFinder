@@ -1,7 +1,7 @@
 
 //====================================================================
 var map;
-var mapMaxZoom = 6;
+var mapMaxZoom = 8;
 
 var markers = [] ;
 var markerGroup ;
@@ -58,15 +58,19 @@ d3.tsv("proxies.tsv", function(data) {
 
   initCrossfilter(data);
 
-  // Render the total.
-  d3.selectAll("#total").text(xf.size());
+  theMap = mapChart.map();
+  new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
+  new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
+  new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [0, 0]}).addTo(theMap);
+
+  mapmadeUrl = 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+  mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
+  miniMap = new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
 //-----------------------------------------
 });
 
 }
-
-
 
 //====================================================================
 function initCrossfilter(data) {
@@ -113,12 +117,8 @@ function initCrossfilter(data) {
   materialGroup = materialDim.group();
 
   //-----------------------------------
-  // mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude]; });
-  // mapGroup = mapDim.group();
-
-  //add Id to group for map popup window
-  mapDimPopup = xf.dimension(function(d) { return [d.Latitude, d.Longitude, d.Id]; });
-  mapGroupPopup = mapDimPopup.group();
+  mapDim = xf.dimension(function(d) { return [d.Latitude, d.Longitude, d.Id]; });
+  mapGroup = mapDim.group();
 
   //-----------------------------------
   tableIdDimension = xf.dimension(function(d) {
@@ -126,39 +126,39 @@ function initCrossfilter(data) {
   });
 
   //-----------------------------------
+  var archiveColors = d3.scale.ordinal()
+        .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
+   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
+
   mapChart  = dc.leafletMarkerChart("#chart-map");
 
   mapChart
       .width(1000)
       .height(300)
-      .dimension(mapDimPopup)
-      .group(mapGroupPopup)
-      .center([0,0])
-      .mapOptions({maxZoom: mapMaxZoom})
-      .zoom(7)      
-      .title(function() { return null; }) //turns off small popup when hovering over icon
-      .filterByArea(false)
+      .dimension(mapDim)
+      .group(mapGroup)
+      .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
+      .center([40,0])
+      .zoom(4)
+      .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function() {
-		    return myIcon;
-      })
-      .popup(function (d) {
-        
-        id = d.key[2];
-        // console.log("d.key[2]: ", id)
-        // console.log("data: ", data)
-        // console.log("data[id]: ", data[id - 1])
-        // console.log("data[id].Id: ", data[id - 1].Id)
-        // console.log("mapDim.top: ", mapDim.top(Infinity))
-        // console.log("mapDimPopup.top: ", mapDimPopup.top(Infinity))
-
-    		return  "Id: " + "<b>" + data[id - 1].Id + "</b></br>"
-    		+ "Position: " + "<b>" + data[id - 1].Longitude.toFixed(2) + "°E</b>, <b>" + data[id - 1].Latitude.toFixed(2) + "°N</b></br>"
-    		+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id - 1].Depth.toFixed(2) + "</b></span></br>"
-    		+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id - 1].RecentDate.toFixed(2) + "</b> to <b>" + data[id - 1].OldestDate.toFixed(2) + "</b></span></br>"
-    		+ "Archive: " + "<b>" + data[id - 1].Archive + "</b></br>"
-    		+ "Material: " + "<b>" + data[id - 1].Material + "</b></br>";
+      .icon(function(d,map) {
+    		//id = d.key[2] -1;
+    		//console.log(archiveColors(data[id].Archive));
+    		return myIcon;
+       })
+      .title(function() {})
+      .popup(function(d) {
+		    id = d.key[2] -1;
+    		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
+    			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
+    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) 
+				+ "</b></span></br>"
+    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) 
+				+ "</b></span></br>"
+    			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
+    			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
        });
 
   //-----------------------------------
@@ -172,7 +172,6 @@ function initCrossfilter(data) {
     .elasticY(true)
     .dimension(depthDim)
     .group(depthGroup)
-    //.on("preRedraw", update0)
     .x(d3.scale.linear().domain(depthRange))
     .xUnits(dc.units.fp.precision(depthBinWidth))
     .round(function(d) {return depthBinWidth*Math.floor(d/depthBinWidth)})
@@ -186,10 +185,6 @@ function initCrossfilter(data) {
   yAxis_depthChart.tickFormat(d3.format("d")).tickSubdivide(0);
 
   //-----------------------------------
-  var archiveColors = d3.scale.ordinal()
-        .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
-   	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
-
   ageChart  = dc.scatterPlot("#chart-age");
 
   ageChart
@@ -200,7 +195,6 @@ function initCrossfilter(data) {
     .group(ageGroup)
     .xAxisLabel("Most recent age")
     .yAxisLabel("Oldest age")
-    //.on("preRedraw", update0)
     //.mouseZoomable(true)
     .x(d3.scale.linear().domain(age1Range))
     .y(d3.scale.linear().domain(age2Range))
@@ -208,19 +202,18 @@ function initCrossfilter(data) {
     .renderHorizontalGridLines(true)
     .renderVerticalGridLines(true)
     .symbolSize(8)
-    .highlightedSize(8)
-    .excludedSize(3)
+    .excludedSize(4)
     .existenceAccessor(function(d) { return d.value > 0 ; })
     .colorAccessor(function (d) { return d.key[2]; })
     .colors(archiveColors)
     .filterHandler(function(dim, filters) {
-    	if(!filters || !filters.length)
-      		dim.filter(null);
-      else {
-       	// assume it's one RangedTwoDimensionalFilter
-      	dim.filterFunction(function(d, i) {          
-          return filters[0].isFiltered([d[0],d[1]]);
-        })
+  	  if(!filters || !filters.length)
+    		dim.filter(null);
+    	else {
+      	// assume it's one RangedTwoDimensionalFilter
+    	  dim.filterFunction(function(d) {
+         return filters[0].isFiltered([d[0],d[1]]);
+     	  })
       }
     });
     // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/
@@ -240,7 +233,6 @@ function initCrossfilter(data) {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(archiveDim)
     .group(archiveGroup)
-    //.on("preRedraw", update0)
     .colors(archiveColors)
     .elasticX(true)
     .gap(2)
@@ -272,28 +264,41 @@ function initCrossfilter(data) {
     .margins({top: 10, right: 10, bottom: 30, left: 10})	
     .dimension(materialDim)
     .group(materialGroup)
-    //.on("preRedraw", update0)
     .colors(materialColors) 
     .elasticX(true)
     .gap(2)
     .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
 
-  //-----------------------------------
+//-----------------------------------
+  dataCount = dc.dataCount('.dc-data-count');
+
+  dataCount 
+        .dimension(xf)
+        .group(xf.groupAll())
+        .html({
+            some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
+                ' | <a href=\'javascript:dc.filterAll(); dc.redrawAll();\'>Reset All</a>',
+            all: 'All records selected. Please click on the graph to apply filters.'
+        });
+
+//-----------------------------------
   dataTable = dc.dataTable("#dcTable");
 
+  format1 = d3.format(".0f");
+  format2 = d3.format(".2f");
+
   dataTable
-    .width(1060)
-    .height(800)
     .dimension(tableIdDimension)
-    .group(function(d) { return "Proxies Table"})
-    .size(6)
-    //.size(csv.length) //display all data
+    .group(function(d) {})
+    .showGroups(false)
+    .size(100)
+    //.size(xf.size()) //display all data
     .columns([
       function(d) { return d.Id; },
-      function(d) { return d.Depth; },
-      function(d) { return d.RecentDate; },
-      function(d) { return d.OldestDate; },
+      function(d) { return format1(d.Depth); },
+      function(d) { return format2(d.RecentDate); },
+      function(d) { return format2(d.OldestDate); },
       function(d) { return d.Archive; },
       function(d) { return d.Material; },
       function(d) { return d.DOI; },
@@ -351,7 +356,6 @@ function initCrossfilter(data) {
 
     //console.log("tableIdDimension: ", tableIdDimension.top(Infinity))
     dataTable.dimension(tableIdDimension) 
-    dataTable.redraw();
     dc.redrawAll();
 
     // make reset link visible
@@ -365,9 +369,6 @@ function initCrossfilter(data) {
 
 }
 
-
-
-//====================================================================
 // reset dcTable
 function resetTable() {
   tableIdDimension.dispose(); //important! table dim will not be updated without it
@@ -376,10 +377,11 @@ function resetTable() {
   });
 
   dataTable.dimension(tableIdDimension) 
-  dataTable.redraw();
   dc.redrawAll();
 
   // make reset link invisible
-  d3.select("#resetTableLink").style("display", "none")
+  d3.select("#resetTableLink").style("display", "none");
 
 }
+
+//====================================================================
