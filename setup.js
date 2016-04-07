@@ -161,10 +161,8 @@ function initCrossfilter(data) {
 		id = d.key[2] -1;
     		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
     			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
-    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) 
-				+ "</b></span></br>"
-    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) 
-				+ "</b></span></br>"
+    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"
+    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
     			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
        });  
