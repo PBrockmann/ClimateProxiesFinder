@@ -68,7 +68,6 @@ d3.tsv("proxies.tsv", function(data) {
   mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
   new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
-  theMap.setView([45, -20], 2);
 //-----------------------------------------
 });
 
@@ -124,9 +123,7 @@ function initCrossfilter(data) {
   mapGroup = mapDim.group();
 
   //-----------------------------------
-  tableIdDimension = xf.dimension(function(d) {
-    return +d.Id;
-  });
+  tableIdDimension = xf.dimension(function(d) { return +d.Id; });
 
   //-----------------------------------
   var archiveColors = d3.scale.ordinal()
@@ -143,7 +140,7 @@ function initCrossfilter(data) {
       .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .center([45, -20])
       .zoom(2)         
-      .fitOnRender(false)
+      //.fitOnRender(false)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
