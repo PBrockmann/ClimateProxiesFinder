@@ -60,7 +60,7 @@ d3.tsv("proxies.tsv", function(data) {
   initCrossfilter(data);
 
   var theMap = mapChart.map();
-  //new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
+  new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
   new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
   new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [45, -20]}).addTo(theMap);
 
@@ -68,6 +68,7 @@ d3.tsv("proxies.tsv", function(data) {
   mapmade = new L.TileLayer(mapmadeUrl, { maxZoom: mapMaxZoom+1});
   new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
+  $('.leaflet-control-zoomhome-home')[0].click();
 //-----------------------------------------
 });
 
@@ -138,9 +139,9 @@ function initCrossfilter(data) {
       .dimension(mapDim)
       .group(mapGroup)
       .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
-      .center([45, -20])
+      .center([45, -19])    // lightly different than zoomHome to have a info updated when triggered
       .zoom(2)         
-      //.fitOnRender(false)
+      .fitOnRender(false)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
