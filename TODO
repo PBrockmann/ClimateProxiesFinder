@@ -1,7 +1,0 @@
-
-- icon with colors ?
-      http://intellipharm.github.io/dc-addons/examples/leaflet-custom.html
-
-- mouseover instead of click event to show the icon's popup
-
-- when click on icon, a filter should be applied on dcTable

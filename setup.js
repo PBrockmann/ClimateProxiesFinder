@@ -57,10 +57,6 @@ $(document).ready(function() {
 
     $('.leaflet-control-zoomhome-home')[0].click();
 
-    d3.selection.prototype.trigger = function(evtName, data) {  
-  	this.on(evtName)(data);
-    }
-
     d3.selectAll('.leaflet-marker-icon').on('click', function() {
     //$('.leaflet-marker-icon').on('click', function() {
 	      console.log("aaaa");
@@ -153,7 +149,7 @@ function initCrossfilter(data) {
 		else if (data[id].Archive == "Tree") 
 			icon=L.icon({ iconUrl: 'marker_Tree.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
 		return icon;
-       })
+      })
       .title(function() {})  
       .popup(function(d) {
 		id = d.key[2] -1;
