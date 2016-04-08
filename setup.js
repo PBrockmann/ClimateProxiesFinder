@@ -2,11 +2,6 @@
 var theMap;
 var mapMaxZoom = 8;
 
-var markers = [] ;
-var markerGroup ;
-
-var grat;
-
 var xf;
 var depthDim;
 var depthGroup;
@@ -61,12 +56,13 @@ $(document).ready(function() {
     new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
     $('.leaflet-control-zoomhome-home')[0].click();
-    $('#chart-map').on('click', '.leaflet-marker-icon', function() {
-	      a=$('.leaflet-popup-content').text();
-	      console.log(a);
-	      tableIdDimension.filter(141);
-	      dc.redrawAll();
-    });
+
+//    $('#chart-map').on('click', '.leaflet-marker-icon', function() {
+//	      a=$('.leaflet-popup-content').text();
+//	      console.log(a);
+//	      tableIdDimension.filter(141);
+//	      dc.redrawAll();
+//    });
 
   });
 
@@ -165,7 +161,8 @@ function initCrossfilter(data) {
     			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
     			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
-       });  
+       })
+       .popupOnHover(true);  
 
 
   //-----------------------------------

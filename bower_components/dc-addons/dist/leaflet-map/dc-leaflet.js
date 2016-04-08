@@ -1,7 +1,7 @@
 /*!
- * dc-addons v0.12.0
+ * dc-addons v0.13.1
  *
- * 2016-02-18 16:19:52
+ * 2016-04-08 11:34:39
  *
  */
 (function () {
@@ -27,8 +27,8 @@
 		'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
                 //'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                 {
-                    //attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     attribution: 'LSCE &copy; 2016 | Baselayer &copy; ArcGis'
+                    //attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 }
             ).addTo(map);
         };
@@ -301,7 +301,6 @@
     dc.leafletMarkerChart = function (parent, chartGroup) {
         var _chart = dc.baseLeafletChart({});
 
-        var _renderPopup = true;
         var _cluster = false; // requires leaflet.markerCluster
         var _clusterOptions = false;
         var _rebuildMarkers = false;
@@ -318,6 +317,9 @@
         var _fitOnRedraw = false;
         var _disableFitOnRedraw = false;
 
+        var _renderPopup = true;
+        var _popupOnHover = false;
+
         _chart.renderTitle(true);
 
         var _location = function (d) {
@@ -328,7 +330,6 @@
             var marker = new L.Marker(_chart.toLocArray(_chart.locationAccessor()(d)),{
                 title: _chart.renderTitle() ? _chart.title()(d) : '',
                 alt: _chart.renderTitle() ? _chart.title()(d) : '',
-                //icon: _icon(), 		// bug https://github.com/Intellipharm/dc-addons/issues/8
                 icon: _icon(d, _chart.map()),
                 clickable: _chart.renderPopup() || (_chart.brushOn() && !_filterByArea),
                 draggable: false
@@ -453,6 +454,14 @@
             return _chart;
         };
 
+        _chart.popupOnHover = function (_) {
+            if (!arguments.length) {
+                return _popupOnHover;
+            }
+            _popupOnHover = _;
+            return _chart;
+        };
+
         _chart.cluster = function (_) {
             if (!arguments.length) {
                 return _cluster;
@@ -520,7 +529,18 @@
             marker.key = k;
             if (_chart.renderPopup()) {
                 marker.bindPopup(_chart.popup()(v,marker));
+
+                if (_chart.popupOnHover()) {
+                    marker.on('mouseover', function () {
+                        marker.openPopup();
+                    });
+
+                    marker.on('mouseout', function () {
+                        marker.closePopup();
+                    });
+                }
             }
+
             if (_chart.brushOn() && !_filterByArea) {
                 marker.on('click',selectFilter);
             }
@@ -674,7 +694,7 @@ dc.leafletLegend = function () {
         return this;
     };
 
-    function _LegendClass() {
+    var _LegendClass = function () {
         return L.Control.extend({
             options: {position: _position},
             onAdd: function (map) {
@@ -712,7 +732,7 @@ dc.leafletLegend = function () {
                 }
             }
         });
-    }
+    };
 
     _legend.LegendClass = function (LegendClass) {
         if (!arguments.length) {
