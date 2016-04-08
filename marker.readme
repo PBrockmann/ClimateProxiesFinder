@@ -1,0 +1,13 @@
+
+# from the code
+# var Ice_color = "#008cb2";
+# var Lake_color = "#314f6f";
+# var Ocean_color = "#81a6d3";
+# var Speleothem_color = "#afa393";
+# var Tree_color = "#568e14";
+
+convert -fuzz 0% -fill '#008cb2' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Ice.png
+convert -fuzz 0% -fill '#314f6f' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Lake.png
+convert -fuzz 0% -fill '#81a6d3' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Ocean.png
+convert -fuzz 0% -fill '#afa393' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Speleothem.png
+convert -fuzz 0% -fill '#568e14' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Tree.png
