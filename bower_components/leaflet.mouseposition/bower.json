@@ -1,0 +1,31 @@
+{
+  "name": "leaflet.mouseposition",
+  "description": "Shows position coordinates under mouse cursor",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sorx00/Leaflet.mouseposition",
+  "authors": [
+    "Roman Sklyarov <sklyarov.r@gmail.com>"
+  ],
+  "keywords": [
+    "leaflet"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sorx00/Leaflet.mouseposition.git"
+  },
+  "main": [
+    "Leaflet.mouseposition.js",
+    "Leaflet.mouseposition.css"
+  ],
+  "dependencies": {
+    "leaflet": "~0.7.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
