@@ -47,6 +47,7 @@ $(document).ready(function() {
     initCrossfilter(data);
   
     var theMap = mapChart.map();
+
     new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
     new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
     new L.Control.zoomHome({homeZoom: 2, homeCoordinates: [45, -20]}).addTo(theMap);
@@ -129,9 +130,14 @@ function initCrossfilter(data) {
       .height(300)
       .dimension(mapDim)
       .group(mapGroup)
-      .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .center([45, -19])    // slightly different than zoomHome to have a info updated when triggered
       .zoom(2)         
+      .tiles(function(map) {			// overwrite default baselayer
+	   return L.tileLayer(
+                'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
+                { attribution: 'LSCE &copy; 2016 | Baselayer &copy; ArcGis' }).addTo(map); 
+       })
+      .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .fitOnRender(false)
       .filterByArea(true)
       .cluster(true) 
@@ -160,8 +166,7 @@ function initCrossfilter(data) {
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
     			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
        })
-       .popupOnHover(true);  
-
+      .popupOnHover(true);  
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");

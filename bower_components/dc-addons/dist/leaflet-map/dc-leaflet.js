@@ -24,11 +24,9 @@
 
         var _tiles = function (map) {
             L.tileLayer(
-		'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
-                //'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
                 {
-                    attribution: 'LSCE &copy; 2016 | Baselayer &copy; ArcGis'
-                    //attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 }
             ).addTo(map);
         };
