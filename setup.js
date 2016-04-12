@@ -46,7 +46,7 @@ $(document).ready(function() {
   
     initCrossfilter(data);
   
-    var theMap = mapChart.map();
+    theMap = mapChart.map();
 
     new L.graticule({ interval: 10, style: { color: '#333', weight: 0.5, opacity: 1. } }).addTo(theMap);
     new L.Control.MousePosition({lngFirst: true}).addTo(theMap);
@@ -58,10 +58,11 @@ $(document).ready(function() {
 
     $('.leaflet-control-zoomhome-home')[0].click();
 
-    d3.selectAll('.leaflet-marker-icon').on('click', function() {
-    //$('.leaflet-marker-icon').on('click', function() {
-	      console.log("aaaa");
-    });
+    //theMarkerGroup = mapChart.markerGroup();
+    //theMarkerGroup.on('mouseover', function(e) {
+    //     console.log(e.target);
+    //});
+
 
   });
 
@@ -123,6 +124,12 @@ function initCrossfilter(data) {
         .domain(["Ice", "Lake", "Ocean", "Speleothem", "Tree"])
    	.range([Ice_color, Lake_color, Ocean_color, Speleothem_color, Tree_color]);
 
+  customMarker = L.Marker.extend({
+    options: { 
+      Id: 'Custom data!'
+   }
+  });
+
   mapChart  = dc.leafletMarkerChart("#chart-map");
 
   mapChart
@@ -136,14 +143,25 @@ function initCrossfilter(data) {
 	   return L.tileLayer(
                 'http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
                 { attribution: 'LSCE &copy; 2016 | Baselayer &copy; ArcGis' }).addTo(map); 
-       })
+      })
       .mapOptions({maxZoom: mapMaxZoom, zoomControl: false})
       .fitOnRender(false)
       .filterByArea(true)
       .cluster(true) 
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
-      .icon(function(d) {
+      .title(function() {})  
+      .popup(function(d,marker) {
 		id = d.key[2] -1;
+    		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
+    			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
+    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"
+    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
+    			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
+    			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
+      })
+      .popupOnHover(true)
+      .marker(function(d,map) {
+        	id = d.key[2] -1;
 		if (data[id].Archive == "Ice") 
 			icon=L.icon({ iconUrl: 'marker_Ice.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
 		else if (data[id].Archive == "Lake") 
@@ -154,19 +172,22 @@ function initCrossfilter(data) {
 			icon=L.icon({ iconUrl: 'marker_Speleothem.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
 		else if (data[id].Archive == "Tree") 
 			icon=L.icon({ iconUrl: 'marker_Tree.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
-		return icon;
-      })
-      .title(function() {})  
-      .popup(function(d) {
-		id = d.key[2] -1;
-    		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
-    			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
-    			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"
-    			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" + data[id].OldestDate.toFixed(2) + "</b></span></br>"
-    			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
-    			+ "Material: " + "<b>" + data[id].Material + "</b></br>";
-       })
-      .popupOnHover(true);  
+        	marker = new customMarker([data[id].Latitude, data[id].Longitude], {Id: (id+1).toString(), icon: icon});
+                marker.on('mouseover', function(e) {
+			console.log(e.target.options.Id);
+			           d3.selectAll(".dc-table-column._0")
+			              .text(function (d, i){
+						if (parseInt(d.Id) == marker_id) {
+				                    // select entire row beloging to marker id and bold the text
+				                    d3.select(this.parentNode)
+					                      .style("font-weight", "bold");
+				                  }
+			                return d.Id;
+		             });
+		});
+        	return marker;
+        	
+      });
 
   //-----------------------------------
   depthChart  = dc.barChart("#chart-depth");
