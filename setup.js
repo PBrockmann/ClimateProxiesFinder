@@ -169,18 +169,18 @@ function initCrossfilter(data) {
       .marker(function(d,map) {
         	id = d.key[2] -1;
 		if (data[id].Archive == "Ice") 
-			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Ice.png' });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'img/marker_Ice.png' });
 		else if (data[id].Archive == "Lake") 
-			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Lake.png' });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'img/marker_Lake.png' });
 		else if (data[id].Archive == "Ocean") 
-			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Ocean.png' });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'img/marker_Ocean.png' });
 		else if (data[id].Archive == "Speleothem") 
-			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Speleothem.png' });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'img/marker_Speleothem.png' });
 		else if (data[id].Archive == "Tree") 
-			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Tree.png' });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'img/marker_Tree.png' });
         	marker = new customMarker([data[id].Latitude, data[id].Longitude], {Id: (id+1).toString(), icon: icon});
                 marker.on('mouseover', function(e) {
-			iconUrlNew = "highlight_" + e.target.options.icon.options.iconUrl;
+			iconUrlNew = e.target.options.icon.options.iconUrl.replace(".png","_highlight.png");
 			iconNew = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: iconUrlNew });
 			e.target.setIcon(iconNew);
 			d3.selectAll(".dc-table-column._0")
@@ -193,7 +193,7 @@ function initCrossfilter(data) {
 		        	});
 		});
                 marker.on('mouseout', function(e) {
-			iconUrlNew = e.target.options.icon.options.iconUrl.replace("highlight_", "");
+			iconUrlNew = e.target.options.icon.options.iconUrl.replace("_highlight.png", ".png");
 			iconNew = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: iconUrlNew });
 			e.target.setIcon(iconNew);
 			d3.selectAll(".dc-table-column._0")
