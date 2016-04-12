@@ -184,10 +184,7 @@ function initCrossfilter(data) {
 			d3.selectAll(".dc-table-column._0")
 				.text(function (d, i) {
 			     		if (parseInt(d.Id) == e.target.options.Id) {
-						console.log(this.parentNode);
-						//scrollTo = this.parentNode;
-						//container = $("#chart-table");
-						//container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
+						this.parentNode.scrollIntoView();
 			                 	d3.select(this.parentNode).style("font-weight", "bold");
 			               	}
 			     		return d.Id;
@@ -204,6 +201,10 @@ function initCrossfilter(data) {
 			               	}
 			     		return d.Id;
 		        	});
+		});
+                marker.on('click', function(e) {
+			console.log("double click");
+      			//window.open(...
 		});
         	return marker;
       });
@@ -263,8 +264,6 @@ function initCrossfilter(data) {
      	})
       }
     });
-    // https://jsfiddle.net/gordonwoodhull/c593ehh7/5/
-    // .colors("#ff0000");
 
   xAxis_ageChart = ageChart.xAxis();
   xAxis_ageChart.ticks(6).tickFormat(d3.format("d"));
@@ -354,15 +353,12 @@ function initCrossfilter(data) {
     .sortBy(function(d){ return +d.Id; })
     .order(d3.ascending);
 
-  // ADD INTERACTIVE FUNCTIONALITY FOR DC TABLE    
-
   // Add ellipses for long entries and make DOI a hyperlink to google scholar
   //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
   $('#chart-table').on('mouseover', '.dc-table-column', function() {      
-    var $this = $(this);
     // displays popup only if text does not fit in col width
     if (this.offsetWidth < this.scrollWidth) {
-      $this.attr('title', $this.text());
+      d3.select(this).attr('title', d3.select(this).text());
     }
 
     // change DOI colour to blue to indicate hyperlink
