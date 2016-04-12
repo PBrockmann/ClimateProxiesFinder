@@ -206,7 +206,7 @@ function initCrossfilter(data) {
 		});
                 marker.on('click', function(e) {
 			Id = e.target.options.Id;
-      			window.open(ClimateProxiesFinder_DB + data[Id].Filename + ".html");
+      			window.open(ClimateProxiesFinder_DB + data[Id -1].Filename + ".html");
 		});
         	return marker;
       });
