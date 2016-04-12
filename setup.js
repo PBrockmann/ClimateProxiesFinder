@@ -130,6 +130,10 @@ function initCrossfilter(data) {
    }
   });
 
+  iconSize = [32,32];
+  iconAnchor = [16,32];
+  popupAnchor = [0,-20];
+
   mapChart  = dc.leafletMarkerChart("#chart-map");
 
   mapChart
@@ -163,30 +167,45 @@ function initCrossfilter(data) {
       .marker(function(d,map) {
         	id = d.key[2] -1;
 		if (data[id].Archive == "Ice") 
-			icon=L.icon({ iconUrl: 'marker_Ice.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Ice.png' });
 		else if (data[id].Archive == "Lake") 
-			icon=L.icon({ iconUrl: 'marker_Lake.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Lake.png' });
 		else if (data[id].Archive == "Ocean") 
-			icon=L.icon({ iconUrl: 'marker_Ocean.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Ocean.png' });
 		else if (data[id].Archive == "Speleothem") 
-			icon=L.icon({ iconUrl: 'marker_Speleothem.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Speleothem.png' });
 		else if (data[id].Archive == "Tree") 
-			icon=L.icon({ iconUrl: 'marker_Tree.png', iconSize: [32,32], iconAnchor: [16,32], popupAnchor: [0,-20] });
+			icon = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: 'marker_Tree.png' });
         	marker = new customMarker([data[id].Latitude, data[id].Longitude], {Id: (id+1).toString(), icon: icon});
                 marker.on('mouseover', function(e) {
-			console.log(e.target.options.Id);
-			           d3.selectAll(".dc-table-column._0")
-			              .text(function (d, i){
-						if (parseInt(d.Id) == marker_id) {
-				                    // select entire row beloging to marker id and bold the text
-				                    d3.select(this.parentNode)
-					                      .style("font-weight", "bold");
-				                  }
-			                return d.Id;
-		             });
+			iconUrlNew = "highlight_" + e.target.options.icon.options.iconUrl;
+			iconNew = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: iconUrlNew });
+			e.target.setIcon(iconNew);
+			d3.selectAll(".dc-table-column._0")
+				.text(function (d, i) {
+			     		if (parseInt(d.Id) == e.target.options.Id) {
+						console.log(this.parentNode);
+						//scrollTo = this.parentNode;
+						//container = $("#chart-table");
+						//container.scrollTop( scrollTo.offset().top - container.offset().top + container.scrollTop() );
+			                 	d3.select(this.parentNode).style("font-weight", "bold");
+			               	}
+			     		return d.Id;
+		        	});
+		});
+                marker.on('mouseout', function(e) {
+			iconUrlNew = e.target.options.icon.options.iconUrl.replace("highlight_", "");
+			iconNew = L.icon({ iconSize: iconSize, iconAnchor: iconAnchor, popupAnchor: popupAnchor, iconUrl: iconUrlNew });
+			e.target.setIcon(iconNew);
+			d3.selectAll(".dc-table-column._0")
+				.text(function (d, i) {
+			     		if (parseInt(d.Id) == e.target.options.Id) {
+			                 	d3.select(this.parentNode).style("font-weight", "normal");
+			               	}
+			     		return d.Id;
+		        	});
 		});
         	return marker;
-        	
       });
 
   //-----------------------------------

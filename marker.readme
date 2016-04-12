@@ -11,3 +11,9 @@ convert -fuzz 0% -fill '#314f6f' -opaque '#ff0000' -geometry 32x32 -background t
 convert -fuzz 0% -fill '#81a6d3' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Ocean.png
 convert -fuzz 0% -fill '#afa393' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Speleothem.png
 convert -fuzz 0% -fill '#568e14' -opaque '#ff0000' -geometry 32x32 -background transparent marker.svg marker_Tree.png
+
+convert -fuzz 0% -fill '#008cb2' -opaque '#ff0000' -geometry 32x32 -background transparent highlight_marker.svg highlight_marker_Ice.png
+convert -fuzz 0% -fill '#314f6f' -opaque '#ff0000' -geometry 32x32 -background transparent highlight_marker.svg highlight_marker_Lake.png
+convert -fuzz 0% -fill '#81a6d3' -opaque '#ff0000' -geometry 32x32 -background transparent highlight_marker.svg highlight_marker_Ocean.png
+convert -fuzz 0% -fill '#afa393' -opaque '#ff0000' -geometry 32x32 -background transparent highlight_marker.svg highlight_marker_Speleothem.png
+convert -fuzz 0% -fill '#568e14' -opaque '#ff0000' -geometry 32x32 -background transparent highlight_marker.svg highlight_marker_Tree.png
