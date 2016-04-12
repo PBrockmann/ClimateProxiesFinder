@@ -1,4 +1,6 @@
 //====================================================================
+var ClimateProxiesFinder_DB = "/home/brock/ClimateProxiesFinder_DB/20150923_html/";
+
 var theMap;
 var mapMaxZoom = 8;
 
@@ -203,8 +205,8 @@ function initCrossfilter(data) {
 		        	});
 		});
                 marker.on('click', function(e) {
-			console.log("double click");
-      			//window.open(...
+			Id = e.target.options.Id;
+      			window.open(ClimateProxiesFinder_DB + data[Id].Filename + ".html");
 		});
         	return marker;
       });

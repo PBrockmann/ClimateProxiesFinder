@@ -86,12 +86,14 @@
 
 	</br>
       	<div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
 		<p><b>Technical architecture:</b>
 		<p>This application uses following javascript libraries:
 			<ul>
 			<li><b>dc.js</b> for Dimensional Charting Javascript Library<br>
 				<a target="_blank" href="https://dc-js.github.io/dc.js/">https://dc-js.github.io/dc.js/</a>
+			<li><b>dc-addons</b> for addons to dc.js<br>
+				<a target="_blank" href="https://github.com/Intellipharm/dc-addons">https://github.com/Intellipharm/dc-addons</a>
 			<li><b>Crossfilter</b> for Fast Multidimensional Filtering for Coordinated Views<br>
 				<a target="_blank" href="http://square.github.io/crossfilter">http://square.github.io/crossfilter</a>
 			<li><b>D3.js</b> for Data-Driven Documents<br>
@@ -99,18 +101,26 @@
 			<li><b>Leaflet</b> for An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps<br>
 				<a target="_blank" href="http://leafletjs.com">http://leafletjs.com</a>
 			</ul>
-
+		</p>
 		<p>The background tiles are provided by the ArcGis Online service<br>
 		<a target="_blank" href="http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer">http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer</a>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
+		<p><b>Open source code:</b>
+		<p>This application has been created and developped by Patrick Brockmann (CEA - LSCE). The source code is available from 
+			<a target="_blank" href="http://github.com/PBrockmann/ClimateProxiesFinder">http://github.com/PBrockmann/ClimateProxiesFinder</a>
+		</p>
+              </div>
+              <div class="col-md-4">
 		<p><b>Known problems:</b>
 			<ul>
 			<li>The projection used is a "Spherical Mercator" with an extension to North and South limited to 85°.
 			    This is a problem for data collected at northen or southern position. In those case, proxies positions
 			    are set to 85°.
 			</ul>
+		</p>
               </div>
+
         </div>
       </div><!-- /.container -->
 
