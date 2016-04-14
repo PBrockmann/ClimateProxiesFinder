@@ -49,8 +49,8 @@
       	<div class="row">
               <div class="col-md-12">
 		<div class="col-md-12"><b>Description:</b></br>
-		This application lets you select different paleo-oceanographic proxies collected at LSCE
-		from some of their dimension (spatial position, depth, proxies ages, archive and material types).
+		This application allows you to select different paleo-oceanographic proxies collected at LSCE
+		according to various dimensions (spatial position, depth, age, archive and material type).
 		</br>
 		</br>
 		</div>
@@ -60,7 +60,7 @@
       	<div class="row">
 		<div class="col-md-2">
 		<img class="imghelp img-responsive" src="img_help/filter_01.png"/>
-		You can refine your research by applying filters on dimension such as depth dimension, age of the proxies, archive and material types. 
+		You can apply filters on dimensions such as depth, age, archive and material type by interacting with the charts. All charts are linked together so that filters applied in one chart will update the others, as well as the map. 
 		</div>
 		<div class="col-md-2">
 		<img class="imghelp img-responsive" src="img_help/filter_02.png"/>
@@ -68,18 +68,16 @@
 		</div>
 		<div class="col-md-3">
 		<img class="imghelp img-responsive" src="img_help/proxy_01.png"/>
-		You can display a proxy description (id, position, DOI, ...) when you pass the mouse over its position.
-		In the same time, the proxy is focussed with a bold style from the list of proxies that contains the proxy, 
-		the species and the reference of the paper. Click on the DOI will send you automatically to google scholar, the web search engine for scientific papers. 
+		You can view information about a proxy (id, position, DOI, etc.) when you mouse over its position marker. This will also highlight in bold text the corresponding row in the data table showing the proxy information, along with the species and the reference of the paper. Click on the DOI to view the listing in google scholar, the web search engine for scientific papers. 
 		</div>
 		<div class="col-md-2">
 		<img class="imghelp img-responsive" src="img_help/cluster_02.png"/>
-		When several proxies share the same location, they appear as a group of proxies called cluster.
-		Zoom to the last zoom level then click on a cluster to display all proxies.
+		When several proxies share the same location, they are grouped together in a cluster (colored circles).
+		Click on a cluster to display all the proxies it contains.
 		</div>
 		<div class="col-md-3">
 		<img class="imghelp img-responsive" src="img_help/cluster_01.png"/>
-		Clusters are colored in red when they represent more than 100 proxies, colored in yellow when more than 10 then colored in green.
+		Red clusters represent more than 100 proxies, yellow clusters contain more than 10, and all others are green.
 		</div>
         </div>
 
@@ -89,15 +87,15 @@
 		<p><b>Technical architecture:</b>
 		<p>This application uses following javascript libraries:
 			<ul>
-			<li><b>dc.js</b> for Dimensional Charting Javascript Library<br>
+			<li><b>dc.js</b> Dimensional Charting Javascript Library<br>
 				<a target="_blank" href="https://dc-js.github.io/dc.js/">https://dc-js.github.io/dc.js/</a>
-			<li><b>dc-addons</b> for addons to dc.js<br>
+			<li><b>dc-addons</b> to dc.js<br>
 				<a target="_blank" href="https://github.com/Intellipharm/dc-addons">https://github.com/Intellipharm/dc-addons</a>
 			<li><b>Crossfilter</b> for Fast Multidimensional Filtering for Coordinated Views<br>
 				<a target="_blank" href="http://square.github.io/crossfilter">http://square.github.io/crossfilter</a>
 			<li><b>D3.js</b> for Data-Driven Documents<br>
 				<a target="_blank" href="http://d3js.org">http://d3js.org</a>
-			<li><b>Leaflet</b> for An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps<br>
+			<li><b>Leaflet</b> Open-Source JavaScript Library for Mobile-Friendly Interactive Maps<br>
 				<a target="_blank" href="http://leafletjs.com">http://leafletjs.com</a>
 			</ul>
 		</p>
@@ -106,7 +104,7 @@
               </div>
               <div class="col-md-4">
 		<p><b>Open source code:</b>
-		<p>This application has been created and developped by Patrick Brockmann (CEA - LSCE). The source code is available from 
+		<p>This application was created and developed by Patrick Brockmann (CEA - LSCE), with coding contributions from Cathy Nangini (CNRS - LSCE). The source code is available at:  
 			<a target="_blank" href="http://github.com/PBrockmann/ClimateProxiesFinder">http://github.com/PBrockmann/ClimateProxiesFinder</a>
 		</p>
               </div>
@@ -114,8 +112,7 @@
 		<p><b>Known problems:</b>
 			<ul>
 			<li>The projection used is a "Spherical Mercator" with an extension to North and South limited to 85°.
-			    This is a problem for data collected at northen or southern position. In those case, proxies positions
-			    are set to 85°.
+			    This is a problem for data collected at more northern or southern positions. In this case, proxy  positions are set to 85°.
 			</ul>
 		</p>
               </div>
@@ -127,7 +124,7 @@
 
     <div id="footer">
        <div class="container">
-		<p class="text-muted credit">Realised by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.6 - 2016/04/06</p>
+		<p class="text-muted credit">Created by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.6 - 2016/04/06</p>
       </div><!-- /.container -->
     </div>
 
