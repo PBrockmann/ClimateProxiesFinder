@@ -1,5 +1,6 @@
 //====================================================================
 var ClimateProxiesFinder_DB = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
+//var ClimateProxiesFinder_DB = "../ClimateProxiesFinder_DB/20150923_html/";
 
 var theMap;
 var mapMaxZoom = 8;
