@@ -390,7 +390,7 @@ function initCrossfilter(data) {
   // Bind chart-table to other dc charts when row is clicked
   //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
   $('#chart-table').on('click', '.dc-table-row', function() {
-    if (! DOI_link && d3.select(this).attr("class") != "dc-table-column _6") {		// filter only if not clicked on DOI
+    if (! DOI_link) {		
     	var id = d3.select(this).select(".dc-table-column._0").text();
     	tableIdDimension.filter(id);
     	dc.redrawAll();
