@@ -377,20 +377,20 @@ function initCrossfilter(data) {
     }
   })
 
-  DOI_link = false;
+  filterRow = false;
   // Make DOI a hyperlink to google scholar
   $('#chart-table').on('click', '.dc-table-column', function() {
     if (d3.select(this).attr("class") == "dc-table-column _6") {
-      DOI_link = true;
+      filterRow = false;
       window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
     } else
-      DOI_link = false;
+      filterRow = true;
   })
 
   // Bind chart-table to other dc charts when row is clicked
   //http://stackoverflow.com/questions/21113513/reorder-datatable-by-column/21116676#21116676
   $('#chart-table').on('click', '.dc-table-row', function() {
-    if (! DOI_link) {		
+    if (filterRow) {		
     	var id = d3.select(this).select(".dc-table-column._0").text();
     	tableIdDimension.filter(id);
     	dc.redrawAll();
