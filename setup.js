@@ -1,6 +1,8 @@
 //====================================================================
-var ClimateProxiesFinder_DB = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
-//var ClimateProxiesFinder_DB = "../ClimateProxiesFinder_DB/20150923_html/";
+var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
+var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
+//var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
+//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
 
 var theMap;
 var mapMaxZoom = 8;
@@ -201,7 +203,7 @@ function initCrossfilter(data) {
 		});
                 marker.on('click', function(e) {
 			Id = e.target.options.Id;
-      			window.open(ClimateProxiesFinder_DB + data[Id -1].Filename + ".html");
+      			window.open(ClimateProxiesFinder_DB_html + data[Id -1].Filename + ".html");
 		});
         	return marker;
       });
