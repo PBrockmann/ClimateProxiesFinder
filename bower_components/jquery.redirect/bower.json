@@ -1,0 +1,21 @@
+{
+  "name": "jquery.redirect",
+  "main": "jquery.redirect.js",
+  "ignore": [],
+  "version": "1.0.1",
+  "homepage": "https://github.com/mgalante/jquery.redirect.git",
+  "authors": [
+    "Miguel Galante",
+    "Nemanja Avramovic"
+  ],
+  "description": "A simple HTTP POST and GET Redirection Plugin for jQuery",
+  "keywords": [
+    "jquery",
+    "post",
+    "put",
+    "get",
+    "redirect",
+    "download"
+  ],
+  "license": "CC BY-SA 4.0"
+}
