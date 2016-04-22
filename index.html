@@ -8,9 +8,13 @@
 -->
   <head>
     <meta charset="utf-8">
+
     <title>Climate Proxies Finder</title>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script> 
+
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
 
     <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
     <script type="text/javascript" src="bower_components/crossfilter/crossfilter.min.js"></script>
@@ -43,12 +47,23 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="sticky-footer-navbar.css" rel="stylesheet">
 
+    <script src="bower_components/jquery.redirect/jquery.redirect.js"></script>
+
     <script src="setup.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css">
 
   </head>
 
   <body>
+
+  <div id="zipdialog-confirm" title="Create zip file" style="font-size: 13px;">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		Please confirm that you want to create zip file from your selection?</p>
+  </div>
+  <div id="zipdialog-message" title="Create zip file">
+        <p><span class="ui-icon ui-icon-notice" style="float:left; margin:0 7px 20px 0;"></span>
+		0 items selected. You must select proxies first.</p>
+  </div>
 
     <div id="wrap">
 
@@ -116,6 +131,9 @@
 		<div class='dc-data-count' id='chart-count'>
 			<span class='filter-count'></span>selected out of <span class='total-count'></span> records.
 		</div>
+		<input class="btn pull-right" type="image" id="button_shipping" src="img/shipping.png" title="Deliver cart as zip file">
+		<input class="btn pull-right" type="image" id="button_cartdelete" src="img/cartdelete.png" title="Empty cart">
+		<input class="btn pull-right" type="image" id="button_cartadd" src="img/cartadd.png" title="Add selection to cart">
         </div>
 	<br>
         <div class='row'>
@@ -131,6 +149,7 @@
                  <th class="th_Mat">Material</th>
                  <th class="th_DOI">DOI</th>
                  <th class="th_Ref">Reference</th>
+		 <th class="th_Sel">Selected</th>
                </tr>
              </thead>
            </table>
@@ -141,7 +160,7 @@
 
     <div id="footer">
        <div class="container">
-		<p class="text-muted credit">Created by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.6 - 2016/04/06</p>
+		<p class="text-muted credit">Created by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.7 - 2016/04/19</p>
       </div><!-- /.container -->
     </div>
 

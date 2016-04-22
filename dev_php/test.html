@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script> 
+    <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+
+    <script src="../bower_components/jquery.redirect/jquery.redirect.js"></script>
+
+<style>
+.ui-dialog{
+    font-size: 13px;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+
+   $("#dialog-confirm").dialog({
+     autoOpen: false,
+     resizable: false,
+     modal: true,
+     buttons: {
+       "Create zip file": function() {
+         $(this).dialog("close");
+         $.redirect("make_zip_test.php", {files: ['ClimateProxiesFinder_DB/../../../../etc/httpd/conf/httpd.*', 
+       				'ClimateProxiesFinder_DB/20150923_csv/*_alton_SIMPL_D13C*',
+       				'img/marker_Ocean.png', 
+       				'img/marker_Tree.png']});
+       },
+       Cancel: function() {
+         $(this).dialog("close");
+       }
+     }
+   });
+   
+   $("#button1").click(function(){
+      $("#dialog-confirm").dialog("open");
+   });
+
+});
+
+</script>
+
+  </head>
+
+  <body>
+
+<p>
+Hello ...
+
+<p>
+
+<input type='button' id='button1' value="Create zip file">
+
+<div id="dialog-confirm" title="Create zip file ?" style="font-size: 13px;">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to create zip file from your selection?</p>
+</div>
+
+
+  </body>
+</html>

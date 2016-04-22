@@ -1,3 +1,4 @@
+
 #charts {
   padding: 0 0;
 }
@@ -97,9 +98,16 @@
   font-size: 13px;
   padding: 0px;
   background: #eee;
+  line-height: 2.2em;
+  background-color: #eee;
 }
 
 #chart-table tr {
+  background: #333;
+  background-color: #ddd;
+}
+
+#chart-table tr th {
   background: #ddd;
 }
 
@@ -113,7 +121,6 @@
   font-weight: normal;
   font-style: italic;
   padding: 0px;
-  background: #ddd;
 }
 
 #chart-table tbody {
@@ -134,12 +141,22 @@
 #chart-table .th_Arc, #chart-table .dc-table-column._4 { width: 130px; text-align: left; padding-left: 40px; }
 #chart-table .th_Mat, #chart-table .dc-table-column._5 { width: 160px; text-align: left; }
 #chart-table .th_DOI, #chart-table .dc-table-column._6 { width: 220px; text-align: left; }
-#chart-table .th_Ref, #chart-table .dc-table-column._7 { width: 374px; text-align: left; }
+#chart-table .th_Ref, #chart-table .dc-table-column._7 { width: 330px; text-align: left; }
+#chart-table .th_Sel { text-align: right; }
+#chart-table .dc-table-column._8 { text-align: center; }
 
 #chart-table .dc-table-column._6, #chart-table .dc-table-column._7 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+#chart-table input[type="checkbox"] {
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /*

@@ -1,8 +1,8 @@
 //====================================================================
-var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
-var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
-//var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
-//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
+//var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
+//var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
+var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
+var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
 
 var theMap;
 var mapMaxZoom = 8;
@@ -62,6 +62,64 @@ $(document).ready(function() {
     new L.Control.MiniMap(mapmade, { toggleDisplay: true, zoomLevelOffset: -4 }).addTo(theMap);
 
     $('.leaflet-control-zoomhome-home')[0].click();
+
+    $('#button_cartadd').click(function() {
+  	//console.log(tableIdDimension.top(Infinity));
+  	selection = tableIdDimension.top(Infinity);
+        selection.forEach(function(d) { 
+		data[d.Id -1].Selected = true; 
+	});
+        dataTable.redraw();
+    });
+
+    $('#button_cartdelete').click(function() {
+        data.forEach(function(d,i) { d.Selected = false; });
+        dataTable.redraw();
+    });
+
+    $('#button_shipping').click(function() {
+        nbSelection = 0;
+        data.forEach(function(d,i) {
+            if (d.Selected == true) nbSelection++;
+	}); 
+        if (nbSelection > 0) $("#zipdialog-confirm").dialog("open");		// create zip file only some proxies selected
+	else $("#zipdialog-message").dialog("open");
+    });
+
+    $("#zipdialog-confirm").dialog({
+        autoOpen: false,
+        resizable: false,
+        modal: true,
+        buttons: {
+          "Confirm": function() {
+            $(this).dialog("close");
+            filesToZip = [];
+            data.forEach(function(d,i) {
+            	if (d.Selected == true) {
+                    	filesToZip.push(ClimateProxiesFinder_DB_csv + data[i].Filename + ".csv");
+                    	filesToZip.push(ClimateProxiesFinder_DB_html + data[i].Filename + ".png");
+                    	//console.log("selected: ", i+1, data[i].Filename);
+            	}
+    	    });
+            //console.log(filesToZip);
+	    $.redirect("make_zip.php", {files: filesToZip});
+          },
+          "Cancel": function() {
+            $(this).dialog("close");
+          }
+        }
+    });
+
+    $("#zipdialog-message").dialog({
+        autoOpen: false,
+        resizable: false,
+        modal: true,
+        buttons: {
+          "OK": function() {
+            $(this).dialog("close");
+          }
+        }
+    });
 
   });
 
@@ -347,7 +405,9 @@ function initCrossfilter(data) {
       function(d) { return d.Archive; },
       function(d) { return d.Material; },
       function(d) { return d.DOI; },
-      function(d) { return d.Reference; }                  
+      function(d) { return d.Reference; },
+      function(d) { if (d.Selected) return "<input type='checkbox' checked>";
+                    else return "<input type='checkbox'>"; }
     ])
     .sortBy(function(d){ return +d.Id; })
     .order(d3.ascending);
@@ -375,15 +435,19 @@ function initCrossfilter(data) {
 
   // Make DOI a hyperlink to google scholar
   $('#chart-table').on('click', '.dc-table-column', function() {
-    if (d3.select(this).attr("class") == "dc-table-column _6") {
-        window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
+    column = d3.select(this).attr("class");
+    if (column == "dc-table-column _6") {
+    	window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
+    } else if (column == "dc-table-column _8") {
+        id = d3.select(this.parentNode).select(".dc-table-column._0").text();
+       	data[id-1].Selected = d3.select(this).select('input').property('checked');
     } else {
-    	id = d3.select(this.parentNode).select(".dc-table-column._0").text();
+        id = d3.select(this.parentNode).select(".dc-table-column._0").text();
     	tableIdDimension.filter(id);
     	dc.redrawAll();
     	// make reset link visible
     	d3.select("#resetTableLink").style("display", "inline")
-    }
+    } 
   });
 
   //-----------------------------------

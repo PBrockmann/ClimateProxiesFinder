@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script> 
+    <script src="../bower_components/jquery.redirect/jquery.redirect.js"></script> 
+
+<script>
+
+$(document).ready(function(){
+
+$("#button1").click(function(){
+
+   $.redirect("make_zip2.php", {files: ['img/marker_L*.png', 'img/marker_Ocean.png']});
+
+   //$.ajax({
+   //     url: 'make_zip2.php',
+   //     type: 'post',
+   //     data: {files: ['img/marker_S*.png', 'img/marker_Tree.png']}, 
+   //     success: function(result){
+   //     	console.log("zip file created");
+   //     	window.location = "make_zip2.php";
+   //     }
+   // });
+
+});
+
+});
+
+</script>
+
+  </head>
+
+  <body>
+
+<p>
+Hello ...
+
+<p>
+
+<input type='button' id='button1' value="Create zip file">
+
+<div id='resultDiv'></div>
+
+  </body>
+</html>

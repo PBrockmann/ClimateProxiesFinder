@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script> 
+
+
+<script>
+
+$(document).ready(function(){
+
+$("#button1").click(function(){
+
+   window.location = "make_zip1.php";
+   //$.ajax({
+   //     url: 'make_zip1.php',
+   //     type: 'post',
+   //     //data: {files: ['img/marker_*.png', 'img/marker_Tree.png']}, 
+   //     data: {files: ['img/marker_Ocean.png', 'img/marker_Tree.png']}, 
+   //     cache: false,
+   //     success: function(data){
+   //     	console.log("zip file created");
+   //     	//var blob = new Blob([data], {type: "application/zip"});
+   //     	//saveAs(blob, "hello.zip");
+   //     	window.location = "http://climateproxiesfinder.ipsl.fr/v1.7/ClimateProxiesFinder_selection.zip";
+   //     }
+   // });
+
+//http://stackoverflow.com/questions/14406174/return-download-zip-file-to-the-browser-download-window
+
+});
+
+});
+
+</script>
+
+  </head>
+
+  <body>
+
+<p>
+Hello ...
+
+<p>
+
+<input type='button' id='button1' value="Create zip file">
+
+<div id='resultDiv'></div>
+
+  </body>
+</html>
