@@ -63,6 +63,34 @@ $(document).ready(function() {
 
     $('.leaflet-control-zoomhome-home')[0].click();
 
+    //----------------------------------------------------------------
+    // Events handling
+    
+    // Add ellipses for long entries and make DOI a hyperlink to google scholar
+    //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
+    $('#chart-table').on('mouseover', '.dc-table-column', function() {      
+      // displays popup only if text does not fit in col width
+      if (this.offsetWidth < this.scrollWidth) {
+        d3.select(this).attr('title', d3.select(this).text());
+      }
+    });
+  
+    // Make DOI a hyperlink to google scholar and handle selection
+    $('#chart-table').on('click', '.dc-table-column', function() {
+      column = d3.select(this).attr("class");
+      if (column == "dc-table-column _8") {
+          id = d3.select(this.parentNode).select(".dc-table-column._0").text();
+         	data[id-1].Selected = d3.select(this).select('input').property('checked');
+      } else {
+          id = d3.select(this.parentNode).select(".dc-table-column._0").text();
+      	  //tableIdDimension.filter(id);
+      	  dataTable.filter(id);
+      	  dc.redrawAll();
+      	  // make reset link visible
+          d3.select("#resetTableLink").style("display", "inline");
+      } 
+    });
+
     $('#button_cartadd').click(function() {
   	//console.log(tableIdDimension.top(Infinity));
   	selection = tableIdDimension.top(Infinity);
@@ -75,6 +103,14 @@ $(document).ready(function() {
     $('#button_cartdelete').click(function() {
         data.forEach(function(d,i) { d.Selected = false; });
         dataTable.redraw();
+    });
+
+    $('#button_shipping').mouseover(function() {
+        nbSelection = 0;
+        data.forEach(function(d,i) {
+            if (d.Selected == true) nbSelection++;
+	}); 
+        $('#button_shipping').prop('title', 'Deliver cart as zip file (currently ' + nbSelection.toString() + ' items)');
     });
 
     $('#button_shipping').click(function() {
@@ -189,7 +225,7 @@ function initCrossfilter(data) {
 
   iconSize = [32,32];
   iconAnchor = [16,32];
-  popupAnchor = [0,-20];
+  popupAnchor = [0,-32];
 
   mapChart  = dc.leafletMarkerChart("#chart-map");
 
@@ -212,6 +248,8 @@ function initCrossfilter(data) {
       .clusterOptions({maxClusterRadius: 50, showCoverageOnHover: false, spiderfyOnMaxZoom: true})
       .title(function() {})  
       .popup(function(d,marker) {
+		//marker._popup.options.closeButton = false;
+		//console.log(marker);
 		id = d.key[2] -1;
     		return  "Id: " + "<b>" + data[id].Id + "</b></br>"
     			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
@@ -381,7 +419,7 @@ function initCrossfilter(data) {
         .group(xf.groupAll())
         .html({
             some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records' +
-                ' | <a href=\'javascript:dc.filterAll(); dc.redrawAll();\'>Reset All</a>',
+                ' | <a href=\'javascript: resetAll_exceptMap();\'>Reset All</a>',
             all: 'All records selected. Please click on the graph to apply filters.'
         });
 
@@ -404,7 +442,7 @@ function initCrossfilter(data) {
       function(d) { return format2(d.OldestDate); },
       function(d) { return d.Archive; },
       function(d) { return d.Material; },
-      function(d) { return d.DOI; },
+      function(d) { return '<a href="https://scholar.google.fr/scholar?q=' + d.DOI + '" target="_blank">' + d.DOI + '</a>' },
       function(d) { return d.Reference; },
       function(d) { if (d.Selected) return "<input type='checkbox' checked>";
                     else return "<input type='checkbox'>"; }
@@ -412,55 +450,27 @@ function initCrossfilter(data) {
     .sortBy(function(d){ return +d.Id; })
     .order(d3.ascending);
 
-  // Add ellipses for long entries and make DOI a hyperlink to google scholar
-  //http://stackoverflow.com/questions/5474871/html-how-can-i-show-tooltip-only-when-ellipsis-is-activated
-  $('#chart-table').on('mouseover', '.dc-table-column', function() {      
-    // displays popup only if text does not fit in col width
-    if (this.offsetWidth < this.scrollWidth) {
-      d3.select(this).attr('title', d3.select(this).text());
-    }
-
-    // change DOI colour to blue to indicate hyperlink
-    if (d3.select(this).attr("class") == "dc-table-column _6") {
-      d3.select(this).style("color", "#0645AD");
-    }
-  });
-
-  // Reset DOI colour to default
-  $('#chart-table').on('mouseout', '.dc-table-column', function() {
-    if (d3.select(this).attr("class") == "dc-table-column _6") {
-      d3.select(this).style("color", "#333");
-    }
-  });
-
-  // Make DOI a hyperlink to google scholar
-  $('#chart-table').on('click', '.dc-table-column', function() {
-    column = d3.select(this).attr("class");
-    if (column == "dc-table-column _6") {
-    	window.open("https://scholar.google.fr/scholar?q=" + d3.select(this).text());
-    } else if (column == "dc-table-column _8") {
-        id = d3.select(this.parentNode).select(".dc-table-column._0").text();
-       	data[id-1].Selected = d3.select(this).select('input').property('checked');
-    } else {
-        id = d3.select(this.parentNode).select(".dc-table-column._0").text();
-    	tableIdDimension.filter(id);
-    	dc.redrawAll();
-    	// make reset link visible
-    	d3.select("#resetTableLink").style("display", "inline")
-    } 
-  });
-
   //-----------------------------------
   dc.renderAll();
 
 }
 
-// reset chart-table
+// reset dataTable
 function resetTable() {
-  tableIdDimension.dispose(); //important! table dim will not be updated without it
+  dataTable.filterAll();
   dc.redrawAll();
   // make reset link invisible
   d3.select("#resetTableLink").style("display", "none");
+}
+
+// reset all except mapChart
+function resetAll_exceptMap() {
+  depthChart.filterAll(); 
+  ageChart.filterAll(); 
+  archiveChart.filterAll(); 
+  materialChart.filterAll();
+  resetTable();
+  dc.redrawAll();
 }
 
 //====================================================================
