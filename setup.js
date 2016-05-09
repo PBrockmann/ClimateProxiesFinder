@@ -83,7 +83,6 @@ $(document).ready(function() {
          	data[id-1].Selected = d3.select(this).select('input').property('checked');
       } else {
           id = d3.select(this.parentNode).select(".dc-table-column._0").text();
-      	  //tableIdDimension.filter(id);
       	  dataTable.filter(id);
       	  dc.redrawAll();
       	  // make reset link visible
@@ -92,8 +91,7 @@ $(document).ready(function() {
     });
 
     $('#button_cartadd').click(function() {
-  	//console.log(tableIdDimension.top(Infinity));
-  	selection = tableIdDimension.top(Infinity);
+  	selection = tableDim.top(Infinity);
         selection.forEach(function(d) { 
 		data[d.Id -1].Selected = true; 
 	});
@@ -210,7 +208,7 @@ function initCrossfilter(data) {
   mapGroup = mapDim.group();
 
   //-----------------------------------
-  tableIdDimension = xf.dimension(function(d) { return +d.Id; });
+  tableDim = xf.dimension(function(d) { return +d.Id; });
 
   //-----------------------------------
   var archiveColors = d3.scale.ordinal()
@@ -431,7 +429,7 @@ function initCrossfilter(data) {
   format2 = d3.format(".2f");
 
   dataTable
-    .dimension(tableIdDimension)
+    .dimension(tableDim)
     .group(function(d) {})
     .showGroups(false)
     .size(100)
