@@ -412,7 +412,7 @@ function initCrossfilter(data) {
     .ordering(function (d) { return newOrderMaterial[d.key]; })
     .xAxis().ticks(4);
 
-//-----------------------------------
+  //-----------------------------------
   dataCount = dc.dataCount('#chart-count');
 
   dataCount 
@@ -424,7 +424,7 @@ function initCrossfilter(data) {
             all: 'All records selected. Please click on the graph to apply filters.'
         });
 
-//-----------------------------------
+  //-----------------------------------
   dataTable = dc.dataTable("#chart-table");
 
   format1 = d3.format(".0f");
