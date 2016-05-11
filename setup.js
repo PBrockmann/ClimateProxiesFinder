@@ -247,7 +247,7 @@ function initCrossfilter(data) {
       .title(function() {})  
       .popup(function(d,marker) {
 		id = d.key[2] -1;
-  		popup = L.popup({autoPan: false, closeButton: false});
+  		popup = L.popup({autoPan: false, closeButton: false, maxWidth: 400});
 		popup.setContent("Id: " + "<b>" + data[id].Id + "</b></br>"
     			+ "Position: " + "<b>" + data[id].Longitude.toFixed(2) + "°E</b>, <b>" + data[id].Latitude.toFixed(2) + "°N</b></br>"
     			+ "Depth (m): " + "<span style='color: " + Ocean_color + ";'><b>" +  data[id].Depth.toFixed(2) + "</b></span></br>"

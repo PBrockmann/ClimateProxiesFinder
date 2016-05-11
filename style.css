@@ -1,11 +1,10 @@
-
 #charts {
   padding: 0 0;
 }
 
 .disabled {
-  opacity: 0.2; 
-  pointer-events: none; 
+  opacity: 0.2;
+  pointer-events: none;
   cursor: default;
 }
 
@@ -78,7 +77,7 @@
 
 .imghelp {
   border-radius: 10px;
-} 
+}
 
 .pointer {
   cursor: pointer;
@@ -92,58 +91,35 @@
  table-layout: fixed;
 }
 
-#chart-table td {
-  cursor: pointer;
-  color: #333;
-  font-size: 13px;
-  padding: 0px;
-  background: #eee;
-  line-height: 2.2em;
-  background-color: #eee;
-}
-
-#chart-table tr {
-  background: #333;
-  background-color: #ddd;
-}
-
-#chart-table tr th {
-  background: #ddd;
-}
-
-#chart-table tr:hover td {
-  font-weight: bold;
-  background: #ccc;
-}
-
-#chart-table th {
-  color: #333;
-  font-weight: normal;
-  font-style: italic;
-  padding: 0px;
-}
-
 #chart-table tbody {
-    display: block;
-    height: 150px;     
-    overflow-y: auto;  
-    overflow-x: hidden;  
+  display: block;
+  height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #chart-table>thead>tr>th, #chart-table>tbody>tr>td {
-    float: left;
+  float: left;
+  line-height: 1em;
+  border: 0px;
+  padding: 5px;
+}
+
+#chart-table>thead>tr>th {
+  font-weight: normal;
 }
 
 #chart-table .th_Id , #chart-table .dc-table-column._0 { width: 40px;  text-align: right; padding-right: 5px; }
 #chart-table .th_Dep, #chart-table .dc-table-column._1 { width: 50px; text-align: right; }
-#chart-table .th_Mos, #chart-table .dc-table-column._2 { width: 100px; text-align: right; padding-left: 20px; }
-#chart-table .th_Old, #chart-table .dc-table-column._3 { width: 80px; text-align: right; }
-#chart-table .th_Arc, #chart-table .dc-table-column._4 { width: 130px; text-align: left; padding-left: 40px; }
-#chart-table .th_Mat, #chart-table .dc-table-column._5 { width: 160px; text-align: left; }
-#chart-table .th_DOI, #chart-table .dc-table-column._6 { width: 220px; text-align: left; }
-#chart-table .th_Ref, #chart-table .dc-table-column._7 { width: 335px; text-align: left; }
-#chart-table .th_Sel { text-align: right; }
-#chart-table .dc-table-column._8 { text-align: center; }
+#chart-table .th_Mos, #chart-table .dc-table-column._2 { width: 100px; text-align: right; padding-left: 10px; }
+#chart-table .th_Old, #chart-table .dc-table-column._3 { width: 100px; text-align: right; }
+#chart-table .th_Arc, #chart-table .dc-table-column._4 { width: 140px; text-align: left; padding-left: 30px; }
+#chart-table .th_Mat, #chart-table .dc-table-column._5 { width: 180px; text-align: left; }
+#chart-table .th_DOI, #chart-table .dc-table-column._6 { width: 210px; text-align: left; }
+/* scrollbar width = 17px; total width set at 1200px */
+#chart-table .th_Ref, #chart-table .dc-table-column._7 { width: 313px; text-align: left; }
+#chart-table .th_Sel { width: 50px; text-align: left; }
+#chart-table .dc-table-column._8 { width: 50px; text-align: center; }
 
 #chart-table .dc-table-column._6, #chart-table .dc-table-column._7 {
   overflow: hidden;
@@ -157,14 +133,35 @@
     margin-right: 10px;
     margin-top: 0px;
     margin-bottom: 0px;
+} 
+
+#chart-table td {
+  cursor: pointer; 
+  color: #333;
+  font-size: 13px;
+  border: 0px;
 }
 
-/*
-.marker-cluster-large div, .marker-cluster-medium div, .marker-cluster-small div {
-  background-color: #ccc;
+#chart-table thead tr {
+  background: #333;
+  background-color: #ddd;
+  color: #333;
+  font-weight: normal;
+  font-style: italic;
+  padding: 0px;
 }
 
-.marker-cluster-large, .marker-cluster-medium, .marker-cluster-small {
-  background-color: #993366;
+#chart-table tbody tr {
+  background: #333;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  font-weight: normal;
 }
-*/
+
+#chart-table tr:hover {
+  background: #ccc;
+}
+
+#chart-table tr:hover td {
+  font-weight: bold;
+}
