@@ -1,8 +1,8 @@
 //====================================================================
-//var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
-//var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
-var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
-var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
+var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
+var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
+//var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
+//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
 
 var theMap;
 var mapMaxZoom = 8;
@@ -254,7 +254,8 @@ function initCrossfilter(data) {
     			+ "Date (ka): " + "<span style='color: #C9840B;'>" + "from <b>" + data[id].RecentDate.toFixed(2) + "</b> to <b>" 
 										+ data[id].OldestDate.toFixed(2) + "</b></span></br>"
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
-    			+ "Material: " + "<b>" + data[id].Material + "</b></br>");
+    			+ "Material: " + "<b>" + data[id].Material + "</b></br>"
+    			+ "Filename: " + "<b>" + data[id].Filename + ".xls</b></br>");
 		return popup;
       })
       .popupOnHover(true)
