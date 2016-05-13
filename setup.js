@@ -162,7 +162,7 @@ $(document).ready(function() {
     markers.on('clustermouseover', function (a) {
       childMarkers = a.layer.getAllChildMarkers();
       childMarkersIds = childMarkers.map(function(obj) {return obj.key[2]}).sort();
-      console.log(childMarkersIds);
+      //console.log(childMarkersIds);
       childMarkersIds.forEach(function(Id, i) {
       	d3.selectAll(".dc-table-column._0")
       		.text(function (d) {
