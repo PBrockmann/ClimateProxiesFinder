@@ -1,8 +1,8 @@
 //====================================================================
-var ClimateProxiesFinder_DB_html = "/data01/brock/ClimateProxiesFinder_DB/20150923_html/";
+var ClimateProxiesFinder_DB_plots = "/data01/brock/ClimateProxiesFinder_DB/20150923_plots/";
 var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
 var ClimateProxiesFinder_DB_xls = "/data01/brock/ClimateProxiesFinder_DB/20150923_xls/";
-//var ClimateProxiesFinder_DB_html = "ClimateProxiesFinder_DB/20150923_html/";
+//var ClimateProxiesFinder_DB_plots = "ClimateProxiesFinder_DB/20150923_plots/";
 //var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
 //var ClimateProxiesFinder_DB_xls = "ClimateProxiesFinder_DB/20150923_xls/";
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
             data.forEach(function(d,i) {
             	if (d.Selected == true) {
                     	filesToZip.push(ClimateProxiesFinder_DB_csv + data[i].Filename + ".csv");
-                    	filesToZip.push(ClimateProxiesFinder_DB_html + data[i].Filename + ".png");
+                    	filesToZip.push(ClimateProxiesFinder_DB_plots + data[i].Filename + ".png");
                     	filesToZip.push(ClimateProxiesFinder_DB_xls + data[i].Filename + ".xls");
                     	//console.log("selected: ", i+1, data[i].Filename);
             	}
@@ -223,6 +223,10 @@ function initCrossfilter(data) {
   archiveGroup = archiveDim.group();
 
   //-----------------------------------
+  chronoDim = xf.dimension( function(d) { return d.ChronoInfo; });
+  chronoGroup = chronoDim.group();
+
+  //-----------------------------------
   materialDim = xf.dimension( function(d) { return d.Material; });
   materialGroup = materialDim.group();
 
@@ -278,7 +282,8 @@ function initCrossfilter(data) {
 										+ data[id].OldestDate.toFixed(2) + "</b></span></br>"
     			+ "Archive: " + "<b>" + data[id].Archive + "</b></br>"
     			+ "Material: " + "<b>" + data[id].Material + "</b></br>"
-    			+ "Filename: " + "<b>" + data[id].Filename + ".xls</b></br>");
+    			+ "Chronological information: " + "<b>" + data[id].ChronoInfo + "</b></br>"
+    			+ "File: " + "<b>" + data[id].Filename + ".xls</b></br>");
 		return popup;
       })
       .popupOnHover(true)
@@ -322,7 +327,7 @@ function initCrossfilter(data) {
 		});
                 marker.on('click', function(e) {
 			Id = e.target.options.Id;
-      			window.open(ClimateProxiesFinder_DB_html + data[Id -1].Filename + ".html");
+      			window.open(ClimateProxiesFinder_DB_plots + data[Id -1].Filename + ".html");
 		});
         	return marker;
       });
@@ -331,7 +336,7 @@ function initCrossfilter(data) {
   depthChart  = dc.barChart("#chart-depth");
 
   depthChart
-    .width(380)
+    .width(300)
     .height(200)
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .centerBar(false)
@@ -354,7 +359,7 @@ function initCrossfilter(data) {
   ageChart  = dc.scatterPlot("#chart-age");
 
   ageChart
-    .width(380)
+    .width(300)
     .height(200)
     .margins({top: 10, right: 20, bottom: 30, left: 40})	
     .dimension(ageDim)
@@ -435,6 +440,24 @@ function initCrossfilter(data) {
     .xAxis().ticks(4);
 
   //-----------------------------------
+  var chronoColors = d3.scale.ordinal()
+        .domain(["1", "2", "3", "4", "5", "No", "Stack"])
+   	.range(["#006837", "#31a354", "#78c679", "#addd8e", "#d9f0a3", "#e34a33", "#fc8d59"]);   // http://colorbrewer2.org/
+
+  chronoChart  = dc.rowChart("#chart-chrono");
+
+  chronoChart
+    .width(180)
+    .height(200)
+    .margins({top: 10, right: 10, bottom: 30, left: 10})	
+    .dimension(chronoDim)
+    .group(chronoGroup)
+    .colors(chronoColors) 
+    .elasticX(true)
+    .gap(2)
+    .xAxis().ticks(4);
+
+  //-----------------------------------
   dataCount = dc.dataCount('#chart-count');
 
   dataCount 
@@ -492,6 +515,7 @@ function resetAll_exceptMap() {
   ageChart.filterAll(); 
   archiveChart.filterAll(); 
   materialChart.filterAll();
+  chronoChart.filterAll();
   resetTable();
   dc.redrawAll();
 }

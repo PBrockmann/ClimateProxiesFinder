@@ -96,7 +96,7 @@
         </div>
 	<br>
       	<div class="row">
-           	    <div class="dc-chart col-xs-4" id="chart-depth">
+           	    <div class="dc-chart col-xs-3" id="chart-depth">
 			<div class="dc-chart-title">Depth (m)</div>
 			<a class="reset" href="javascript:depthChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
 			<a class="preset" href="javascript:depthChart.filterAll();depthChart.filter(dc.filters.RangedFilter(0., 500.));dc.redrawAll();">0:500</a>
@@ -105,7 +105,7 @@
 			<span class="reset" style="display: none;"><span class="filter"></span></span>
 			<br>
            	    </div>
-           	     <div class="dc-chart col-xs-4" id="chart-age">
+           	     <div class="dc-chart col-xs-3" id="chart-age">
 			<div class="dc-chart-title">Age (ka)</div>
 			<a class="reset" href="javascript:ageChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
 			<a class="preset" href="javascript:ageChart.filterAll();ageChart.filter(dc.filters.RangedFilter([-2.5, -2.5], [6.5, 6.5]));dc.redrawAll();" 
@@ -125,6 +125,11 @@
            	     <div class="dc-chart col-xs-2" id="chart-material">
 			<div class="dc-chart-title">Material</div>
 			<a class="reset" href="javascript:materialChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+			<br>
+           	     </div>
+           	     <div class="dc-chart col-xs-2" id="chart-chrono">
+			<div class="dc-chart-title">Chronological information</div>
+			<a class="reset" href="javascript:chronoChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
 			<br>
            	     </div>
         </div>
@@ -162,7 +167,7 @@
 
     <div id="footer">
        <div class="container">
-		<p class="text-muted credit">Created by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 1.9 - 2016/06/11</p>
+		<p class="text-muted credit">Created by <a target="_blank" href="http://www.lsce.ipsl.fr/en"><span title="Climate and Environment Sciences Laboratory" style="font-weight:bold;">LSCE</span></a>&nbsp;<a target="_blank" href="http://www.lsce.ipsl.fr/en"><img src="img/LSCE_Icon.png" title="Climate and Environment Sciences Laboratory"/></a> and hosted by <a target="_blank" href="http://www.ipsl.fr/en"><span title="Institut Pierre Simon Laplace" style="font-weight:bold;">IPSL</span></a>&nbsp;<a target="_blank" href="http://www.ipsl.fr/en"><img src="img/IPSL_logo.png" title="Institut Pierre Simon Laplace"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version 2.0 - 2016/05/17</p>
       </div><!-- /.container -->
     </div>
 
