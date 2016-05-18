@@ -1,10 +1,10 @@
 //====================================================================
-var ClimateProxiesFinder_DB_plots = "/data01/brock/ClimateProxiesFinder_DB/20150923_plots/";
-var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20150923_csv/";
 var ClimateProxiesFinder_DB_xls = "/data01/brock/ClimateProxiesFinder_DB/20150923_xls/";
-//var ClimateProxiesFinder_DB_plots = "ClimateProxiesFinder_DB/20150923_plots/";
-//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20150923_csv/";
+var ClimateProxiesFinder_DB_plots = "/data01/brock/ClimateProxiesFinder_DB/20160513_plots/";
+var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20160513_csv/";
 //var ClimateProxiesFinder_DB_xls = "ClimateProxiesFinder_DB/20150923_xls/";
+//var ClimateProxiesFinder_DB_plots = "ClimateProxiesFinder_DB/20160513_plots/";
+//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20160513_csv/";
 
 var theMap;
 var mapMaxZoom = 8;
@@ -36,7 +36,6 @@ var Others_color = "#FF4400";
 //====================================================================
 $(document).ready(function() {
 
-  //d3.tsv("proxies_select.tsv", function(data) {
   d3.tsv("proxies.tsv", function(data) {
     data.forEach(function(d) {
           d.Longitude = +d.Longitude;
