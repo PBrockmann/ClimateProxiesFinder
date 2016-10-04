@@ -1,10 +1,10 @@
 //====================================================================
-var ClimateProxiesFinder_DB_xls = "/data01/brock/ClimateProxiesFinder_DB/20150923_xls/";
-var ClimateProxiesFinder_DB_plots = "/data01/brock/ClimateProxiesFinder_DB/20160513_plots/";
-var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20160513_csv/";
-//var ClimateProxiesFinder_DB_xls = "ClimateProxiesFinder_DB/20150923_xls/";
-//var ClimateProxiesFinder_DB_plots = "ClimateProxiesFinder_DB/20160513_plots/";
-//var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20160513_csv/";
+//var ClimateProxiesFinder_DB_xls = "/data01/brock/ClimateProxiesFinder_DB/20150923_xls/";
+//var ClimateProxiesFinder_DB_plots = "/data01/brock/ClimateProxiesFinder_DB/20160513_plots/";
+//var ClimateProxiesFinder_DB_csv = "/data01/brock/ClimateProxiesFinder_DB/20160513_csv/";
+var ClimateProxiesFinder_DB_xls = "ClimateProxiesFinder_DB/20150923_xls/";
+var ClimateProxiesFinder_DB_plots = "ClimateProxiesFinder_DB/20160513_plots/";
+var ClimateProxiesFinder_DB_csv = "ClimateProxiesFinder_DB/20160513_csv/";
 
 var theMap;
 var mapMaxZoom = 8;
